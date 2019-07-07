@@ -1,0 +1,13 @@
+---
+title: New Podcast - The Court of Jibber Jabber
+date: "2018-06-07T22:12:03.284Z"
+description: HEAR YE, HEAR YE, court is now in session. The honorable Lee-Ana and John weigh in on mindful living topics. Jibber jabber topics includeing Where do we go when we sleep? What affect does your mindset have when you fall asleep? and developing a bedtime routine to encourage physical and mental healing
+---
+
+HEAR YE, HEAR YE, court is now in session. The honorable Lee-Ana and John weigh in on mindful living topics. Jibber jabber topics include:
+
+Where do we go when we sleep? What affect does your mindset have when you fall asleep?
+Using the Tarot to develop your intuition. What is the Tarot and how does it tell a story with energy?
+Michelle Tea’s excellent and accessible introduction to the Tarot in her book ‘The Modern Tarot’
+Developing a bedtime routine to encourage physical and mental healing
+Let us know what you think of the show and how we can improve by leaving a review or emailing john@tarotly.app. The Court of Jibber Jabber broadcasts weekly. Subscribe now so you don’t miss anything!

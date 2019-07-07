@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 
 import { rhythm, scale } from "../utils/typography"
+import AudioPlayer from "../components/audioPlayer"
 
 class Layout extends React.Component {
   render() {
@@ -62,7 +63,7 @@ class Layout extends React.Component {
       >
         <header>{header}</header>
         <main>{children}</main>
-        <script async data-uid="cfa520a67b" src="https://f.convertkit.com/cfa520a67b/3017a1dafb.js"></script>
+        <AudioPlayer/>
         <footer>
           © Tarotly {new Date().getFullYear()}
           {` `}
