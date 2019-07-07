@@ -54,7 +54,7 @@ const Bio = () => {
         }}
       /> */}
       <p>
-        Written by <strong>{author}</strong> who live and work in California, building useful things.
+        Made with love by <strong>{author}</strong> who live and work in California, building useful things.
         {` `}
         <a href={`https://twitter.com/${social.twitter}`}>
           connect on Twitter
