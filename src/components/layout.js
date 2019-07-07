@@ -62,10 +62,10 @@ class Layout extends React.Component {
       >
         <header>{header}</header>
         <main>{children}</main>
+        <script async data-uid="cfa520a67b" src="https://f.convertkit.com/cfa520a67b/3017a1dafb.js"></script>
         <footer>
-          © {new Date().getFullYear()}, Built with
+          © Tarotly {new Date().getFullYear()}
           {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
         </footer>
       </div>
     )

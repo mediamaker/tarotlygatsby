@@ -4,7 +4,7 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: `Tarotly - helping our members acheive their mindful living goals with better tools`,
+    title: `Our mission at Tarotly is to help our members acheive their mindful living goals`,
     author: `John and Lee-Ana`,
     description: `Our mission is to help our members achieve their mindful living goals with tools to succeed across mobile, desktop and voice assistants.`,
     siteUrl: `https://tarotly.net`,
