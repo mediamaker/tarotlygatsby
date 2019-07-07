@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "Tarotly",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "description": "Helping members acheive their mindful living goals. Developing that intuition with the tools they need across mobile, desktops and voice assistants.",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "John Cozen",
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },

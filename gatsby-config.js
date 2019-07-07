@@ -1,11 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
-    author: `Kyle Mathews`,
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    title: `Tarotly - helping our members acheive their mindful living goals with better tools`,
+    author: `John and Lee-Ana`,
+    description: `Our mission is to help our members achieve their mindful living goals with tools to succeed across mobile, desktop and voice assistants.`,
+    siteUrl: `https://tarotly.net`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `tarotly1`,
     },
   },
   plugins: [
@@ -42,6 +42,7 @@ module.exports = {
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
+          'gatsby-plugin-styled-components',
         ],
       },
     },
