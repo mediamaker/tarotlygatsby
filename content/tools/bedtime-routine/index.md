@@ -1,7 +1,7 @@
 ---
 title: Bedtime Routine
 description: Rejuvenate with deep sleep. This simple checklist will help you wind down before bed so you can feel truly restored in the morning
-date: "2018-06-07T22:12:03.284Z"
+date: "2019-06-07T22:12:03.284Z"
 
 ---
 

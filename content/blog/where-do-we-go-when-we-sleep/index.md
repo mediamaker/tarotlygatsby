@@ -1,6 +1,6 @@
 ---
 title: New Podcast - The Court of Jibber Jabber
-date: "2018-06-07T22:12:03.284Z"
+date: "2019-06-07T22:12:03.284Z"
 description: HEAR YE, HEAR YE, court is now in session. The honorable Lee-Ana and John weigh in on mindful living topics. Jibber jabber topics including Where do we go when we sleep? What effect does your mindset have when you fall asleep? and developing a bedtime routine to encourage physical and mental healing
 ---
 
