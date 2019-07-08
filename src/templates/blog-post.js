@@ -67,6 +67,19 @@ class BlogPostTemplate extends React.Component {
             )}
           </li>
         </ul>
+        <ul
+          style={{
+            display: `flex`,
+            flexWrap: `wrap`,
+            justifyContent: `space-between`,
+            listStyle: `none`,
+            padding: 0,
+          }}
+        >
+          <li>
+          {post.frontmatter.tags} 
+          </li>
+        </ul>
       </Layout>
     )
   }
@@ -90,6 +103,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        tags
       }
     }
   }
