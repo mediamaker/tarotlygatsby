@@ -12,7 +12,8 @@ module.exports = {
       twitter: `tarotly1`,
     },
   },
-  plugins: [{
+  plugins: [
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/blog`,
@@ -27,8 +28,9 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: `gatsby-mdx`,
       options: {
+        extenstions: ['.mdx', '.md'],
         plugins: [{
             resolve: `gatsby-remark-images`,
             options: {
@@ -41,9 +43,11 @@ module.exports = {
               wrapperStyle: `margin-bottom: 1.0725rem`,
             },
           },
-          `gatsby-remark-prismjs`,
-          `gatsby-remark-copy-linked-files`,
-          `gatsby-remark-smartypants`,
+          { resolve: `gatsby-remark-prismjs`},
+          { resolve: `gatsby-remark-copy-linked-files`},
+          { resolve: `gatsby-remark-smartypants`},
+          
+          
         ],
       },
     },
