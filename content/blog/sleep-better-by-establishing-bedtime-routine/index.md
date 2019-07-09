@@ -5,7 +5,7 @@ date: "2019-06-07T22:12:03.284Z"
 tags: ["tools", "sleep"]
 ---
 
-Rejuvenate with deep sleep. This simple checklist will help you wind down before bed so you can feel truly restored in the morning. Keep this checklist handy and try following it before bed for 7 days and feel the difference better sleep can make in your energy and clarity levels.
+Rejuvenate with deep sleep. This simple checklist will help you wind down before bed so you can feel truly restored in the morning. Try it before bed for 7 days and feel the difference better sleep can make in your daily energy and clarity levels.
 
 - [ ] Sit comfortably on a chair or on the floor.
 - [ ] Close your eyes and bring your attention to your breathing, stay focused here for a few breaths. Notice your breaths become longer and deeper.
