@@ -4,7 +4,7 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: `Our mission at Tarotly is to help our members acheive their mindful living goals`,
+    title: `On a mission to make mindful living easy`,
     author: `John and Lee-Ana`,
     description: `Our mission is to help our members achieve their mindful living goals with tools to succeed across mobile, desktop and voice assistants.`,
     siteUrl: `https://tarotly.net`,
@@ -30,8 +30,8 @@ module.exports = {
     {
       resolve: `gatsby-mdx`,
       options: {
-        extenstions: ['.mdx', '.md'],
-        plugins: [{
+        extenstions: [`.mdx`, `.md`],
+        gatsbyRemarkPlugins: [{
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 590,
@@ -45,9 +45,7 @@ module.exports = {
           },
           { resolve: `gatsby-remark-prismjs`},
           { resolve: `gatsby-remark-copy-linked-files`},
-          { resolve: `gatsby-remark-smartypants`},
-          
-          
+          { resolve: `gatsby-remark-smartypants`},          
         ],
       },
     },
