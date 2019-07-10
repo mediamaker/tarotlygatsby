@@ -1,12 +1,13 @@
 import React from "react"
 import PropTypes from "prop-types"
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 
 // Utilities
 import kebabCase from "lodash/kebabCase"
 
 // Components
 import { Helmet } from "react-helmet"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
 const TagsPage = ({
   data: {
@@ -23,9 +24,9 @@ const TagsPage = ({
       <ul>
         {group.map(tag => (
           <li key={tag.fieldValue}>
-            <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
+            <AniLink paintDrip color="rebeccapurple" to={`/tags/${kebabCase(tag.fieldValue)}/`}>
               {tag.fieldValue} ({tag.totalCount})
-            </Link>
+            </AniLink>
           </li>
         ))}
       </ul>

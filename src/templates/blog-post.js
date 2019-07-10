@@ -1,17 +1,13 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
-
+import {graphql} from "gatsby"
+import AniLink from 'gatsby-plugin-transition-link'
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
 import MDXRenderer from "gatsby-mdx/mdx-renderer"
-
-import {
-  Headline1,
-} from '../utils/styledComponents'
-
+import Title from "../components/title"
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -25,9 +21,9 @@ class BlogPostTemplate extends React.Component {
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
         />
-        <Headline1>
+        <Title title={post.frontmatter.title}>
           {post.frontmatter.title}
-          </Headline1>
+          </Title>
         <p
           style={{
             ...scale(-1 / 5),
@@ -35,8 +31,7 @@ class BlogPostTemplate extends React.Component {
             marginBottom: rhythm(1),
           }}
         >
-          {post.frontmatter.date}
-        </p>
+         </p>
         <MDXRenderer>{post.code.body}</MDXRenderer>
         <hr
           style={{
@@ -56,16 +51,16 @@ class BlogPostTemplate extends React.Component {
         >
           <li>
             {previous && (
-              <Link to={previous.fields.slug} rel="prev">
+              <AniLink paintDrip to={previous.fields.slug} color="rebeccapurple" rel="prev">
                 ← {previous.frontmatter.title}
-              </Link>
+              </AniLink>
             )}
           </li>
           <li>
             {next && (
-              <Link to={next.fields.slug} rel="next">
+              <AniLink paintDrip to={next.fields.slug} color="rebeccapurple" rel="next">
                 {next.frontmatter.title} →
-              </Link>
+              </AniLink>
             )}
           </li>
         </ul>
