@@ -42,7 +42,7 @@ class Layout extends React.Component {
         <main>{children}</main>
         <AudioPlayer/>
         <footer>
-          <Typography variant="subtitle" gutterBottom>© Tarotly {new Date().getFullYear()}</Typography> 
+          <Typography variant="caption" gutterBottom>© Tarotly {new Date().getFullYear()}</Typography> 
           {` `}
         </footer>
       </div>
