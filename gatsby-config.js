@@ -13,6 +13,12 @@ module.exports = {
     },
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-facebook-pixel`,
+      options: {
+        pixelId: '455395268341831',
+      },
+    },
     `gatsby-plugin-transition-link`,
     {
       resolve: `gatsby-source-filesystem`,
