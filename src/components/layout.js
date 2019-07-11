@@ -1,8 +1,10 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import { rhythm, scale } from "../utils/typography"
+import { rhythm } from "../utils/typography"
 import AudioPlayer from "../components/audioPlayer"
+import Typography from '@material-ui/core/Typography';
+
 
 class Layout extends React.Component {
   render() {
@@ -40,7 +42,7 @@ class Layout extends React.Component {
         <main>{children}</main>
         <AudioPlayer/>
         <footer>
-          © Tarotly {new Date().getFullYear()}
+          <Typography variant="subtitle" gutterBottom>© Tarotly {new Date().getFullYear()}</Typography> 
           {` `}
         </footer>
       </div>
