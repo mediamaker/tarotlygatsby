@@ -38,18 +38,18 @@ const BlogIndex = () => {
   return (
     <Layout title={site.siteMetadata.title}>
     <SEO title="Mindful living tools, podcasts and more." />
-    <Bio />
     <h3>Trending now</h3>
       <ul>
         {allMdx.edges.map(({ node: post }) => (
           <li key={post.id}>
-            <AniLink to={post.fields.slug}>
+            <AniLink paintDrip to={post.fields.slug} hex="#6897bb">
               <h2>{post.frontmatter.title}</h2>
             </AniLink>
             <p>{post.excerpt}</p>
           </li>
         ))}
       </ul>
+      <Bio />
       </Layout>
   )
 }
