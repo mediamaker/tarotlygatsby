@@ -69,6 +69,23 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
     {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Tarotly Tarot Cards`,
+        short_name: `Tarotly`,
+        description: `Mysterious and powerful, learn all about what tarot cards are and how they are used`,
+        lang: `en`,
+        start_url: `/`,
+        background_color: `#f7f0eb`,
+        theme_color: `#a2466c`,
+        display: `standalone`,
+        icon: `src/images/icon.png`, // This path is relative to the root of the site.
+
+      },
+    },
+    //make sure to load gatsby-plugin-offline after gatsby-plugin-manifest
+    `gatsby-plugin-offline`,
+    {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `src/utils/typography`,
