@@ -1,89 +1,70 @@
-const path = require(`path`)
-const _ = require("lodash")
-const { createFilePath } = require(`gatsby-source-filesystem`)
-
-exports.createPages = ({ graphql, actions }) => {
-  const { createPage } = actions
-
-  const blogPostTemplate = path.resolve(`./src/templates/blog-post.js`)
-  const tagTemplate = path.resolve("src/templates/tags.js")
-
-  return graphql(
-    `
-      {
-        allMdx(
-          sort: { fields: [frontmatter___date], order: DESC }
-          limit: 1000
-        ) {
-          edges {
-            node {
-              fields {
-                slug
-              }
-              frontmatter {
-                title
-              }
-            }
-          }
-        }
-      }
-    `
-  ).then(result => {
-    if (result.errors) {
-      return Promise.reject(result.errors)
-    }
-
-    // Create blog posts pages.
-    const posts = result.data.allMdx.edges
-
-    posts.forEach((post, index) => {
-      const previous = index === posts.length - 1 ? null : posts[index + 1].node
-      const next = index === 0 ? null : posts[index - 1].node
-
-      createPage({
-        path: post.node.fields.slug,
-        component: blogPostTemplate,
-        context: {
-          slug: post.node.fields.slug,
-          previous,
-          next,
-        },
-      })
-    })
-
-    let tags = []
-    // Iterate through each post, putting all found tags into `tags`
-    _.each(posts, edge => {
-      if (_.get(edge, "node.frontmatter.tags")) {
-        tags = tags.concat(edge.node.frontmatter.tags)
-      }
-    })
-    // Eliminate duplicate tags
-    tags = _.uniq(tags)
-
-    // Make tag pages
-    tags.forEach(tag => {
-      createPage({
-        path: `/tags/${_.kebabCase(tag)}/`,
-        component: tagTemplate,
-        context: {
-          tag,
-        },
-      })
-    })
-    return null
-  })
-}
+const { createFilePath } = require("gatsby-source-filesystem")
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
-  if (node.internal.type === `Mdx`) {
+  // We only want to operate on `Mdx` nodes. If we had content from a
+  // remote CMS we could also check to see if the parent node was a
+  // `File` node here
+  if (node.internal.type === "Mdx") {
     const value = createFilePath({ node, getNode })
+
     createNodeField({
-      name: `slug`,
+      // Name of the field you are adding
+      name: "slug",
+      // Individual MDX node
       node,
-      value,
+      // Generated value based on filepath. We
+      // don't need a separating "/" before the value because
+      // createFilePath returns a path with the leading "/".
+      value: `${value}`,
     })
   }
+}
+
+
+exports.createPages = ({ graphql, actions }) => {
+  // Destructure the createPage function from the actions object
+  const { createPage } = actions
+
+  return new Promise((resolve, reject) => {
+    resolve(
+      graphql(
+        `
+          {
+            allMdx {
+              edges {
+                node {
+                  id
+                  fields {
+                    slug
+                  }
+                }
+              }
+            }
+          }
+        `
+      ).then(result => {
+        // this is some boilerlate to handle errors
+        if (result.errors) {
+          console.error(result.errors)
+          reject(result.errors)
+        }
+
+        // We'll call `createPage` for each result
+        result.data.allMdx.edges.forEach(({ node }) => {
+          createPage({
+            // This is the slug we created before
+            // (or `node.frontmatter.slug`)
+            path: node.fields.slug,
+            // This component will wrap our MDX content
+            component: path.resolve(`./src/components/posts-page-layout.js`),
+            // We can use the values in this context in
+            // our page layout component
+            context: { id: node.id },
+          })
+        })
+      })
+    )
+  })
 }

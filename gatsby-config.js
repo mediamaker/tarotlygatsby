@@ -17,8 +17,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/blog`,
-        name: `blog`,
+        path: `${__dirname}/content/posts`,
+        name: `posts`,
       },
     },
     {
@@ -27,32 +27,12 @@ module.exports = {
         path: `${__dirname}/content/assets`,
         name: `assets`,
       },
-    },
-    {
-      resolve: `gatsby-mdx`,
-      options: {
-        extenstions: [`.mdx`, `.md`],
-        gatsbyRemarkPlugins: [{
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 590,
-            },
-          },
-          {
-            resolve: `gatsby-remark-responsive-iframe`,
-            options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`,
-            },
-          },
-          { resolve: `gatsby-remark-prismjs`},
-          { resolve: `gatsby-remark-copy-linked-files`},
-          { resolve: `gatsby-remark-smartypants`},          
-        ],
-      },
-    },
+    },  
+    `gatsby-plugin-mdx`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-playground`,
+    "gatsby-plugin-slug",
     {
       resolve: 'gatsby-source-contentful',
       options: {
