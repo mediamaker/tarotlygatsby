@@ -50,7 +50,7 @@ exports.createPages = ({ graphql, actions }) => {
           console.error(result.errors)
           reject(result.errors)
         }
-
+        const path = require("path")
         // We'll call `createPage` for each result
         result.data.allMdx.edges.forEach(({ node }) => {
           createPage({
