@@ -7,11 +7,7 @@ import AudioPlayer from "../components/audioPlayer"
 class Layout extends React.Component {
   render() {
     const { title, children } = this.props
-    const rootPath = `${__PATH_PREFIX__}/`
-    let header
-
-   
-      header = (
+    const header = (
         <h3
           style={{
             fontFamily: `Montserrat, sans-serif`,

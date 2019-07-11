@@ -1,11 +1,19 @@
 import React from "react"
 import {useStaticQuery, graphql} from "gatsby"
 import AniLink from "gatsby-plugin-transition-link/AniLink";
+import 'typeface-roboto';
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
+import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
+
+  const useStyles = makeStyles({
+  root: {
+    width: '100%'
+  },
+});
 
 const BlogIndex = () => {
   const { site, allMdx } = useStaticQuery(
@@ -34,23 +42,24 @@ const BlogIndex = () => {
   }
   `
   )
+  const classes = useStyles();
 
   return (
+    <div className={classes.root}>
     <Layout title={site.siteMetadata.title}>
     <SEO title="Mindful living tools, podcasts and more." />
-    <h3>Trending now</h3>
-      <ul>
+    <Typography variant="h2" gutterBottom>Trending now</Typography>
         {allMdx.edges.map(({ node: post }) => (
-          <li key={post.id}>
+          <div key={post.id}>
             <AniLink paintDrip to={post.fields.slug} hex="#6897bb">
-              <h2>{post.frontmatter.title}</h2>
+              <Typography variant="h3" gutterBottom>{post.frontmatter.title}</Typography>
             </AniLink>
             <p>{post.excerpt}</p>
-          </li>
+          </div>
         ))}
-      </ul>
       <Bio />
       </Layout>
+      </div>  
   )
 }
 

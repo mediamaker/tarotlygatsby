@@ -39,6 +39,11 @@ function SEO({ description, lang, meta, title }) {
           name: `description`,
           content: metaDescription,
         },
+        //for material-UI
+        {
+          name: `viewport`,
+          content: "minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no",
+        },
         {
           property: `og:title`,
           content: title,
