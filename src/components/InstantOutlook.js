@@ -58,7 +58,7 @@ export default function InstantOutlook() {
   const classes = useStyles();
   return (
     <React.Fragment>
-      <Title>Instant Outlook</Title>
+      <Title>Instant Outlook </Title>
 
       <Chip
         icon={<FaceIcon />}
