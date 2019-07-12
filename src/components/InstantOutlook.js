@@ -5,7 +5,6 @@ import Link from '@material-ui/core/Link';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Title from './Title';
-import Avatar from '@material-ui/core/Avatar';
 import Chip from '@material-ui/core/Chip';
 import FaceIcon from '@material-ui/icons/Face';
 import DoneIcon from '@material-ui/icons/Done'; 
@@ -13,13 +12,6 @@ import TextField from '@material-ui/core/TextField';
 
 
 export default function InstantOutlook() {
-  
-  const [state, setState] = React.useState({
-    age: '',
-    name: 'hai',
-  });
-  
-
 
   const useStyles = makeStyles(theme => ({
     root: {
