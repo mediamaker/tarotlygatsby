@@ -1,23 +1,15 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import PropTypes from 'prop-types';
+import Typography from '@material-ui/core/Typography';
 
- const Title = ({ title, className }) => {
-    return (
-      <div className={className}>
-        <h4>
-          <span className="title">{title}</span>
-        </h4>
-        </div>
-    )
-  }
+export default function Title(props) {
+  return (
+    <Typography component="h2" variant="h6" color="primary" gutterBottom>
+      {props.children}
+    </Typography>
+  );
+}
 
-  export default styled(Title)`
-    .h4 {
-      text-align: center;
-    }
-    .title
-      text-transform: uppercase;
-      color: rebeccapurple;
-    }
-  `
-
+Title.propTypes = {
+  children: PropTypes.node,
+};

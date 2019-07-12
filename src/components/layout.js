@@ -5,6 +5,7 @@ import { rhythm } from "../utils/typography"
 import AudioPlayer from "../components/audioPlayer"
 import Typography from '@material-ui/core/Typography';
 
+import Dashboard from "./Dashboard"
 
 class Layout extends React.Component {
   render() {
@@ -30,6 +31,8 @@ class Layout extends React.Component {
       )
     
     return (
+      <div>
+        <Dashboard/>
       <div
         style={{
           marginLeft: `auto`,
@@ -45,6 +48,7 @@ class Layout extends React.Component {
           <Typography variant="caption" gutterBottom>© Tarotly {new Date().getFullYear()}</Typography> 
           {` `}
         </footer>
+      </div>
       </div>
     )
   }

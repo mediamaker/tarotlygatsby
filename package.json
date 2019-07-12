@@ -10,6 +10,7 @@
   "dependencies": {
     "@babel/runtime": "^7.5.4",
     "@material-ui/core": "^4.2.0",
+    "@material-ui/icons": "^4.2.1",
     "@material-ui/styles": "^4.2.0",
     "@mdx-js/mdx": "^1.0.23",
     "@mdx-js/react": "^1.0.23",
@@ -49,6 +50,7 @@
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
     "react-typography": "^0.16.19",
+    "recharts": "^1.6.2",
     "styled-components": "^4.3.2",
     "typeface-merriweather": "0.0.72",
     "typeface-montserrat": "0.0.54",
