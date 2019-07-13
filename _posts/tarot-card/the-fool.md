@@ -1,7 +1,7 @@
 ---
 layout: blog
 title: The Fool
-number: -3
+number: 0
 thumbnail: /images/the-fool.png
 description: >-
   The Fool embarks on an adventure, wide-eyed to the world and full of carefree
