@@ -16,7 +16,7 @@ collections:
       - {label: "Name", name: "name", widget: "string"}
       - {label: "Number", name: "number", widget: "number"}
       - {label: "Featured Image", name: "thumbnail", widget: "image" , required: false}
-      - {label: "Description", name: "description", widget: "list"}
+      - {label: "Description", name: "description", widget: "markdown"}
       - {label: "Meaning", name: "meaning", widget: "markdown"}
       - {label: "Suit", name: "suit", widget: "select", options: ["Cups", "Pentacles", "Swords", "Wands", "Does Not Apply"] , required: false}
       - {label: "Element", name: "element", widget: "select", options: ["Air", "Fire", "Earth", "Water", "Does Not Apply"] , required: false}
