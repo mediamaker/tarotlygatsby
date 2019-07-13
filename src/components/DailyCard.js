@@ -92,11 +92,7 @@ export default function DailyCard() {
         title="The Fool"
         subheader="Major Arcana"
       />
-      <CardMedia
-        className={classes.media}
-        image={""}
-        title="Paella dish"
-      />
+
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
           This impressive paella is a perfect party dish and a fun meal to cook together with your

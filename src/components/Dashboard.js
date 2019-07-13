@@ -22,7 +22,6 @@ import Chart from './Chart';
 import InstantOutlook from './InstantOutlook';
 import Orders from './Orders';
 import DailyCard from './DailyCard';
-import CMS from 'netlify-cms'
 
 // Now the registry is available via the CMS object.
 
