@@ -29,7 +29,7 @@ export const mainListItems = (
       <ListItemIcon>
         <LayersIcon />
       </ListItemIcon>
-      <ListItemText primary="Tarot Tools" />  
+      <ListItemText primary="Tarot Tools and Apps" />  
     </ListItem>
     <ListItem button>
       <ListItemIcon>
