@@ -20,6 +20,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-transition-link`,
+    `gatsby-plugin-netlify-cms`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

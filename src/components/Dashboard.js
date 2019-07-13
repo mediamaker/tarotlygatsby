@@ -21,8 +21,13 @@ import { mainListItems, secondaryListItems } from './listItems';
 import Chart from './Chart';
 import InstantOutlook from './InstantOutlook';
 import Orders from './Orders';
+import DailyCard from './DailyCard';
+import CMS from 'netlify-cms'
+
+// Now the registry is available via the CMS object.
 
 function MadeWithLove() {
+
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {'Built with love by the '}
@@ -117,7 +122,7 @@ const useStyles = makeStyles(theme => ({
 
 export default function Dashboard() {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -141,7 +146,7 @@ export default function Dashboard() {
             <MenuIcon />
           </IconButton>
           <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
-            Tarotly Dashboard
+            Tarotly
           </Typography>
           <IconButton color="inherit">
             <Badge badgeContent={4} color="secondary">
@@ -171,16 +176,16 @@ export default function Dashboard() {
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
           <Grid container spacing={3}>
-            {/* Chart */}
-            <Grid item xs={12} md={8} lg={9}>
+            {/* Daily Card */}
+            <Grid item xs={12} md={4} lg={3}>
               <Paper className={fixedHeightPaper}>
-                <Chart />
+                  <DailyCard />
               </Paper>
             </Grid>
             {/* Instant Outlook */}
             <Grid item xs={12} md={4} lg={3}>
               <Paper className={fixedHeightPaper}>
-                <InstantOutlook />
+                  <InstantOutlook />
               </Paper>
             </Grid>
             {/* Recent Tarot Readings */}
