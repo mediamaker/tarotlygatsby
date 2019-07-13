@@ -6,71 +6,44 @@ import ListSubheader from '@material-ui/core/ListSubheader';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import PeopleIcon from '@material-ui/icons/People';
-import BarChartIcon from '@material-ui/icons/BarChart';
+import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import LayersIcon from '@material-ui/icons/Layers';
+import QueueMusicIcon from '@material-ui/icons/QueueMusic';
 import AssignmentIcon from '@material-ui/icons/Assignment';
-
+import ArtTrackIcon from '@material-ui/icons/ArtTrack'; 
 export const mainListItems = (
   <div>
     <ListItem button>
       <ListItemIcon>
+        <AccountBoxIcon />
+      </ListItemIcon>
+      <ListItemText primary="My Tarotly" />
+    </ListItem>
+    <ListItem button>
+      <ListItemIcon>
         <DashboardIcon />
       </ListItemIcon>
-      <ListItemText primary="Dashboard" />
-    </ListItem>
-    <ListItem button>
-      <ListItemIcon>
-        <ShoppingCartIcon />
-      </ListItemIcon>
-      <ListItemText primary="All Tarot Cards" />
-    </ListItem>
-    <ListItem button>
-      <ListItemIcon>
-        <PeopleIcon />
-      </ListItemIcon>
-      <ListItemText primary="Major Arcana" />
-    </ListItem>
-    <ListItem button>
-      <ListItemIcon>
-        <BarChartIcon />
-      </ListItemIcon>
-      <ListItemText primary="Minor Arcana" />
+      <ListItemText primary="Tarot Card Wiki" />
     </ListItem>
     <ListItem button>
       <ListItemIcon>
         <LayersIcon />
       </ListItemIcon>
-      <ListItemText primary="Suits of the Tarot" />
+      <ListItemText primary="Tarot Tools" />  
     </ListItem>
     <ListItem button>
       <ListItemIcon>
-        <LayersIcon />
+        <QueueMusicIcon />
       </ListItemIcon>
       <ListItemText primary="Podcasts" />
+    </ListItem>
+    <ListItem button>
+      <ListItemIcon>
+        <ArtTrackIcon />
+      </ListItemIcon>
+      <ListItemText primary="Articles" />
     </ListItem>
   </div>
 );
 
-export const secondaryListItems = (
-  <div>
-    <ListSubheader inset>Saved Tarot Readings</ListSubheader>
-    <ListItem button>
-      <ListItemIcon>
-        <AssignmentIcon />
-      </ListItemIcon>
-      <ListItemText primary="Favorites" />
-    </ListItem>
-    <ListItem button>
-      <ListItemIcon>
-        <AssignmentIcon />
-      </ListItemIcon>
-      <ListItemText primary="Trending Now" />
-    </ListItem>
-    <ListItem button>
-      <ListItemIcon>
-        <AssignmentIcon />
-      </ListItemIcon>
-      <ListItemText primary="Tarot Card Designer" />
-    </ListItem>
-  </div>
-);
+
