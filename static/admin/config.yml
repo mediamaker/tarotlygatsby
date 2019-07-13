@@ -13,20 +13,19 @@ collections:
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
       - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
-      - {label: "Name", name: "name", widget: "string"}
+      - {label: "Title", name: "title", widget: "string"}
       - {label: "Number", name: "number", widget: "number"}
       - {label: "Featured Image", name: "thumbnail", widget: "image" , required: false}
       - {label: "Description", name: "description", widget: "markdown"}
       - {label: "Meaning", name: "meaning", widget: "markdown"}
+      - {label: "Reversed Meaning", name: "reversedMeaning", widget: "markdown" , required: false}
       - {label: "Suit", name: "suit", widget: "select", options: ["Cups", "Pentacles", "Swords", "Wands", "Does Not Apply"] , required: false}
       - {label: "Element", name: "element", widget: "select", options: ["Air", "Fire", "Earth", "Water", "Does Not Apply"] , required: false}
-      - {label: "Reversed Meaning", name: "reversedMeaning", widget: "markdown" , required: false}
       - {label: "Yes or No", name: "yes-or-no", widget: "select", options: ["Yes", "No", "Does Not Apply"] , required: false}
       - {label: "Arcana", name: "arcana", widget: "select", options: ["Major", "Minor", "Does Not Apply"] , required: false}
       - {label: "Keywords [tags]", name: "keywords", widget: "list" , required: false}
       - {label: "Kaballah Letter", name: "kaballah-letter", widget: "string" , required: false} 
-      - {label: "Astrology", name: "kaballah-letter", widget: "select", options: ["Aquarius", "Pisces", "Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius", "Capricorn"] , required: false}
+      - {label: "Astrology", name: "kaballah-letter", widget: "select", options: ["Aquarius", "Pisces", "Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius", "Capricorn", "Uranus"] , required: false}
       - {label: "Numerology Link", name: "numerology-link", widget: "string"}
       - {label: "Tree of Life Pathway", name: "tree-of-life", widget: "string" , required: false}
       - {label: "Chakra", name: "chakra", widget: "select", options: ["Root Chakra", "Sacral Chakra", "Solar Plexus Chakra", "Heart Chakra", "Throat Chakra", "Third Eye Chakra", "Crown Chakra"] , required: false}
-
