@@ -37,7 +37,7 @@ export default class emailSignupForm extends React.Component {
   render() {
     return (
       <div>
-        <h5 className="signupHeadline">{signupHeadline}</h5>
+        <h3 className="signupHeadline">{signupHeadline}</h3>
         <form
           name="emailSignupForm"
           method="post"
