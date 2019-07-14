@@ -4,6 +4,7 @@ import { Link } from "gatsby"
 import { rhythm } from "../utils/typography"
 import AudioPlayer from "../components/audioPlayer"
 import Typography from '@material-ui/core/Typography';
+import EmailSignupForm from "./emailSignupForm";
 
 
 class Layout extends React.Component {
@@ -40,6 +41,7 @@ class Layout extends React.Component {
       >
         <header>{header}</header>
         <main>{children}</main>
+        <EmailSignupForm/>
         <AudioPlayer/>
         <footer>
           <Typography variant="caption" gutterBottom>© Tarotly {new Date().getFullYear()}</Typography> 

@@ -40,14 +40,6 @@ module.exports = {
     `gatsby-plugin-playground`,
     "gatsby-plugin-slug",
     {
-      resolve: 'gatsby-source-contentful',
-      options: {
-        spaceId: `xzh4kbrtihq0`,
-        // Learn about environment variables: https://gatsby.app/env-vars
-        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-      },
-    },
-    {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: `UA-50891-26`,

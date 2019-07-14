@@ -22,6 +22,7 @@
     "gatsby-plugin-facebook-pixel": "^1.0.3",
     "gatsby-plugin-feed": "^2.3.2",
     "gatsby-plugin-google-analytics": "^2.1.1",
+    "gatsby-plugin-mailchimp": "^5.1.2",
     "gatsby-plugin-manifest": "^2.2.2",
     "gatsby-plugin-material-ui": "^2.1.4",
     "gatsby-plugin-mdx": "^1.0.8",
@@ -38,7 +39,6 @@
     "gatsby-remark-prismjs": "^3.3.1",
     "gatsby-remark-responsive-iframe": "^2.2.1",
     "gatsby-remark-smartypants": "^2.1.0",
-    "gatsby-source-contentful": "^2.1.8",
     "gatsby-source-filesystem": "^2.1.2",
     "gatsby-transformer-remark": "^2.6.0",
     "gatsby-transformer-sharp": "^2.2.1",
@@ -72,7 +72,7 @@
     "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
   },
   "scripts": {
-    "build": "gatsby build",
+    "build": "echo SITE_RECAPTCHA_KEY=$SITE_RECAPTCHA_KEY >> .env.production && gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
