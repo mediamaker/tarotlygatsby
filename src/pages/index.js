@@ -16,27 +16,13 @@ import { makeStyles } from '@material-ui/core/styles';
 });
 
 const BlogIndex = () => {
-  const { site, allMdx } = useStaticQuery(
+  const { site } = useStaticQuery(
   graphql`
   query {
     site {
       siteMetadata {
         title
         description
-      }
-    }
-    allMdx {
-      edges {
-        node {
-          id
-          excerpt
-          frontmatter {
-            title
-          }
-          fields {
-            slug
-          }
-        }
       }
     }
   }
@@ -49,14 +35,14 @@ const BlogIndex = () => {
     <Layout title={site.siteMetadata.title}>
     <SEO title="Mindful living tools, podcasts and more." />
     <Typography variant="h6" gutterBottom>Trending now</Typography>
-        {allMdx.edges.map(({ node: post }) => (
+        {/* {allMdx.edges.map(({ node: post }) => (
           <div key={post.id}>
             <AniLink paintDrip to={post.fields.slug} hex="#6897bb">
               <Typography variant="h5" gutterBottom>{post.frontmatter.title}</Typography>
             </AniLink>
             <p>{post.excerpt}</p>
           </div>
-        ))}
+        ))} */}
       <Bio />
       </Layout>
       </div>  
