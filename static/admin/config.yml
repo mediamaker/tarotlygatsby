@@ -1,13 +1,15 @@
 backend:
   name: git-gateway
   branch: master # Branch to update (optional; defaults to master)
+  # logo_url: http://tarotly.net  
   publish_mode: editorial_workflow
 media_folder: "static/images/uploads" # Media files will be stored in the repo under static/images/uploads
 public_folder: "/images" # The src attribute for uploaded media will begin with /images/uploads
 
 collections:
   - name: "tarot-cards" # Used in routes, e.g., /admin/collections/blog
-    label: "Tarot Card" # Used in the UI
+    label: "Tarot Cards" # Used in the UI
+    label_singular: "Tarot Card" # Used in the UI
     folder: "_posts/tarot-card" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
@@ -32,7 +34,9 @@ collections:
       - {label: "Rating (scale of 1-5)", name: "rating", widget: "number", required: false}
 
   - name: "posts" # Used in routes, e.g., /admin/collections/blog
-    label: "Post" # Used in the UI
+    description: "Posts can be blog entries, tools, guided meditations...whatever"
+    label: "Posts" # Used in the UI
+    label_singular: 'Post'
     folder: "_posts/post" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
@@ -41,7 +45,7 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Featured Image", name: "thumbnail", widget: "image", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Category", name: "category", widget: "relation", collection: "categories", searchFields: ["Title"], valueField: "title", displayFields: ["twitterHandle", "followerCount"]      
+      - {label: "Category", name: "category", widget: "list"}
       - {label: "Tags", name: "tags", widget: "list" , required: false}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Rating (scale of 1-5)", name: "rating", widget: "number", required: false}
