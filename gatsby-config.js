@@ -21,38 +21,29 @@ module.exports = {
     },
     `gatsby-plugin-transition-link`,
     `gatsby-plugin-netlify-cms`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/posts`,
-        name: `posts`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/assets`,
-        name: `assets`,
-      },
-    },  
-    `gatsby-plugin-mdx`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-playground`,
     "gatsby-plugin-slug",
-    // {
-    //   resolve: 'gatsby-source-contentful',
-    //   options: {
-    //     spaceId: `xzh4kbrtihq0`,
-    //     // Learn about environment variables: https://gatsby.app/env-vars
-    //     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-    //   },
-    // },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: `UA-50891-26`,
       },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: `posts`,
+        path: `${__dirname}/_posts/posts/`,
+      }
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: `tarot-cards`,
+        path: `${__dirname}/_posts/tarot-cards/`,
+      }
     },
     {
       resolve: `gatsby-plugin-manifest`,
@@ -67,7 +58,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-offline`,
-    //load before
     `gatsby-plugin-material-ui`,
     `gatsby-plugin-styled-components`,    
     `gatsby-plugin-react-helmet`,
