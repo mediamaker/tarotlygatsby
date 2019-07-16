@@ -20,21 +20,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-transition-link`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/posts`,
-        name: `posts`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/assets`,
-        name: `assets`,
-      },
-    },  
-    `gatsby-plugin-mdx`,
+    `gatsby-plugin-netlify-cms`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-playground`,
@@ -44,6 +30,20 @@ module.exports = {
       options: {
         trackingId: `UA-50891-26`,
       },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: `posts`,
+        path: `${__dirname}/_posts/posts/`,
+      }-
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: `tarot-cards`,
+        path: `${__dirname}/_posts/tarot-cards/`,
+      }
     },
     {
       resolve: `gatsby-plugin-manifest`,
@@ -58,7 +58,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-offline`,
-    //load before
     `gatsby-plugin-material-ui`,
     `gatsby-plugin-styled-components`,    
     `gatsby-plugin-react-helmet`,
