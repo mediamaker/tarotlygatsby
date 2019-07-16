@@ -36,7 +36,7 @@ module.exports = {
       options: {
         name: `posts`,
         path: `${__dirname}/_posts/posts/`,
-      }-
+      },
     },
     {
       resolve: 'gatsby-source-filesystem',
@@ -45,19 +45,6 @@ module.exports = {
         path: `${__dirname}/_posts/tarot-cards/`,
       }
     },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
-        start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
-      },
-    },
-    `gatsby-plugin-offline`,
     `gatsby-plugin-material-ui`,
     `gatsby-plugin-styled-components`,    
     `gatsby-plugin-react-helmet`,
