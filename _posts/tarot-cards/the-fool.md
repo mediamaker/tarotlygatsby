@@ -1,6 +1,7 @@
 ---
 layout: blog
 title: The Fool
+slug: the-fool
 number: 0
 thumbnail: /images/the-fool.png
 description: >-
