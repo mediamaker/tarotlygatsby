@@ -6,7 +6,7 @@ import AudioPlayer from "../components/audioPlayer"
 import Typography from '@material-ui/core/Typography';
 import EmailSignupForm from "./emailSignupForm";
 
-import { BottomNavigation } from "@material-ui/core";
+import Drawer  from "../components/drawer";
 
 class Layout extends React.Component {
   render() {
@@ -41,11 +41,8 @@ class Layout extends React.Component {
         }}
       >
         <header>{header}</header>
-        <main>{children}</main>
-        <BottomNavigation/>
+        <main>{children}</main> 
         <footer>
-          <Typography variant="caption" gutterBottom>© Tarotly {new Date().getFullYear()}</Typography> 
-          {` `}
         </footer>
       </div>
     )

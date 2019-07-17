@@ -45,6 +45,7 @@ module.exports = {
         path: `${__dirname}/_posts/tarot-cards/`,
       }
     },
+    `gatsby-transformer-remark`,
     `gatsby-plugin-material-ui`,
     `gatsby-plugin-styled-components`,    
     `gatsby-plugin-react-helmet`,
