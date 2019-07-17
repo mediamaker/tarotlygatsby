@@ -2,6 +2,13 @@ require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
+var netlifyCmsPaths = {
+  resolve: `gatsby-plugin-netlify-cms-paths`,
+  options: {
+    cmsConfig: `/static/admin/config.yml`,
+  },
+}
+
 module.exports = {
   siteMetadata: {
     title: `On a mission to make mindful living easy`,
@@ -20,7 +27,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-transition-link`,
-    `gatsby-plugin-netlify-cms`,
+    netlifyCmsPaths,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-playground`,
@@ -29,6 +36,13 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: `UA-50891-26`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/static/images/uploads`,
+        name: 'assets',
       },
     },
     {
@@ -45,8 +59,35 @@ module.exports = {
         path: `${__dirname}/_posts/tarot-cards/`,
       }
     },
-    `gatsby-transformer-remark`,
-    `gatsby-plugin-material-ui`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          netlifyCmsPaths,
+
+          // gatsby-remark-relative-images must
+          // go before gatsby-remark-images
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              // It's important to specify the maxWidth (in pixels) of
+              // the content container as this plugin uses this as the
+              // base for generating different widths of each image.
+              maxWidth: 590,
+            },
+          },
+          {
+            resolve: `gatsby-remark-responsive-iframe`,
+            options: {
+              wrapperStyle: `margin-bottom: 1.0725rem`
+            }
+          },
+          "gatsby-remark-prismjs",
+          "gatsby-remark-copy-linked-files",
+          "gatsby-remark-smartypants"
+        ],
+      },
+    },    `gatsby-plugin-material-ui`,
     `gatsby-plugin-styled-components`,    
     `gatsby-plugin-react-helmet`,
     {
@@ -66,10 +107,12 @@ module.exports = {
     },
     //make sure to load gatsby-plugin-offline after gatsby-plugin-manifest
     `gatsby-plugin-offline`,
+    `gatsby-plugin-netlify-cms`,
     {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `src/utils/typography`,
+        enableIdentityWidget: true,
       },
     },
   ],

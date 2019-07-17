@@ -19,7 +19,7 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Slug", name: "slug", widget: "string"}
       - {label: "Number", name: "number", widget: "number"}
-      - {label: "Featured Image", name: "thumbnail", widget: "image" , required: false}
+      - {label: "Featured Image", name: "thumbnail", widget: "image"}
       - {label: "Description", name: "description", widget: "markdown"}
       - {label: "Meaning", name: "meaning", widget: "markdown"}
       - {label: "Reversed Meaning", name: "reversedMeaning", widget: "markdown" , required: false}
@@ -45,7 +45,7 @@ collections:
     fields: # The fields for each document, usually in front matter
       - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Featured Image", name: "thumbnail", widget: "image", required: false}
+      - {label: "Featured Image", name: "thumbnail", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Category", name: "category", widget: "list"}
       - {label: "Tags", name: "tags", widget: "list" , required: false}

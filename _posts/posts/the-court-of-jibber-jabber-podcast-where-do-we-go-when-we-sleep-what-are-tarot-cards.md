@@ -13,6 +13,8 @@ tags:
 date: 2019-07-15T09:32:38.581Z
 rating: 5
 slug: the-court-of-jibber-jabber-podcast-what-are-tarot-cards
+thumbnail: /images/vladislav-muslakov-cwiu33kgtoc-unsplash.jpg
+
 ---
 HEAR YE, HEAR YE, court is now in session. The honorable Lee-Ana and John weigh in on mindful living topics. This week's jibber jabber covers:
 
