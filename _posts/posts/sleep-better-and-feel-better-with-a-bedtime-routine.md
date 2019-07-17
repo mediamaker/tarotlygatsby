@@ -1,6 +1,7 @@
 ---
 layout: blog
 title: Sleep Better and Feel Better with a Bedtime Routine
+thumbnail: /images/vladislav-muslakov-cwiu33kgtoc-unsplash.jpg
 category:
   - sleep
 tags:
