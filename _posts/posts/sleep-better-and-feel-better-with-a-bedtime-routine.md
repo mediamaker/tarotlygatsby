@@ -8,7 +8,7 @@ tags:
   - sleep
 date: 2019-07-15T09:47:45.932Z
 slug: sleep-better-by-establishing-a-bedtime-routine
-rating: 5
+rating: 4
 ---
 Rejuvenate with deep sleep. This simple checklist will help you wind down before bed so you can feel truly restored in the morning
 
