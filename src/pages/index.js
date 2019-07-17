@@ -1,5 +1,5 @@
 import React, {useState} from "react"
-import {useStaticQuery, graphql} from "gatsby"
+import {useStaticQuery, graphql, Link} from "gatsby"
 import SEO from "../components/seo"
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
@@ -9,14 +9,27 @@ import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
+import CardActionArea from '@material-ui/core/CardActionArea';
 import CardMedia from '@material-ui/core/CardMedia';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import Img from 'gatsby-image'
-
 
   const useStyles = makeStyles((theme) => ({
+    gridList: {
+      width: 500,
+      height: 450,
+      // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
+      transform: 'translateZ(0)',
+    },
+    titleBar: {
+      background:
+        'linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, ' +
+        'rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
+    },
+    icon: {
+      color: 'white',
+    },
     menuButton: {
       marginLeft: theme.spacing(2),
     },
@@ -103,31 +116,33 @@ const BlogIndex = () => {
           </IconButton>
         </Toolbar>
       </AppBar>
+    
       <Grid container className={classes.root} spacing={2}  >
         <Grid item xs={12}>
         <Grid container justify="center" spacing={2}>
             {allMarkdownRemark.edges.map((post, index) => (
-              
+            
             <Grid key={index} item>
 
               <Card key={index} className={classes.card}>
+              <CardActionArea>
+                <Link to={post.node.frontmatter.slug}>
               <CardMedia
           className={classes.media}
           image={post.node.frontmatter.thumbnail.childImageSharp.fluid.src} 
-
           title={post.node.frontmatter.title}
           />
           <CardContent>
         <Typography color="textPrimary" component="h2" gutterBottom>
         {post.node.frontmatter.title}
         </Typography>
-        <Typography variant="body1" component="p">
+        <Typography variant="body2" component="p">
         {post.node.excerpt}
         </Typography>
       </CardContent>
-      <CardActions>
-        <Button size="small">Learn More</Button>
-      </CardActions>
+      </Link>
+      </CardActionArea>
+
     </Card>
     </Grid>
             ))}
