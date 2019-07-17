@@ -5,15 +5,34 @@ const path = require('path')
 
 const { createFilePath } = require('gatsby-source-filesystem')
 
+const {fmImagesToRelative} = require('gatsby-remark-relative-images')
+
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions;
+  if (node.internal.type === `MarkdownRemark`) {
+    const slug = createFilePath({
+      node,
+      getNode, 
+      // basePath: `pages`
+    });
+    createNodeField({
+      node,
+      name: "slug",
+      value: slug,
+    });
+  }
+};
+
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
-
+  const blogPostTemplate = path.resolve("src/templates/blog.js")
+  const tagTemplate = path.resolve("src/templates/tags.js")
   return graphql(`
     {
       allMarkdownRemark(limit: 1000) {
         edges {
           node {
-            id
+            id  
             fields {
               slug
             }
@@ -40,13 +59,15 @@ exports.createPages = ({ actions, graphql }) => {
           slug: node.fields.slug,
         },
       })
-    })
+
+    // Tag pages:
+    const posts = result.data.allMarkdownRemark.edges
 
     // Tag pages:
     let tags = []
     // Iterate through each post, putting all found tags into `tags`
-    posts.forEach(edge => {
-      if (_.get(edge, `node.frontmatter.tags`)) {
+    _.each(posts, edge => {
+      if (_.get(edge, "node.frontmatter.tags")) {
         tags = tags.concat(edge.node.frontmatter.tags)
       }
     })
@@ -55,31 +76,14 @@ exports.createPages = ({ actions, graphql }) => {
 
     // Make tag pages
     tags.forEach(tag => {
-      const tagPath = `/tags/${_.kebabCase(tag)}/`
-
       createPage({
-        path: tagPath,
-        component: path.resolve(`src/templates/tags.js`),
+        path: `/tags/${_.kebabCase(tag)}/`,
+        component: tagTemplate,
         context: {
-          tag, tag
+          tag,
         },
       })
     })
   })
-}
-
-const { fmImagesToRelative } = require('gatsby-remark-relative-images');
-
-exports.onCreateNode = ({ node, actions, getNode }) => {
-const { createNodeField } = actions
-fmImagesToRelative(node);
-
-  if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode })
-    createNodeField({
-      name: `slug`,
-      node,
-      value,
-    })
-  }
+})
 }
