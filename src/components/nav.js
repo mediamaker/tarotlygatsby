@@ -1,5 +1,5 @@
 import React from "react"
-import Link from '@material-ui/core/Link';
+import {Link} from 'gatsby';
 import AppBar from '@material-ui/core/AppBar';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     },
     icon: {
       color: 'white',
-    },
+    }, 
     colorPrimary: {
       color: '#fff',
     },
@@ -36,6 +36,9 @@ const useStyles = makeStyles((theme) => ({
   card: {
     maxWidth: 345,
   },
+  superlink: {
+    color: "#fff",
+  },
   media: {
     height: 140,
   },
@@ -47,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
     fontSize: 14,
-    
+    color: '#fff'
   },
   pos: {
     marginBottom: 12,
@@ -64,8 +67,8 @@ export default function Nav() {
         <div>
 <AppBar position="static">
 <Toolbar>
-  <Typography variant="h5" className={classes.title}>
-  <Link to="/"> Tarotly <span role="img" aria-label="flower-playing-card">🎴</span></Link>
+  <Typography variant="body1" className={classes.title}>
+  <Link className="superlink" to="/"> Tarotly <span role="img" aria-label="flower-playing-card">🎴</span></Link>
   </Typography>
   {/* <IconButton edge="end" className={classes.menuButton} color="inherit" aria-label="Menu">
     <MenuIcon />
