@@ -1,11 +1,13 @@
-import React, {useState} from "react"
-import {Link} from 'gatsby'
+import React from "react"
+import Link from '@material-ui/core/Link';
 import AppBar from '@material-ui/core/AppBar';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import { createMuiTheme } from '@material-ui/core/styles';
+import orange from '@material-ui/core/colors/orange';
 
 const useStyles = makeStyles((theme) => ({
     gridList: {
@@ -21,6 +23,9 @@ const useStyles = makeStyles((theme) => ({
     },
     icon: {
       color: 'white',
+    },
+    colorPrimary: {
+      color: '#fff',
     },
     menuButton: {
       marginLeft: theme.spacing(2),
@@ -47,10 +52,12 @@ const useStyles = makeStyles((theme) => ({
   pos: {
     marginBottom: 12,
   },
+  palette: {
+    primary: orange,
+  },
 }));
 
 export default function Nav() {
-
 
     const classes = useStyles();
     return (
@@ -58,7 +65,7 @@ export default function Nav() {
 <AppBar position="static">
 <Toolbar>
   <Typography variant="h5" className={classes.title}>
-  <Link to="/">Tarotly</Link>
+  <Link to="/"> Tarotly <span role="img" aria-label="flower-playing-card">🎴</span></Link>
   </Typography>
   {/* <IconButton edge="end" className={classes.menuButton} color="inherit" aria-label="Menu">
     <MenuIcon />

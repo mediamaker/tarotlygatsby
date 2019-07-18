@@ -9,6 +9,8 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.5.4",
+    "@emotion/core": "^10.0.14",
+    "@emotion/styled": "^10.0.14",
     "@material-ui/core": "^4.2.0",
     "@material-ui/icons": "^4.2.1",
     "@material-ui/styles": "^4.2.0",
@@ -19,6 +21,7 @@
     "gatsby": "^2.13.4",
     "gatsby-background-image": "^0.8.0",
     "gatsby-image": "^2.2.4",
+    "gatsby-plugin-emotion": "^4.1.2",
     "gatsby-plugin-facebook-pixel": "^1.0.3",
     "gatsby-plugin-feed": "^2.3.2",
     "gatsby-plugin-google-analytics": "^2.1.1",
