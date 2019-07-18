@@ -4,7 +4,6 @@ import SEO from "../components/seo"
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from "@material-ui/core/Button"
-import AppBar from '@material-ui/core/AppBar';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
@@ -14,6 +13,10 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+
+import Nav from "../components/nav"
+
+const BlogIndex = () => {
 
   const useStyles = makeStyles((theme) => ({
     gridList: {
@@ -58,7 +61,6 @@ import MenuIcon from '@material-ui/icons/Menu';
 
 
 
-const BlogIndex = () => {
   const {site, allMarkdownRemark}  = useStaticQuery(
   graphql`
     query {
@@ -101,22 +103,10 @@ const BlogIndex = () => {
   // const {parse} = require('graphql');
   // const {print} = require('graphql/language/printer');
   // console.log(print(parse('{  allMarkdownRemark (first: 20) { ok koo } }')))
-  const [image , setImage] = useState('/images/vladislav-muslakov-cwiu33kgtoc-unsplash.jpg')
   return (
     <div>
     <SEO title={site.siteMetadata.title} />
-    <AppBar position="static">
-        <Toolbar>
-          
-          <Typography variant="h6" className={classes.title}>
-          Tarotly
-          </Typography>
-          <IconButton edge="end" className={classes.menuButton} color="inherit" aria-label="Menu">
-            <MenuIcon />
-          </IconButton>
-        </Toolbar>
-      </AppBar>
-    
+    <Nav/>
       <Grid container className={classes.root} spacing={2}  >
         <Grid item xs={12}>
         <Grid container justify="center" spacing={2}>

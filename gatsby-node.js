@@ -2,30 +2,12 @@
 
 const _ = require('lodash')
 const path = require('path')
-
 const { createFilePath } = require('gatsby-source-filesystem')
-
 const {fmImagesToRelative} = require('gatsby-remark-relative-images')
-
-exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions;
-  if (node.internal.type === `MarkdownRemark`) {
-    const slug = createFilePath({
-      node,
-      getNode, 
-      // basePath: `pages`
-    });
-    createNodeField({
-      node,
-      name: "slug",
-      value: slug,
-    });
-  }
-};
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
-  const blogPostTemplate = path.resolve("src/templates/blog.js")
+  const blogPostTemplate = path.resolve("src/templates/blog-post.js")
   const tagTemplate = path.resolve("src/templates/tags.js")
   return graphql(`
     {
@@ -48,20 +30,20 @@ exports.createPages = ({ actions, graphql }) => {
       result.errors.forEach(e => console.error(e.toString()))
       return Promise.reject(result.errors)
     }
+    const posts = result.data.allMarkdownRemark.edges
 
-    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    posts.forEach(edge => {
+      const id = edge.node.id
       createPage({
-        path: node.fields.slug,
-        component: path.resolve(`./src/templates/blog-post.js`),
+        path: edge.node.fields.slug,
+        tags: edge.node.frontmatter.tags,
+        component: blogPostTemplate,
+        // additional data can be passed via context
         context: {
-          // Data passed to context is available
-          // in page queries as GraphQL variables.
-          slug: node.fields.slug,
+          id,
         },
       })
-
-    // Tag pages:
-    const posts = result.data.allMarkdownRemark.edges
+    })
 
     // Tag pages:
     let tags = []
@@ -76,14 +58,30 @@ exports.createPages = ({ actions, graphql }) => {
 
     // Make tag pages
     tags.forEach(tag => {
+      const tagPath = `/tags/${_.kebabCase(tag)}/`
+
       createPage({
-        path: `/tags/${_.kebabCase(tag)}/`,
-        component: tagTemplate,
+        path: tagPath,
+        component: path.resolve(`src/templates/tags.js`),
         context: {
           tag,
         },
       })
     })
   })
-})
+}
+
+
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions
+  fmImagesToRelative(node) // convert image paths for gatsby images
+
+  if (node.internal.type === `MarkdownRemark`) {
+    const value = createFilePath({ node, getNode })
+    createNodeField({
+      name: `slug`,
+      node,
+      value,
+    })
+  }
 }
