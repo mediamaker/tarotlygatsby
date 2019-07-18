@@ -60,9 +60,9 @@ export default function Nav() {
   <Typography variant="h5" className={classes.title}>
   <Link to="/">Tarotly</Link>
   </Typography>
-  <IconButton edge="end" className={classes.menuButton} color="inherit" aria-label="Menu">
+  {/* <IconButton edge="end" className={classes.menuButton} color="inherit" aria-label="Menu">
     <MenuIcon />
-  </IconButton>
+  </IconButton> */}
 </Toolbar>
 </AppBar>
 </div>

@@ -1,7 +1,6 @@
 media_folder: "static/images/uploads" # Media files will be stored in the repo under static/images/uploads
 public_folder: "/images" #
-publish_mode: editorial_workflow
-logo_url: "src/images/uploads/icon.png" 
+logo_url: "images/uploads/icon.png" 
 
 backend:
   name: git-gateway
