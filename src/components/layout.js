@@ -66,6 +66,7 @@ export default function Layout({children}) {
       >
 
       <main>{children}</main> 
+      <EmailSignupForm/>
         <footer>
         </footer>
       </div>
