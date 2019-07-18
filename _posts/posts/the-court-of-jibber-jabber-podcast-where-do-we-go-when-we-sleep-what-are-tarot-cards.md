@@ -3,6 +3,7 @@ layout: blog
 title: >-
   The Court of Jibber Jabber Podcast - Where do we go when we sleep? What are
   Tarot Cards?
+thumbnail: /images/listening-to-a-podcast.jpg
 category:
   - podcasts
 tags:
@@ -11,10 +12,8 @@ tags:
   - sleep
   - tarot
 date: 2019-07-15T09:32:38.581Z
-rating: 5
 slug: the-court-of-jibber-jabber-podcast-what-are-tarot-cards
-thumbnail: /images/vladislav-muslakov-cwiu33kgtoc-unsplash.jpg
-
+rating: 5
 ---
 HEAR YE, HEAR YE, court is now in session. The honorable Lee-Ana and John weigh in on mindful living topics. This week's jibber jabber covers:
 

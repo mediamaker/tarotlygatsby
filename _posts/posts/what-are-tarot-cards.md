@@ -1,6 +1,7 @@
 ---
 layout: blog
 title: What are Tarot Cards?
+thumbnail: /images/woman-with-tarot-cards.jpg
 category:
   - tarot-cards
 tags:
@@ -8,7 +9,5 @@ tags:
 date: 2019-07-15T09:32:38.581Z
 slug: what-are-tarot-cards
 rating: 5
-thumbnail: /images/vladislav-muslakov-cwiu33kgtoc-unsplash.jpg
-
 ---
 Tarot cards hold a mysterious power and when their true power is on display, the significance cannot be ignored. Reading tarot cards with the right energy and intention reveals to the seeker the answers they are looking for, and it's borderline magical how the energy of the cards can vibrate with the seekers true self to discern powerful and clear guidance. Actionable advice and a clear, possibly new perspective on a problem or question await.
