@@ -27,7 +27,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-transition-link`,
-    netlifyCmsPaths,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-playground`,
@@ -63,31 +62,37 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
-          netlifyCmsPaths,
-
-          // gatsby-remark-relative-images must
-          // go before gatsby-remark-images
           {
-            resolve: `gatsby-remark-images`,
+            resolve: 'gatsby-remark-relative-images',
+            options: {
+              name: 'uploads',
+            },
+          },
+          {
+            resolve: 'gatsby-remark-images',
             options: {
               // It's important to specify the maxWidth (in pixels) of
               // the content container as this plugin uses this as the
               // base for generating different widths of each image.
-              maxWidth: 590,
+              maxWidth: 2048,
             },
           },
           {
-            resolve: `gatsby-remark-responsive-iframe`,
+            resolve: 'gatsby-remark-copy-linked-files',
             options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`
-            }
+              destinationDir: 'static',
+            },
           },
-          "gatsby-remark-prismjs",
-          "gatsby-remark-copy-linked-files",
-          "gatsby-remark-smartypants"
         ],
       },
-    },    `gatsby-plugin-material-ui`,
+    },  
+    {
+      resolve: 'gatsby-plugin-netlify-cms',
+      options: {
+        modulePath: `${__dirname}/src/cms/cms.js`,
+      },
+    },
+    `gatsby-plugin-material-ui`,
     `gatsby-plugin-styled-components`,    
     `gatsby-plugin-react-helmet`,
     {
@@ -107,7 +112,6 @@ module.exports = {
     },
     //make sure to load gatsby-plugin-offline after gatsby-plugin-manifest
     `gatsby-plugin-offline`,
-    `gatsby-plugin-netlify-cms`,
     {
       resolve: `gatsby-plugin-typography`,
       options: {
@@ -115,5 +119,7 @@ module.exports = {
         enableIdentityWidget: true,
       },
     },
+    netlifyCmsPaths,
+    'gatsby-plugin-netlify',
   ],
 }

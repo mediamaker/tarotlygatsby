@@ -1,10 +1,12 @@
 import React, {useState} from "react"
+import {Link} from 'gatsby'
 import AppBar from '@material-ui/core/AppBar';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+
 const useStyles = makeStyles((theme) => ({
     gridList: {
       width: 500,
@@ -40,6 +42,7 @@ const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
     fontSize: 14,
+    
   },
   pos: {
     marginBottom: 12,
@@ -54,9 +57,8 @@ export default function Nav() {
         <div>
 <AppBar position="static">
 <Toolbar>
-  
-  <Typography variant="h6" className={classes.title}>
-  Tarotly
+  <Typography variant="h5" className={classes.title}>
+  <Link to="/">Tarotly</Link>
   </Typography>
   <IconButton edge="end" className={classes.menuButton} color="inherit" aria-label="Menu">
     <MenuIcon />

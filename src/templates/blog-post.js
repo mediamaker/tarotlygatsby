@@ -5,6 +5,8 @@ import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/layout'
 import Content, { HTMLContent } from '../components/Content'
+import Nav from '../components/nav'
+import Img from "gatsby-image"
 
 export const BlogPostTemplate = ({
   content,
@@ -12,6 +14,7 @@ export const BlogPostTemplate = ({
   description,
   tags,
   title,
+  thumb,
   helmet,
 }) => {
   const PostContent = contentComponent || Content
@@ -22,6 +25,7 @@ export const BlogPostTemplate = ({
       <div className="container content">
         <div className="columns">
           <div className="column is-10 is-offset-1">
+            <Img fluid={thumb}/>
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
               {title}
             </h1>
@@ -50,6 +54,7 @@ BlogPostTemplate.propTypes = {
   content: PropTypes.node.isRequired,
   contentComponent: PropTypes.func,
   description: PropTypes.string,
+  thumb: PropTypes.string,
   title: PropTypes.string,
   helmet: PropTypes.object,
 }
@@ -58,8 +63,11 @@ const BlogPost = ({ data }) => {
   const { markdownRemark: post } = data
 
   return (
+   <div> <Nav/>
     <Layout>
+
       <BlogPostTemplate
+        thumb = {post.frontmatter.thumbnail.childImageSharp.fluid.src}
         content={post.html}
         contentComponent={HTMLContent}
         description={post.frontmatter.description}
@@ -76,6 +84,7 @@ const BlogPost = ({ data }) => {
         title={post.frontmatter.title}
       />
     </Layout>
+    </div>
   )
 }
 
@@ -97,6 +106,14 @@ export const pageQuery = graphql`
         title
         description
         tags
+        thumbnail {
+          childImageSharp {
+              fluid(maxWidth: 630) {
+                  src
+                  srcSet
+              }
+          }
+        }
       }
     }
   }
