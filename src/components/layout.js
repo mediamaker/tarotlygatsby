@@ -56,7 +56,6 @@ export default function Layout({children}) {
 
  
     return (
-     <React.Fragment>
        <ThemeProvider theme={theme}>
        <div
         style={{
@@ -71,7 +70,6 @@ export default function Layout({children}) {
         </footer>
       </div>
        </ThemeProvider>
-     </React.Fragment>
      
     )
   }
