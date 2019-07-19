@@ -13,11 +13,10 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import { useTheme } from '@material-ui/core/styles';
+import NavBar from "../components/navBar"
 
-import Nav from "../components/nav"
-
-const BlogIndex = () => {
-
+const BlogIndex = () => { 
   const useStyles = makeStyles((theme) => ({
     gridList: {
       width: 500,
@@ -108,7 +107,7 @@ const BlogIndex = () => {
   return (
     <div>
     <SEO title={site.siteMetadata.title} />
-    <Nav/>
+    <NavBar/>
       <Grid container className={classes.root} spacing={2}  >
         <Grid item xs={12}>
         <Grid container justify="center" spacing={2}>

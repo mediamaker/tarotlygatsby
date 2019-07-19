@@ -2,7 +2,6 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/layout'
-import Nav from '../components/nav'
 
 class TagRoute extends React.Component {
   render() {
@@ -22,7 +21,7 @@ class TagRoute extends React.Component {
     } tagged with “${tag}”`
 
     return (
-      <div><Nav/>
+      <div>
       <Layout>
         <section className="section">
           <Helmet title={`${tag} | ${title}`} />

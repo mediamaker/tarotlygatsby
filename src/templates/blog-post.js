@@ -5,8 +5,9 @@ import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/layout'
 import Content, { HTMLContent } from '../components/content'
-import Nav from '../components/nav'
 import Img from "gatsby-image"
+import NavBar from "../components/navBar"
+
 
 export const BlogPostTemplate = ({
   content,
@@ -63,7 +64,9 @@ const BlogPost = ({ data }) => {
   const { markdownRemark: post } = data
 
   return (
-   <div> <Nav/>
+   <div>
+     <NavBar/>
+
     <Layout>
 
       <BlogPostTemplate
