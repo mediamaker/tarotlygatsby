@@ -8,6 +8,8 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import { createMuiTheme } from '@material-ui/core/styles';
 import orange from '@material-ui/core/colors/orange';
+import purple from '@material-ui/core/colors/purple';
+import customTheme from './customTheme.json';
 
 const useStyles = makeStyles((theme) => ({
     gridList: {
@@ -26,6 +28,7 @@ const useStyles = makeStyles((theme) => ({
     }, 
     colorPrimary: {
       color: '#fff',
+      textDecoration: 'none',
     },
     menuButton: {
       marginLeft: theme.spacing(2),
@@ -35,9 +38,6 @@ const useStyles = makeStyles((theme) => ({
   },
   card: {
     maxWidth: 345,
-  },
-  superlink: {
-    color: "#fff",
   },
   media: {
     height: 140,
@@ -60,15 +60,17 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
+
 export default function Nav() {
 
-    const classes = useStyles();
+    const classes = useStyles(customTheme);
     return (
         <div>
 <AppBar position="static">
 <Toolbar>
   <Typography variant="body1" className={classes.title}>
-  <Link className="superlink" to="/"> Tarotly <span role="img" aria-label="flower-playing-card">🎴</span></Link>
+  <Link style={{ textDecoration: 'none' }} className={classes.colorPrimary}  to="/"> Tarotly </Link>
   </Typography>
   {/* <IconButton edge="end" className={classes.menuButton} color="inherit" aria-label="Menu">
     <MenuIcon />

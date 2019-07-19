@@ -100,6 +100,8 @@ const BlogIndex = () => {
   `
   )
   const classes = useStyles();
+
+  
   // const {parse} = require('graphql');
   // const {print} = require('graphql/language/printer');
   // console.log(print(parse('{  allMarkdownRemark (first: 20) { ok koo } }')))
@@ -139,7 +141,7 @@ const BlogIndex = () => {
         </Grid>
         </Grid>  
         </Grid>
-        </div>
+                </div>
   )
 }
 

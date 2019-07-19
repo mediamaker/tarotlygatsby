@@ -112,13 +112,6 @@ module.exports = {
     },
     //make sure to load gatsby-plugin-offline after gatsby-plugin-manifest
     `gatsby-plugin-offline`,
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`,
-        enableIdentityWidget: true,
-      },
-    },
     netlifyCmsPaths,
     'gatsby-plugin-netlify',
   ],
