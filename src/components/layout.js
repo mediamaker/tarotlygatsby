@@ -8,7 +8,7 @@ import IconButton from '@material-ui/core/IconButton';
 import { createMuiTheme, makeStyles } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 import { withStyles } from '@material-ui/core/styles';
-import {orange} from '@material-ui/core/colors';
+import EmailSignupForm from '../components/emailSignupForm'
 
 const theme = {
   gridList: {
@@ -65,6 +65,7 @@ export default function Layout({children}) {
         }}
       > 
       <main>{children}</main> 
+      <EmailSignupForm/>
         <footer>
         </footer>
       </div>
