@@ -46,6 +46,9 @@ title: {
 pos: {
   marginBottom: 12,
 },
+body: {
+  margin: 0,
+}
 };
 
 export default function Layout({children}) {
