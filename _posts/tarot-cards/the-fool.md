@@ -35,7 +35,7 @@ kaballah-letter: Aleph
 astrology: Uranus
 numerology-link: No cards and all cards
 tree-of-life: 'First, between Kether and Chockmath'
-chakra: Crown Chakra
+chakra: 'Crown, for spiritual connection, and base, for survival'
 rating: 5
 ---
 
