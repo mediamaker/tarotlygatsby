@@ -26,13 +26,13 @@ collections:
       - {label: "Reversed Meaning", name: "reversedMeaning", widget: "markdown" , required: false}
       - {label: "Suit", name: "suit", widget: "select", options: ["Cups", "Pentacles", "Swords", "Wands", "Does Not Apply"] , required: false}
       - {label: "Element", name: "element", widget: "select", options: ["Air", "Fire", "Earth", "Water", "Does Not Apply"] , required: false}
-      - {label: "Yes or No", name: "yes-or-no", widget: "select", options: ["Yes", "No", "Does Not Apply"] , required: false}
+      - {label: "Yes or No", name: "yesOrNo", widget: "select", options: ["Yes", "No", "Does Not Apply"] , required: false}
       - {label: "Arcana", name: "arcana", widget: "select", options: ["Major", "Minor", "Does Not Apply"] , required: false}
       - {label: "Keywords [tags]", name: "keywords", widget: "list" , required: false}
-      - {label: "Kaballah Letter", name: "kaballah-letter", widget: "string" , required: false} 
+      - {label: "Kaballah Letter", name: "kaballahLetter", widget: "string" , required: false} 
       - {label: "Astrology", name: "astrology", widget: "select", options: ["Aquarius", "Mercury", "Pisces", "Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius", "Capricorn", "Uranus"] , required: false}
-      - {label: "Numerology Link", name: "numerology-link", widget: "string"}
-      - {label: "Tree of Life Pathway", name: "tree-of-life", widget: "string" , required: false}
+      - {label: "Numerology Link", name: "numerologyLink", widget: "string"}
+      - {label: "Tree of Life Pathway", name: "treeOfLife", widget: "string" , required: false}
       - {label: "Chakra", name: "chakra", widget: "string"}
       - {label: "Rating (scale of 1-5)", name: "rating", widget: "number", required: false}
 
