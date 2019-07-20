@@ -1,6 +1,10 @@
 ---
 layout: blog
 title: The Magician
+alternateNames:
+  - The Magus
+  - The Juggler
+  - The Mountebank
 slug: the-magician
 number: 1
 thumbnail: /images/the-magician.jpg
@@ -18,6 +22,7 @@ kaballah-letter: Beth
 astrology: Mercury
 numerology-link: '10,19'
 tree-of-life: 'Second, between Kether and Binah'
+chakra: 'The palm chakra, for manifesting'
 rating: 5
 ---
 
