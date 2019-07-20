@@ -12,16 +12,16 @@ description: The Magician description
 meaning: The Magician meaning
 reversedMeaning: The Magician reversed meaning
 element: Air
-yes-or-no: 'Yes'
+yesOrNo: 'Yes'
 arcana: Major
 keywords:
   - action
   - creativity
   - success
-kaballah-letter: Beth
+kaballahLetter: Beth
 astrology: Mercury
-numerology-link: '10,19'
-tree-of-life: 'Second, between Kether and Binah'
+numerologyLink: '10,19'
+treeOfLife: 'Second, between Kether and Binah'
 chakra: 'The palm chakra, for manifesting'
 rating: 5
 ---

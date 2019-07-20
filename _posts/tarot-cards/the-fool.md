@@ -24,17 +24,17 @@ reversedMeaning: >-
   decision.
 suit: Does Not Apply
 element: Does Not Apply
-yes-or-no: 'Yes'
+yesOrNo: 'Yes'
 arcana: Major
 keywords:
   - innocence
   - risks
   - beginning
   - instinct
-kaballah-letter: Aleph
+kaballahLetter: Aleph
 astrology: Uranus
-numerology-link: No cards and all cards
-tree-of-life: 'First, between Kether and Chockmath'
+numerologyLink: No cards and all cards
+treeOfLife: 'First, between Kether and Chockmath'
 chakra: 'Crown, for spiritual connection, and base, for survival'
 rating: 5
 ---

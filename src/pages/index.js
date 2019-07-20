@@ -113,8 +113,11 @@ const BlogIndex = () => {
     </Card>
     </Grid>
             ))}
+       
+       
         </Grid>
-        </Grid>  
+        <Link to='/tarot-cards'>Tarot Card Wiki</Link>
+ </Grid>  
         </Grid>
                 </div>
   )
