@@ -1,6 +1,6 @@
-import React, {useState} from "react"
-import {useStaticQuery, graphql, Link} from "gatsby"
-import SEO from "../components/seo"
+import React, {useState} from "react";
+import {useStaticQuery, graphql, Link} from "gatsby";
+import SEO from "../components/seo";
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from "@material-ui/core/Button"
@@ -14,7 +14,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import { useTheme } from '@material-ui/core/styles';
-import NavBar from "../components/navBar"
+import NavBar from "../components/navBar";
 
 const BlogIndex = () => { 
   const useStyles = makeStyles((theme) => ({

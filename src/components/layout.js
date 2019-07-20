@@ -11,7 +11,7 @@ import { createMuiTheme, makeStyles } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 import {orange} from '@material-ui/core/colors';
 
-const theme = createMuiTheme({
+const theme = {
   palette: {
     type: 'dark',
   },
@@ -50,7 +50,7 @@ title: {
 pos: {
   marginBottom: 12,
 },
-});
+};
 
 export default function Layout({children}) {
 
