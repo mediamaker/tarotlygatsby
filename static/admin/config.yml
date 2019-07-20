@@ -1,6 +1,6 @@
 media_folder: "static/images/uploads" # Media files will be stored in the repo under static/images/uploads
 public_folder: "/images" #
-logo_url: "images/uploads/icon.png" 
+logo_url: "static/images/uploads/icon.png" 
 publish_mode: editorial_workflow
 
 backend:
@@ -32,7 +32,7 @@ collections:
       - {label: "Astrology", name: "astrology", widget: "select", options: ["Aquarius", "Mercury", "Pisces", "Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius", "Capricorn", "Uranus"] , required: false}
       - {label: "Numerology Link", name: "numerology-link", widget: "string"}
       - {label: "Tree of Life Pathway", name: "tree-of-life", widget: "string" , required: false}
-      - {label: "Chakra", name: "chakra", widget: "select", options: ["Root Chakra", "Sacral Chakra", "Solar Plexus Chakra", "Heart Chakra", "Throat Chakra", "Third Eye Chakra", "Crown Chakra"] , required: false}
+      - {label: "Chakra", name: "chakra", widget: "string"}
       - {label: "Rating (scale of 1-5)", name: "rating", widget: "number", required: false}
 
   - name: "posts" # Used in routes, e.g., /admin/collections/blog
