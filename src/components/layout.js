@@ -1,20 +1,16 @@
 import React from "react"
 import Toolbar from '@material-ui/core/Toolbar';
 import { rhythm } from "../utils/typography"
-import AudioPlayer from "../components/audioPlayer"
 import Typography from '@material-ui/core/Typography';
-import EmailSignupForm from "./emailSignupForm";
 import AppBar from '@material-ui/core/AppBar';
 import MenuIcon from '@material-ui/icons/Menu';
 import IconButton from '@material-ui/core/IconButton';
 import { createMuiTheme, makeStyles } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
+import { withStyles } from '@material-ui/core/styles';
 import {orange} from '@material-ui/core/colors';
 
 const theme = {
-  palette: {
-    type: 'dark',
-  },
   gridList: {
     width: 500,
     height: 450,
