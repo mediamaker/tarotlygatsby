@@ -8,11 +8,30 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardMedia from '@material-ui/core/CardMedia';
+import BottomNavigation from '@material-ui/core/BottomNavigation';
+import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
+import RestoreIcon from '@material-ui/icons/Restore';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import LocationOnIcon from '@material-ui/icons/LocationOn';
+import purple from '@material-ui/core/colors/purple';
+import red from '@material-ui/core/colors/red';
 import NavBar from "../components/navBar";
 
+
 const useStyles = makeStyles(theme => ({
+  palette: {
+    textColor:  red[500],
+    primary1Color: red[500],
+    primary2Color: red[500],
+    accent1Color: red[500],
+    pickerHeaderColor: red[500],
+  },
   root: {
-    flexGrow: 1,
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around',
+    overflow: 'hidden',
+    backgroundColor: theme.palette.background.paper,
   },
   paper: {
     height: 140,
@@ -27,6 +46,9 @@ const useStyles = makeStyles(theme => ({
   media: {
     height: 140,
   },
+  body: {
+    margin: 0
+  }
 }));
 
 
@@ -76,16 +98,20 @@ const BlogIndex = () => {
 
   const [spacing, setSpacing] = React.useState(2);
   const classes = useStyles();
-
-  // const {parse} = require('graphql');
-  // const {print} = require('graphql/language/printer');
-  // console.log(print(parse('{  allMarkdownRemark (first: 20) { ok koo } }')))
+    const [value, setValue] = React.useState(0);
+    const styles = {
+      stickToBottom: {
+        width: '100%',
+        position: 'fixed',
+        bottom: 0,
+      },
+    };
   return (
-    <div>
+    <React.Fragment>
     <SEO title={site.siteMetadata.title} />
     <NavBar/>
     <Grid container justify="center" spacing={spacing}>
-        <Grid item xs={6}>
+        <Grid item xs={12}>
         <Grid container justify="center" spacing={2}>
             {allMarkdownRemark.edges.map((post, index) => (
             
@@ -113,13 +139,22 @@ const BlogIndex = () => {
     </Card>
     </Grid>
             ))}
-       
-       
         </Grid>
-        <Link to='/tarot-cards'>Tarot Card Wiki</Link>
- </Grid>  
+ </Grid>      
         </Grid>
-                </div>
+       
+            <BottomNavigation className={styles.stickToBottom}
+                 value={value}
+                 onChange={(event, newValue) => {
+                   setValue(newValue);
+                 }}
+                 showLabels
+               >
+                 <BottomNavigationAction label="Wiki" icon={<RestoreIcon />} />
+                 <BottomNavigationAction label="Today" icon={<FavoriteIcon />} />
+                 <BottomNavigationAction label="Draw Cards" icon={<LocationOnIcon />} />
+               </BottomNavigation>
+               </React.Fragment>
   )
 }
 
