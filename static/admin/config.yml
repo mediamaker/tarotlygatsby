@@ -29,7 +29,7 @@ collections:
       - {label: "Arcana", name: "arcana", widget: "select", options: ["Major", "Minor", "Does Not Apply"] , required: false}
       - {label: "Keywords [tags]", name: "keywords", widget: "list" , required: false}
       - {label: "Kaballah Letter", name: "kaballah-letter", widget: "string" , required: false} 
-      - {label: "Astrology", name: "kaballah-letter", widget: "select", options: ["Aquarius", "Mercury", "Pisces", "Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius", "Capricorn", "Uranus"] , required: false}
+      - {label: "Astrology", name: "astrology", widget: "select", options: ["Aquarius", "Mercury", "Pisces", "Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius", "Capricorn", "Uranus"] , required: false}
       - {label: "Numerology Link", name: "numerology-link", widget: "string"}
       - {label: "Tree of Life Pathway", name: "tree-of-life", widget: "string" , required: false}
       - {label: "Chakra", name: "chakra", widget: "select", options: ["Root Chakra", "Sacral Chakra", "Solar Plexus Chakra", "Heart Chakra", "Throat Chakra", "Third Eye Chakra", "Crown Chakra"] , required: false}
