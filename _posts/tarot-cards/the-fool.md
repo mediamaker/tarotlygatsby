@@ -1,6 +1,9 @@
 ---
 layout: blog
 title: The Fool
+alternateNames:
+  - The Jester
+  - The Idiot
 slug: the-fool
 number: 0
 thumbnail: /images/the-fool.png
