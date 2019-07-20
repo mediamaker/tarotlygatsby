@@ -65,10 +65,10 @@ const TarotCardsIndex = () => {
               element
               arcana
               keywords
-              kaballah-letter
+              kaballahLetter
               astrology
-              numerology-link
-              tree-of-life
+              numerologyLink
+              treeOfLife
               chakra
               thumbnail {
                 childImageSharp {
