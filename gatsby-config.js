@@ -93,6 +93,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-material-ui`,
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-manifest`,
