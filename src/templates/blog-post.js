@@ -14,8 +14,11 @@ const BlogPost = ({ data }) => {
     <div>
       <Layout>
           <Img fluid={data.markdownRemark.frontmatter.thumbnail.childImageSharp.fluid}/>
-        <p>{data.markdownRemark.html}</p>
-      </Layout>
+          <div
+          className="blog-post-content"
+          dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
+        />
+              </Layout>
     </div>
   )
 }

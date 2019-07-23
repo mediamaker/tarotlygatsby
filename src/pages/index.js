@@ -162,7 +162,7 @@ const BlogIndex = () => {
           </Grid>
         </Grid>
       </Grid>
-      <BottomNavigation
+      {/* <BottomNavigation
         className={classes.stickToBottom}
         value={value}
         onChange={(event, newValue) => {
@@ -173,7 +173,7 @@ const BlogIndex = () => {
         <BottomNavigationAction label="Wiki" icon={<RestoreIcon />} />
         <BottomNavigationAction label="Today" icon={<FavoriteIcon />} />
         <BottomNavigationAction label="Draw Cards" icon={<LocationOnIcon />} />
-      </BottomNavigation>
+      </BottomNavigation> */}
     </React.Fragment>
   )
 }
