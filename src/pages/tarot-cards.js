@@ -8,7 +8,6 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardMedia from '@material-ui/core/CardMedia';
-import NavBar from "../components/navBar";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -29,11 +28,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-
-
-
 const TarotCardsIndex = () => { 
-
 
   const {site, allMarkdownRemark}  = useStaticQuery(
   graphql`
@@ -95,7 +90,6 @@ const TarotCardsIndex = () => {
   return (
     <div>
     <SEO title={site.siteMetadata.title} />
-    <NavBar/>
     <Grid container justify="center" spacing={spacing}>
         <Grid item xs={6}>
         <Grid container justify="center" spacing={2}>
