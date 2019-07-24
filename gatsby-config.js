@@ -21,6 +21,12 @@ module.exports = {
   },
   plugins: [
     {
+        resolve: `gatsby-plugin-typography`,
+        options: {
+          pathToConfigModule: `src/utils/typography`,
+        }
+       },
+      {
       resolve: `gatsby-plugin-facebook-pixel`,
       options: {
         pixelId: '455395268341831',
