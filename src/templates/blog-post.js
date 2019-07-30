@@ -5,13 +5,15 @@ import { kebabCase } from "lodash"
 import Helmet from "react-helmet"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
-
+import SEO from "../components/seo"
 
 const BlogPost = ({ data }) => {
   console.log(data.markdownRemark.frontmatter.thumbnail.childImageSharp.fluid)
   
   return (
     <div>
+      <SEO title={data.markdownRemark.frontmatter.title} /> 
+
       <Layout>
         <h1>{data.markdownRemark.frontmatter.title}</h1>
           <Img fluid={data.markdownRemark.frontmatter.thumbnail.childImageSharp.fluid}/>
