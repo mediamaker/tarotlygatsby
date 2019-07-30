@@ -1,35 +1,37 @@
 import React, { useState } from "react"
+import clsx from 'clsx';
 import { useStaticQuery, graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 import SEO from "../components/seo"
 import Typography from "@material-ui/core/Typography"
-import { makeStyles } from "@material-ui/core/styles"
+import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Grid from "@material-ui/core/Grid"
 import Card from "@material-ui/core/Card"
 import CardContent from "@material-ui/core/CardContent"
 import CardActionArea from "@material-ui/core/CardActionArea"
 import CardMedia from "@material-ui/core/CardMedia"
-import BottomNavigation from "@material-ui/core/BottomNavigation"
-import BottomNavigationAction from "@material-ui/core/BottomNavigationAction"
-import RestoreIcon from "@material-ui/icons/Restore"
-import FavoriteIcon from "@material-ui/icons/Favorite"
-import LocationOnIcon from "@material-ui/icons/LocationOn"
-import red from "@material-ui/core/colors/red"
+import Drawer from '@material-ui/core/Drawer';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import List from '@material-ui/core/List';
+import Divider from '@material-ui/core/Divider';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import InboxIcon from '@material-ui/icons/MoveToInbox';
+import MailIcon from '@material-ui/icons/Mail';
+const drawerWidth = 240;
+
 
 const useStyles = makeStyles(theme => ({
-  palette: {
-    textColor: red[500],
-    primary1Color: red[500],
-    primary2Color: red[500],
-    accent1Color: red[500],
-    pickerHeaderColor: red[500],
-  },
   root: {
     display: "flex",
-    flexWrap: "wrap",
-    justifyContent: "space-around",
-    overflow: "hidden",
-    backgroundColor: theme.palette.background.paper,
+
   },
   paper: {
     height: 140,
@@ -52,9 +54,60 @@ const useStyles = makeStyles(theme => ({
     position: "fixed",
     bottom: 0,
   },
+  appBar: {
+    transition: theme.transitions.create(['margin', 'width'], {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen,
+    }),
+  },
+  appBarShift: {
+    width: `calc(100% - ${drawerWidth}px)`,
+    marginLeft: drawerWidth,
+    transition: theme.transitions.create(['margin', 'width'], {
+      easing: theme.transitions.easing.easeOut,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+  },
+  menuButton: {
+    marginRight: theme.spacing(2),
+  },
+  hide: {
+    display: 'none',
+  },
+  drawer: {
+    width: drawerWidth,
+    flexShrink: 0,
+  },
+  drawerPaper: {
+    width: drawerWidth,
+  },
+  drawerHeader: {
+    display: 'flex',
+    alignItems: 'center',
+    padding: '0 8px',
+    ...theme.mixins.toolbar,
+    justifyContent: 'flex-end',
+  },
+  content: {
+    flexGrow: 1,
+    padding: theme.spacing(3),
+    transition: theme.transitions.create('margin', {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen,
+    }),
+    marginLeft: -drawerWidth,
+  },
+  contentShift: {
+    transition: theme.transitions.create('margin', {
+      easing: theme.transitions.easing.easeOut,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+    marginLeft: 0,
+  },
 }))
 
 const BlogIndex = () => {
+
   const { site, allPosts, allTarotCards } = useStaticQuery(
     graphql`
       query {
@@ -120,15 +173,86 @@ const BlogIndex = () => {
   const [spacing, setSpacing] = React.useState(2)
   const classes = useStyles()
   const [value, setValue] = React.useState(0)
+  const theme = useTheme();
+  const [open, setOpen] = React.useState(false);
+  
+  function handleDrawerOpen() {
+    setOpen(true);
+  }
+
+  function handleDrawerClose() {
+    setOpen(false);
+  }
+
 
   return (
     <React.Fragment>
       <SEO title={site.siteMetadata.title} />
-      <Grid container justify="center" spacing={spacing}>
+      <div className={classes.root}>
+      <CssBaseline />
+      <AppBar
+        position="fixed"
+        className={clsx(classes.appBar, {
+          [classes.appBarShift]: open,
+        })}
+      >
+        <Toolbar>
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            onClick={handleDrawerOpen}
+            edge="start"
+            className={clsx(classes.menuButton, open && classes.hide)}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="h6" noWrap>
+            {site.siteMetadata.title}
+          </Typography>
+        </Toolbar>
+      </AppBar>
+      <Drawer
+        className={classes.drawer}
+        variant="persistent"
+        anchor="left"
+        open={open}
+        classes={{
+          paper: classes.drawerPaper,
+        }}
+      >
+        <div className={classes.drawerHeader}>
+          <IconButton onClick={handleDrawerClose}>
+            {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+          </IconButton>
+        </div>
+        <Divider />
+        <List>
+          {['Today', 'Tarot Card Wiki', 'Choose a Tarot Card', 'Tarot Card Designer'].map((text, index) => (
+            <ListItem button key={text}>
+              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItem>
+          ))}
+        </List>
+        <Divider />
+        <List>
+          {['My Tarotly', 'Feedback'].map((text, index) => (
+            <ListItem button key={text}>
+              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItem>
+          ))}
+        </List>
+      </Drawer>
+      <main
+        className={clsx(classes.content, {
+          [classes.contentShift]: open,
+        })}
+      >
+        <div className={classes.drawerHeader} />
+        <Grid container justify="center" spacing={spacing}>
         <Grid item xs={12}>
           <Grid container justify="center" spacing={2}>
-
-
             {allPosts.edges.map((post, index) => (
               <Grid key={index} item>
                 <Card key={index} className={classes.card}>
@@ -162,18 +286,11 @@ const BlogIndex = () => {
           </Grid>
         </Grid>
       </Grid>
-      {/* <BottomNavigation
-        className={classes.stickToBottom}
-        value={value}
-        onChange={(event, newValue) => {
-          setValue(newValue)
-        }}
-        showLabels
-      >
-        <BottomNavigationAction label="Wiki" icon={<RestoreIcon />} />
-        <BottomNavigationAction label="Today" icon={<FavoriteIcon />} />
-        <BottomNavigationAction label="Draw Cards" icon={<LocationOnIcon />} />
-      </BottomNavigation> */}
+      </main>
+    </div>
+
+
+    
     </React.Fragment>
   )
 }

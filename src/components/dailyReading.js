@@ -9,13 +9,9 @@ import CardActionArea from "@material-ui/core/CardActionArea"
 import CardMedia from "@material-ui/core/CardMedia"
 import { makeStyles } from "@material-ui/core/styles"
 import ReactDOM from 'react-dom';
-import posed from 'react-pose';
 import './styles.css';
 
-const Box = posed.div({
-  visible: { opacity: 1 },
-  hidden: { opacity: 0 }
-});
+
 
 const useStyles = makeStyles(theme => ({
     root: {

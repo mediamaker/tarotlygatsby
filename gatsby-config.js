@@ -11,9 +11,9 @@ var netlifyCmsPaths = {
 
 module.exports = {
   siteMetadata: {
-    title: `On a mission to make mindful living easy`,
+    title: `Self care and mindful living`,
     author: `John and Lee-Ana`,
-    description: `Our mission is to help our members achieve their mindful living goals with tools to succeed across mobile, desktop and voice assistants.`,
+    description: `Our mission is to help our members achieve their self care and mindful living goals with tools to succeed across mobile, desktop and voice assistants.`,
     siteUrl: `https://tarotly.net`,
     social: {
       twitter: `tarotly1`,
@@ -100,7 +100,19 @@ module.exports = {
     },
     `gatsby-plugin-material-ui`,
     `gatsby-plugin-sitemap`,
+    `gatsby-plugin-emotion`,
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Work Sans`,
+            variants: [`300`, `400`, `700`, `900`]
+          },
+        ],
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
