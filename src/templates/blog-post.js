@@ -13,6 +13,7 @@ const BlogPost = ({ data }) => {
   return (
     <div>
       <Layout>
+        <h1>{data.markdownRemark.frontmatter.title}</h1>
           <Img fluid={data.markdownRemark.frontmatter.thumbnail.childImageSharp.fluid}/>
           <div
           className="blog-post-content"
