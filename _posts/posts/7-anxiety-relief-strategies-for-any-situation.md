@@ -19,4 +19,4 @@ Millions of people deal with anxiety every day. Here are 7 simple strategies tha
 4. **Use an affirmation**. Affirmations can be powerful mood regulators. Repeat "_I am still as the morning water"_ to yourself a few times.
 5. **Meditate**. Take 20 minutes to sit alone in silence. After the first 15 minutes that inner-voice will settle down and you can achieve a sense of tranquility and stillness.
 6. **Write a thank you note.** Even if you don't end up sending it, write a message to someone you are grateful for and tell them why.
-7. **Look for evidence**. Can you express what you worried about and is there any evidence to back up that concern? If there's no evidence, than maybe your brain is trying to trick you into being anxious for no real reason. Don't let your brain trick you!
+7. **Look for evidence supporting the cause of this anxiety** . Can you express what you worried about and is there any evidence to back up that concern? If there's no evidence, maybe your brain is trying to trick you into being anxious for no real reason. Don't let your brain trick you!
