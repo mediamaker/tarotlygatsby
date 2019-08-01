@@ -25,9 +25,14 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
-const drawerWidth = 240;
 
 
+const BlogIndex = () => {
+
+  const drawerWidth = 240;
+
+const [spacing, setSpacing] = React.useState(2)
+  
 const useStyles = makeStyles(theme => ({
   root: {
     display: "flex",
@@ -106,60 +111,35 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const BlogIndex = () => {
+const classes = useStyles()
 
-  const { site, allPosts, allTarotCards } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-          }
+const { site, allPosts, allTarotCards } = useStaticQuery(
+  graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+          description
         }
-        allPosts: allMarkdownRemark(
-          filter: { fileAbsolutePath: { regex: "/_posts/posts/" } }
-          sort: { fields: [frontmatter___date], order: DESC }
-        ) {
-          totalCount
-          edges {
-            node {
-              id
-              excerpt
-              frontmatter {
-                title
-                slug
-                date(formatString: "DD MMMM YYYY")
-                category
-                thumbnail {
-                  childImageSharp {
-                    fluid(maxWidth: 630) {
-                      ...GatsbyImageSharpFluid
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-        allTarotCards: allMarkdownRemark(
-          filter: { fileAbsolutePath: { regex: "/_posts/tarot-cards/" } }
-          sort: { fields: [frontmatter___date], order: DESC }
-        ) {
-          totalCount
-          edges {
-            node {
-              id
-              excerpt
-              frontmatter {
-                title
-                slug
-                date(formatString: "DD MMMM YYYY")
-                thumbnail {
-                  childImageSharp {
-                    fluid(maxWidth: 630) {
-                      ...GatsbyImageSharpFluid
-                    }
+      }
+      allPosts: allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/_posts/posts/" } }
+        sort: { fields: [frontmatter___date], order: DESC }
+      ) {
+        totalCount
+        edges {
+          node {
+            id
+            excerpt
+            frontmatter {
+              title
+              slug
+              date(formatString: "DD MMMM YYYY")
+              category
+              thumbnail {
+                childImageSharp {
+                  fluid(maxWidth: 630) {
+                    ...GatsbyImageSharpFluid
                   }
                 }
               }
@@ -167,23 +147,34 @@ const BlogIndex = () => {
           }
         }
       }
-    `
-  )
-
-  const [spacing, setSpacing] = React.useState(2)
-  const classes = useStyles()
-  const [value, setValue] = React.useState(0)
-  const theme = useTheme();
-  const [open, setOpen] = React.useState(false);
-  
-  function handleDrawerOpen() {
-    setOpen(true);
-  }
-
-  function handleDrawerClose() {
-    setOpen(false);
-  }
-
+      allTarotCards: allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/_posts/tarot-cards/" } }
+        sort: { fields: [frontmatter___date], order: DESC }
+      ) {
+        totalCount
+        edges {
+          node {
+            id
+            excerpt
+            frontmatter {
+              title
+              slug
+              date(formatString: "DD MMMM YYYY")
+              thumbnail {
+                childImageSharp {
+                  fluid(maxWidth: 630) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `
+)
+ 
 
   return (
     <React.Fragment>
@@ -191,45 +182,9 @@ const BlogIndex = () => {
       <div className={classes.root}>
       <CssBaseline />
    
-      <Drawer
-        className={classes.drawer}
-        variant="persistent"
-        anchor="left"
-        open={open}
-        classes={{
-          paper: classes.drawerPaper,
-        }}
-      >
-        <div className={classes.drawerHeader}>
-          <IconButton onClick={handleDrawerClose}>
-            {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
-          </IconButton>
-        </div>
-        <Divider />
-        <List>
-          {['Today', 'Tarot Card Wiki', 'Choose a Tarot Card', 'Tarot Card Designer'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
-        <Divider />
-        <List>
-          {['My Tarotly', 'Feedback'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
-      </Drawer>
-      <main
-        className={clsx(classes.content, {
-          [classes.contentShift]: open,
-        })}
-      >
-        <div className={classes.drawerHeader} />
+   
+      <main>
+       
         <Grid container justify="center" spacing={spacing}>
         <Grid item xs={12}>
           <Grid container justify="center" spacing={2}>

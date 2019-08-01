@@ -25,7 +25,7 @@ const BlogPost = ({ data }) => {
           dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
         />
 
-{/* TODO: impliment social sharing buttins  */}
+{/* TODO: impliment social sharing buttons  */}
 
 {/*         <FacebookShareButton url="" quote={data.excerpt}></FacebookShareButton>
         <TwitterShareButton title={data.markdownRemark.frontmatter.title}></TwitterShareButton> */}
