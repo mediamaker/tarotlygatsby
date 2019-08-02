@@ -13,6 +13,18 @@ const Layout = ({children}) => {
      root: {
     display: 'flex',
   },
+  content: {
+    flexGrow: 1,
+    padding: theme.spacing(3),
+  
+  },
+  contentShift: {
+    transition: theme.transitions.create('margin', {
+      easing: theme.transitions.easing.easeOut,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+    marginLeft: 0,
+  },
     appBar: {
       transition: theme.transitions.create(['margin', 'width'], {
         easing: theme.transitions.easing.sharp,
@@ -101,7 +113,11 @@ const { site, allPosts, allTarotCards } = useStaticQuery(
          <CssBaseline />
 
       <NavBar position="absolute" className={clsx(classes.appBar, open && classes.appBarShift)}/>
-      <main>{children}</main> 
+             <main
+        className={clsx(classes.content, {
+          [classes.contentShift]: open,
+        })}
+      >{children}</main> 
 
         <footer>
         </footer>
