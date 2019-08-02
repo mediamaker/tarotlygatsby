@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import clsx from 'clsx';
-import { useStaticQuery, graphql, Link } from "gatsby"
+import { useStaticQuery, graphql, Link as GatsbyLink } from "gatsby"
+import Link from '@material-ui/core/Link';
 import Typography from "@material-ui/core/Typography"
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -27,27 +28,12 @@ const useStyles = makeStyles(theme => ({
     display: "flex",
 
   },
-  paper: {
-    height: 140,
-    width: 100,
-  },
-  control: {
-    padding: theme.spacing(2),
-  },
-  card: {
-    maxWidth: 345,
-  },
-  media: {
-    height: 140,
-  },
   body: {
     margin: 0,
   },
-  stickToBottom: {
-    width: "100%",
-    position: "fixed",
-    bottom: 0,
-  },
+siteTitle: {
+ color: '#fff',
+},
   appBar: {
     transition: theme.transitions.create(['margin', 'width'], {
       easing: theme.transitions.easing.sharp,
@@ -110,9 +96,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-    const [spacing, setSpacing] = React.useState(2)
     const classes = useStyles()
-    const [value, setValue] = React.useState(0)
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
   
@@ -125,64 +109,13 @@ const useStyles = makeStyles(theme => ({
       setOpen(false);
     }
   
-   
-  
-    const { site, allPosts, allTarotCards } = useStaticQuery(
+    const { site} = useStaticQuery(
       graphql`
         query {
           site {
             siteMetadata {
               title
               description
-            }
-          }
-          allPosts: allMarkdownRemark(
-            filter: { fileAbsolutePath: { regex: "/_posts/posts/" } }
-            sort: { fields: [frontmatter___date], order: DESC }
-          ) {
-            totalCount
-            edges {
-              node {
-                id
-                excerpt
-                frontmatter {
-                  title
-                  slug
-                  date(formatString: "DD MMMM YYYY")
-                  category
-                  thumbnail {
-                    childImageSharp {
-                      fluid(maxWidth: 630) {
-                        ...GatsbyImageSharpFluid
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-          allTarotCards: allMarkdownRemark(
-            filter: { fileAbsolutePath: { regex: "/_posts/tarot-cards/" } }
-            sort: { fields: [frontmatter___date], order: DESC }
-          ) {
-            totalCount
-            edges {
-              node {
-                id
-                excerpt
-                frontmatter {
-                  title
-                  slug
-                  date(formatString: "DD MMMM YYYY")
-                  thumbnail {
-                    childImageSharp {
-                      fluid(maxWidth: 630) {
-                        ...GatsbyImageSharpFluid
-                      }
-                    }
-                  }
-                }
-              }
             }
           }
         }
@@ -209,7 +142,11 @@ const useStyles = makeStyles(theme => ({
             <MenuIcon/>
           </IconButton>
           <Typography variant="h6">
-            {site.siteMetadata.title}
+          <Link component={GatsbyLink} className={classes.siteTitle} to="/">
+          {site.siteMetadata.title}
+          </Link>
+        
+        
           </Typography>
         </Toolbar>
       </AppBar>

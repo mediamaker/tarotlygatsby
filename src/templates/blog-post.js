@@ -4,6 +4,7 @@ import PropTypes from "prop-types"
 import { kebabCase } from "lodash"
 import Helmet from "react-helmet"
 import { graphql, Link } from "gatsby"
+import { makeStyles} from '@material-ui/core/styles';
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Paper from "@material-ui/core/Paper"
@@ -13,19 +14,34 @@ import {FacebookShareButton,
 import { Container } from "@material-ui/core";
 
 const BlogPost = ({ data }) => {
-  console.log(data.markdownRemark.frontmatter.thumbnail.childImageSharp.fluid)
-  
+
+  const useStyles = makeStyles(theme => ({
+    root: {
+   display: 'flex',
+ },
+ mainFeaturedPostBody: {
+  marginBottom: theme.spacing(4),
+  paddingBottom: theme.spacing(2),
+},
+mainFeaturedPostImage: {
+  marginBottom: theme.spacing(4),
+},
+ }))
+
+ const classes = useStyles()
+
+
   return (
     <div>
       <SEO title={data.markdownRemark.frontmatter.title} description={data.excerpt} image={data.markdownRemark.frontmatter.thumbnail.childImageSharp.fluid} /> 
 
       <Layout>
-        <Paper>
-          <Container>
+      <Paper>
+        <Container className={classes.mainFeaturedPost}>
         <h1>{data.markdownRemark.frontmatter.title}</h1>
-          <Img fluid={data.markdownRemark.frontmatter.thumbnail.childImageSharp.fluid}/>
+          <Img className={classes.mainFeaturedPostImage} fluid={data.markdownRemark.frontmatter.thumbnail.childImageSharp.fluid}/>
           <div
-          className="blog-post-content"
+          className={classes.mainFeaturedPostBody}
           dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
         />
 

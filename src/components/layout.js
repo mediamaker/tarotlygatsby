@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import clsx from 'clsx';
 import { useStaticQuery, graphql, Link } from "gatsby"
 import SEO from "../components/seo"
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import NavBar from '../components/navBar';
 const drawerWidth = 240;
