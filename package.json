@@ -59,6 +59,7 @@
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
     "react-redux": "^7.1.0",
+    "react-share": "^3.0.0",
     "react-typography": "^0.16.19",
     "recharts": "^1.6.2",
     "redux": "^4.0.4",
