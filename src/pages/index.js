@@ -21,10 +21,13 @@ import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
+import Paper from '@material-ui/core/Paper';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
+import Layout from "../components/layout";
+import EmailSignupForm from '../components/emailSignupForm' 
 
 
 const BlogIndex = () => {
@@ -177,14 +180,17 @@ const { site, allPosts, allTarotCards } = useStaticQuery(
  
 
   return (
+
     <React.Fragment>
       <SEO title={site.siteMetadata.title} />
-      <div className={classes.root}>
+      <Layout>
       <CssBaseline />
+
    
-   
-      <main>
-       
+      <div className={classes.root}>
+<Paper>
+<div className={classes.drawerHeader} />
+
         <Grid container justify="center" spacing={spacing}>
         <Grid item xs={12}>
           <Grid container justify="center" spacing={2}>
@@ -218,13 +224,16 @@ const { site, allPosts, allTarotCards } = useStaticQuery(
                 </Card>
               </Grid>
             ))}
+                    <EmailSignupForm/>
+
           </Grid>
         </Grid>
+
       </Grid>
-      </main>
-    </div>
+      </Paper>
+      </div>
 
-
+</Layout>
     
     </React.Fragment>
   )

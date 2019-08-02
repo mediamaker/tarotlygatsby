@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-import EmailSignupForm from '../components/emailSignupForm' 
 import clsx from 'clsx';
 import { useStaticQuery, graphql, Link } from "gatsby"
 import Typography from "@material-ui/core/Typography"
@@ -8,9 +7,21 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import Drawer from '@material-ui/core/Drawer';
+import List from '@material-ui/core/List';
+import Divider from '@material-ui/core/Divider';
+import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import InboxIcon from '@material-ui/icons/MoveToInbox';
+import MailIcon from '@material-ui/icons/Mail';
+
+const NavBar = () => {
 
 const drawerWidth = 240;
-  
+
 const useStyles = makeStyles(theme => ({
   root: {
     display: "flex",
@@ -87,9 +98,18 @@ const useStyles = makeStyles(theme => ({
     }),
     marginLeft: 0,
   },
+  toolbar: {
+    paddingRight: 24, // keep right padding when drawer closed
+  },
+  toolbarIcon: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+    padding: '0 8px',
+    ...theme.mixins.toolbar,
+  }
 }))
 
-  const NavBar = () => {
     const [spacing, setSpacing] = React.useState(2)
     const classes = useStyles()
     const [value, setValue] = React.useState(0)
@@ -171,13 +191,14 @@ const useStyles = makeStyles(theme => ({
     
 
     return (
+<React.Fragment>
 <AppBar
         position="fixed"
         className={clsx(classes.appBar, {
           [classes.appBarShift]: open,
         })}
       >
-        <Toolbar>
+        <Toolbar  className={classes.toolbar}>
           <IconButton
             color="inherit"
             aria-label="open drawer"    
@@ -185,14 +206,47 @@ const useStyles = makeStyles(theme => ({
             edge="start"
             className={clsx(classes.menuButton, open && classes.hide)}
           >
-            <MenuIcon />
+            <MenuIcon/>
           </IconButton>
-          <Typography variant="h6" noWrap>
+          <Typography variant="h6">
             {site.siteMetadata.title}
           </Typography>
         </Toolbar>
       </AppBar>
-
+  <Drawer
+  className={classes.drawer}
+  variant="persistent"
+  anchor="left"
+  open={open}
+  classes={{
+    paper: clsx(classes.drawerPaper, !open && classes.drawerPaperClose),
+  }}
+>
+  <div className={classes.drawerHeader}>
+    <IconButton onClick={handleDrawerClose}>
+      {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+    </IconButton>
+  </div>
+  <Divider />
+  <List>
+    {['Today', 'Tarot Card Wiki', 'Choose a Tarot Card', 'Tarot Card Designer'].map((text, index) => (
+      <ListItem button key={text}>
+        <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+        <ListItemText primary={text} />
+      </ListItem>
+    ))}
+  </List>
+  <Divider />
+  <List>
+    {['My Tarotly', 'Feedback'].map((text, index) => (
+      <ListItem button key={text}>
+        <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+        <ListItemText primary={text} />
+      </ListItem>
+    ))}
+  </List>
+</Drawer>
+</React.Fragment>
     )}
 
     export default NavBar;
