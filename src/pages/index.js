@@ -169,12 +169,11 @@ const { site, allPosts, allTarotCards } = useStaticQuery(
       <SEO title={site.siteMetadata.title} />
       <Layout>
       <CssBaseline />
+      <Container>
 
-   
       <div className={classes.root}>
 <Paper>
 <div className={classes.drawerHeader} />
-<Container>
         <Grid container justify="center" spacing={spacing}>
         <Grid item xs={12}>
           <Grid container justify="center" spacing={2}>
@@ -213,9 +212,9 @@ const { site, allPosts, allTarotCards } = useStaticQuery(
         </Grid>
 
       </Grid>
-      </Container>
       </Paper>
       </div>
+      </Container>
 
 </Layout>
     

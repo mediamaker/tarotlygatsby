@@ -132,7 +132,7 @@ const BlogIndex = () => {
       >
         <div className={classes.drawerHeader} />
         <Typography component='h4' variant='h4'>
-          Tarot Card Wiki
+          Tarot Cards
         </Typography>
         <Grid container justify="center" spacing={spacing}>
         <Grid item xs={12}>

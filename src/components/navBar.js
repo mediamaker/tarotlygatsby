@@ -168,14 +168,20 @@ siteTitle: {
         <ListItemIcon> 
           <InboxIcon /> 
         </ListItemIcon>
-        <ListItemText primary='Today on Tarotly' />
+        <ListItemText primary='Today' />
       </ListItem>
         <ListItem button component={GatsbyLink} to='/tarot-cards/' >
         <ListItemIcon> 
           <InboxIcon /> 
         </ListItemIcon>
-        <ListItemText primary='Tarot Card Wiki' />
+        <ListItemText primary='Tarot Cards' />
       </ListItem>
+      {/* <ListItem button component={GatsbyLink} to='/tarot-cards/' >
+        <ListItemIcon> 
+          <InboxIcon /> 
+        </ListItemIcon>
+        <ListItemText primary='Tarot Card Spreads' />
+      </ListItem> */}
   </List>
  
 </Drawer>
