@@ -36,6 +36,20 @@ collections:
       - {label: "Chakra", name: "chakra", widget: "string"}
       - {label: "Rating (scale of 1-5)", name: "rating", widget: "number", required: false}
 
+  - name: "card-spreads" # Used in routes, e.g., /admin/collections/blog
+    label: "Card Spreads" # Used in the UI
+    label_singular: "Card Spread" # Used in the UI
+    create: true # Allow users to create new documents in this collection
+    folder: "_posts/card-spreads" # The path to the folder where the documents are stored
+    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Slug", name: "slug", widget: "string"}
+      - {label: "Card Count", name: "cardCount", widget: "number"}
+      - {label: "Featured Image", name: "thumbnail", widget: "image"}
+      - {label: "Description", name: "description", widget: "markdown"}
+
   - name: "posts" # Used in routes, e.g., /admin/collections/blog
     description: "Posts can be blog entries, tools, guided meditations...whatever"
     label: "Posts" # Used in the UI

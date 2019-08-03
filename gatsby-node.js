@@ -25,6 +25,7 @@ exports.createPages = ({ actions, graphql }) => {
   const blogPostTemplate = path.resolve("src/templates/blog-post.js")
   const tarotCardTemplate = path.resolve("src/templates/tarot-card.js")
   const tagTemplate = path.resolve("src/templates/tags.js")
+  const cardSpreadTemplate = path.resolve("src/templates/card-spreads.js")
   return graphql(`
     {
       posts: allMarkdownRemark(limit: 1000, filter: { fileAbsolutePath: {regex : "\/posts/"} }) {
@@ -48,8 +49,21 @@ exports.createPages = ({ actions, graphql }) => {
               slug
             }
             frontmatter {
-              tags
+              keywords
               number
+            }
+          }
+        }
+      }
+      cardSpreads: allMarkdownRemark(limit: 1000, filter: { fileAbsolutePath: {regex : "\/card-spreads/"} }) {
+        edges {
+          node {
+            id  
+            fields {
+              slug
+            }
+            frontmatter {
+              cardCount
             }
           }
         }
@@ -83,6 +97,21 @@ console.log({posts})
         path: edge.node.fields.slug,
         tags: edge.node.frontmatter.tags,
         component: tarotCardTemplate,
+        // additional data can be passed via context
+        context: {
+          id,
+        },
+      })
+    })
+
+    const cardSpreads = result.data.cardSpreads.edges
+
+    cardSpreads.forEach(edge => {
+      const id = edge.node.id
+      createPage({
+        path: edge.node.fields.slug,
+        tags: edge.node.frontmatter.tags,
+        component: cardSpreadTemplate,
         // additional data can be passed via context
         context: {
           id,

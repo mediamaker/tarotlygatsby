@@ -176,12 +176,12 @@ siteTitle: {
         </ListItemIcon>
         <ListItemText primary='Tarot Cards' />
       </ListItem>
-      {/* <ListItem button component={GatsbyLink} to='/tarot-cards/' >
+      <ListItem button component={GatsbyLink} to='/card-spreads/' >
         <ListItemIcon> 
           <InboxIcon /> 
         </ListItemIcon>
-        <ListItemText primary='Tarot Card Spreads' />
-      </ListItem> */}
+        <ListItemText primary='Card Spreads' />
+      </ListItem>
   </List>
  
 </Drawer>
