@@ -1,7 +1,5 @@
 import React, { useState } from "react"
 import clsx from 'clsx';
-import { useStaticQuery, graphql, Link } from "gatsby"
-import SEO from "../components/seo"
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import NavBar from '../components/navBar';
@@ -44,68 +42,7 @@ const Layout = ({children}) => {
   const classes = useStyles()
   const [open, setOpen] = React.useState(false);
 
-const { site, allPosts, allTarotCards } = useStaticQuery(
-  graphql`
-    query {
-      site {
-        siteMetadata {
-          title
-          description
-        }
-      }
-      allPosts: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/_posts/posts/" } }
-        sort: { fields: [frontmatter___date], order: DESC }
-      ) {
-        totalCount
-        edges {
-          node {
-            id
-            excerpt
-            frontmatter {
-              title
-              slug
-              date(formatString: "DD MMMM YYYY")
-              category
-              thumbnail {
-                childImageSharp {
-                  fluid(maxWidth: 630) {
-                    ...GatsbyImageSharpFluid
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-      allTarotCards: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/_posts/tarot-cards/" } }
-        sort: { fields: [frontmatter___date], order: DESC }
-      ) {
-        totalCount
-        edges {
-          node {
-            id
-            excerpt
-            frontmatter {
-              title
-              slug
-              date(formatString: "DD MMMM YYYY")
-              thumbnail {
-                childImageSharp {
-                  fluid(maxWidth: 630) {
-                    ...GatsbyImageSharpFluid
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  `
-)
-  
+
 
     return (
        

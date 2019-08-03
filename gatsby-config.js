@@ -11,7 +11,7 @@ var netlifyCmsPaths = {
 
 module.exports = {
   siteMetadata: {
-    title: `Self care and mindful living`,
+    title: `Tarotly self care`,
     author: `John and Lee-Ana`,
     description: `Our mission is to help our members achieve their self care and mindful living goals with tools to succeed across mobile, desktop and voice assistants.`,
     siteUrl: `https://tarotly.net`,
@@ -53,7 +53,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: `posts`,
+        name: `blog-post`,
         path: `${__dirname}/_posts/posts/`,
       },
     },

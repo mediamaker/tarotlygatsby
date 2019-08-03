@@ -1,16 +1,10 @@
 import React from "react"
 import Img from "gatsby-image"
-import PropTypes from "prop-types"
-import { kebabCase } from "lodash"
-import Helmet from "react-helmet"
 import { graphql, Link } from "gatsby"
 import { makeStyles} from '@material-ui/core/styles';
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Paper from "@material-ui/core/Paper"
-import {FacebookShareButton,
-  LinkedinShareButton,
-  TwitterShareButton} from "react-share"
 import { Container } from "@material-ui/core";
 
 const BlogPost = ({ data }) => {
@@ -30,7 +24,6 @@ mainFeaturedPostImage: {
 
  const classes = useStyles()
 
-
   return (
     <div>
       <SEO title={data.markdownRemark.frontmatter.title} description={data.excerpt} image={data.markdownRemark.frontmatter.thumbnail.childImageSharp.fluid} /> 
@@ -46,7 +39,7 @@ mainFeaturedPostImage: {
         />
 
 {/* TODO: impliment social sharing buttons  */}
-
+    
 {/*         <FacebookShareButton url="" quote={data.excerpt}></FacebookShareButton>
         <TwitterShareButton title={data.markdownRemark.frontmatter.title}></TwitterShareButton> */}
               </Container>

@@ -145,9 +145,7 @@ siteTitle: {
           <Link component={GatsbyLink} className={classes.siteTitle} to="/">
           {site.siteMetadata.title}
           </Link>
-        
-        
-          </Typography>
+        </Typography>
         </Toolbar>
       </AppBar>
   <Drawer
@@ -166,22 +164,20 @@ siteTitle: {
   </div>
   <Divider />
   <List>
-    {['Today', 'Tarot Card Wiki', 'Choose a Tarot Card', 'Tarot Card Designer'].map((text, index) => (
-      <ListItem button key={text}>
-        <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-        <ListItemText primary={text} />
+  <ListItem button component={GatsbyLink} to='/' >
+        <ListItemIcon> 
+          <InboxIcon /> 
+        </ListItemIcon>
+        <ListItemText primary='Today on Tarotly' />
       </ListItem>
-    ))}
-  </List>
-  <Divider />
-  <List>
-    {['My Tarotly', 'Feedback'].map((text, index) => (
-      <ListItem button key={text}>
-        <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-        <ListItemText primary={text} />
+        <ListItem button component={GatsbyLink} to='/tarot-cards/' >
+        <ListItemIcon> 
+          <InboxIcon /> 
+        </ListItemIcon>
+        <ListItemText primary='Tarot Card Wiki' />
       </ListItem>
-    ))}
   </List>
+ 
 </Drawer>
 </React.Fragment>
     )}
