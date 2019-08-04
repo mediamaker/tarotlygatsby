@@ -2,7 +2,7 @@
 layout: blog
 title: Significator
 slug: significator-spread
-cardCount: 3
+cardCount: 4
 thumbnail: /images/significator-draw.png
 description: >-
   This spread delves deeper into a specific subject. Place a card in the
