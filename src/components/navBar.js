@@ -67,6 +67,8 @@ siteTitle: {
     padding: '0 8px',
     ...theme.mixins.toolbar,
     justifyContent: 'flex-end',
+   
+
   },
   content: {
     flexGrow: 1,
@@ -86,6 +88,9 @@ siteTitle: {
   },
   toolbar: {
     paddingRight: 24, // keep right padding when drawer closed
+    background: '#8360c3',  /* fallback for old browsers */
+    background: '-webkit-linear-gradient(to left, #2ebf91, #8360c3)',  /* Chrome 10-25, Safari 5.1-6 */
+    background: 'linear-gradient(to left, #2ebf91, #8360c3)' /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   },
   toolbarIcon: {
     display: 'flex',

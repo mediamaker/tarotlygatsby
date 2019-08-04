@@ -28,10 +28,10 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(2),
   },
   card: {
-    width: 200,
+    width: 250,
   },
   media: {
-    height: 340,
+    height: 200,
   },
   body: {
     margin: 0,
@@ -86,7 +86,7 @@ const CardSpreads = () => {
         }
         allCardSpreads: allMarkdownRemark(
           filter: { fileAbsolutePath: { regex: "/_posts/card-spreads/" } }
-          sort: { fields: [frontmatter___number], order: ASC }
+          sort: { fields: [frontmatter___cardCount], order: ASC }
         ) {
           totalCount
           edges {
@@ -96,6 +96,7 @@ const CardSpreads = () => {
               frontmatter {
                 title
                 slug
+                cardCount
                 thumbnail {
                   childImageSharp {
                     fluid(maxWidth: 630) {
@@ -135,9 +136,9 @@ const CardSpreads = () => {
         <Grid container justify="center" spacing={spacing}>
         <Grid item xs={12}>
           <Grid container justify="center" spacing={2}>
-            {allCardSpreads.edges.map((post, number) => (
-              <Grid key={number} item>
-                <Card key={number} className={classes.card}>
+            {allCardSpreads.edges.map((post, cardCount) => (
+              <Grid key={cardCount} item>
+                <Card key={cardCount} className={classes.card}>
                   <CardActionArea>
                     <Link to={post.node.frontmatter.slug}>
                       <CardMedia
