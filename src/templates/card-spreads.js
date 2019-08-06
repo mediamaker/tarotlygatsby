@@ -46,7 +46,6 @@ export default function CardSpread({ data }) {
 
 },
 mainFeaturedPostImage: {
-  width: 430,
   marginBottom: theme.spacing(4),
 },
 
@@ -75,7 +74,8 @@ drawerHeader: {
       <div className={classes.drawerHeader} />
 
       <Typography component='h3' variant='h3' className={clsx(classes.pageTitle)}>
-                  {data.markdownRemark.frontmatter.title}</Typography>      <Img className={classes.mainFeaturedPostImage} fluid={data.markdownRemark.frontmatter.thumbnail.childImageSharp.fluid}/>                  
+                  {data.markdownRemark.frontmatter.title}</Typography>      
+        <Img className={classes.mainFeaturedPostImage} fluid={data.markdownRemark.frontmatter.thumbnail.childImageSharp.fluid}/>                  
                   <div
           className={classes.mainFeaturedPostBody}
           dangerouslySetInnerHTML={{ __html: data.markdownRemark.frontmatter.description }}
