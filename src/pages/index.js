@@ -34,6 +34,7 @@ const useStyles = makeStyles(theme => ({
   },
   card: {
     maxWidth: 345,
+    textDecoration: 'none',
   },
   media: {
     height: 140,
@@ -96,6 +97,9 @@ const useStyles = makeStyles(theme => ({
     }),
     marginLeft: 0,
   },
+  cardLink: {
+    textDecoration: "none",
+  }
 }))
 
 const classes = useStyles()
@@ -168,7 +172,6 @@ const { site, allPosts, allTarotCards } = useStaticQuery(
     <React.Fragment>
       <SEO title={site.siteMetadata.title} />
       <Layout>
-      <CssBaseline />
       <Container>
 
       <div className={classes.root}>
@@ -181,7 +184,7 @@ const { site, allPosts, allTarotCards } = useStaticQuery(
               <Grid key={index} item>
                 <Card key={index} className={classes.card}>
                   <CardActionArea>
-                    <Link to={post.node.frontmatter.slug}>
+                    <Link to={post.node.frontmatter.slug} className={classes.cardLink}>
                       <CardMedia
                         className={classes.media}
                         image={
