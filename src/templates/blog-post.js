@@ -19,6 +19,7 @@ const BlogPost = ({ data }) => {
   marginBottom: theme.spacing(4),
   marginLeft: theme.spacing(2), 
   paddingBottom: theme.spacing(2),
+  fontSize: 18,
 },
 mainFeaturedPostImage: {
   marginBottom: theme.spacing(4),
@@ -30,9 +31,7 @@ drawerHeader: {
   ...theme.mixins.toolbar,
   justifyContent: 'flex-end',
 },
-siteTitle: {
-padding: '30px'
-},
+
  }))
 
  const classes = useStyles()
@@ -42,12 +41,12 @@ padding: '30px'
       <SEO title={data.markdownRemark.frontmatter.title} description={data.excerpt} image={data.markdownRemark.frontmatter.thumbnail.childImageSharp.fluid} /> 
 
       <Layout>
-        <Container>
 
         <Paper className={classes.paper}>
                   <div className={classes.drawerHeader} />
+                  <Container>
 
-        <Typography component='h3' variant='h3' className={clsx(classes.siteTitle)}>
+                  <Typography component='h3' variant='h3' className={clsx(classes.pageTitle)}>
         {data.markdownRemark.frontmatter.title}
         </Typography>
           <Img className={classes.mainFeaturedPostImage} fluid={data.markdownRemark.frontmatter.thumbnail.childImageSharp.fluid}/>
@@ -55,8 +54,9 @@ padding: '30px'
           className={classes.mainFeaturedPostBody}
           dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
         />
+                      </Container>
+
               </Paper>
-              </Container>
 
               </Layout>
     </div>

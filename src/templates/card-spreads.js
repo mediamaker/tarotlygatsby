@@ -6,6 +6,8 @@ import SEO from "../components/seo"
 import { Container } from "@material-ui/core";
 import Paper from "@material-ui/core/Paper"
 import { makeStyles} from '@material-ui/core/styles';
+import Typography from "@material-ui/core/Typography"
+import clsx from 'clsx';
 
 export const pageQuery = graphql`
   query cardSpreadByID($id: String!) {
@@ -40,11 +42,23 @@ export default function CardSpread({ data }) {
  mainFeaturedPostBody: {
   marginBottom: theme.spacing(4),
   paddingBottom: theme.spacing(2),
+  fontSize: 18,
+
 },
 mainFeaturedPostImage: {
   width: 430,
   marginBottom: theme.spacing(4),
 },
+
+drawerHeader: {
+  display: 'flex',
+  alignItems: 'center',
+  padding: '0 8px',
+  ...theme.mixins.toolbar,
+  justifyContent: 'flex-end',
+},
+
+
  }))
 
  const classes = useStyles()
@@ -58,9 +72,14 @@ mainFeaturedPostImage: {
 
         <Paper>
       <Container>
-      <Img className={classes.mainFeaturedPostImage} fluid={data.markdownRemark.frontmatter.thumbnail.childImageSharp.fluid}/>                  
-                  {data.markdownRemark.frontmatter.title}
-                <p> {data.markdownRemark.frontmatter.description} </p> 
+      <div className={classes.drawerHeader} />
+
+      <Typography component='h3' variant='h3' className={clsx(classes.pageTitle)}>
+                  {data.markdownRemark.frontmatter.title}</Typography>      <Img className={classes.mainFeaturedPostImage} fluid={data.markdownRemark.frontmatter.thumbnail.childImageSharp.fluid}/>                  
+                  <div
+          className={classes.mainFeaturedPostBody}
+          dangerouslySetInnerHTML={{ __html: data.markdownRemark.frontmatter.description }}
+        />
             
           </Container>
         </Paper>
