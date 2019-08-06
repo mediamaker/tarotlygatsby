@@ -1,9 +1,6 @@
 // gatsby-node.js
-
 const _ = require('lodash')
 const path = require('path')
-const { createFilePath } = require('gatsby-source-filesystem')
-const {fmImagesToRelative} = require('gatsby-remark-relative-images')
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
@@ -68,29 +65,29 @@ if (edge.node.fields.collection === 'blog-post'){
       });
 
 
-  //    /*  let tags = []
-  //     // Iterate through each post, putting all found tags into `tags`
-  //     _.each(edge, edge => {
-  //       if (_.get(edge, "node.frontmatter.tags")) {
-  //         tags = tags.concat(edge.node.frontmatter.tags)
-  //       }
-  //     })
-  //     // Eliminate duplicate tags
-  //     tags = _.uniq(tags)
+      let tags = []
+      // Iterate through each post, putting all found tags into `tags`
+      _.each(edge, edge => {
+        if (_.get(edge, "node.frontmatter.tags")) {
+          tags = tags.concat(edge.node.frontmatter.tags)
+        }
+      })
+      // Eliminate duplicate tags
+      tags = _.uniq(tags)
   
-  //     // Make tag pages
-  //     tags.forEach(tag => {
-  //       const tagPath = `/tags/${_.kebabCase(tag)}/`
+      // Make tag pages
+      tags.forEach(tag => {
+        const tagPath = `/tags/${_.kebabCase(tag)}/`
   
-  //       createPage({
-  //         path: tagPath,
-  //         component: tagTemplate,
-  //         context: {
-  //           tag,
-  //         },
-  //       })
-  //     })
-  // */
+        createPage({
+          path: tagPath,
+          component: tagTemplate,
+          context: {
+            tag,
+          },
+        })
+      })
+  
 
     } else if (edge.node.fields.collection === 'tarot-cards') {
       createPage({
@@ -118,7 +115,4 @@ if (edge.node.fields.collection === 'blog-post'){
 
   })
 }
-
-    // Tag pages:
-   
 
