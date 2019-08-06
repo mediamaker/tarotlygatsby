@@ -20,12 +20,6 @@ module.exports = {
     },
   },
   plugins: [
-    {
-        resolve: `gatsby-plugin-typography`,
-        options: {
-          pathToConfigModule: `src/utils/typography`,
-        }
-       },
       {
       resolve: `gatsby-plugin-facebook-pixel`,
       options: {
@@ -53,13 +47,6 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: `blog-post`,
-        path: `${__dirname}/_posts/posts/`,
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
         name: `tarot-cards`,
         path: `${__dirname}/_posts/tarot-cards/`,
       }
@@ -70,6 +57,13 @@ module.exports = {
         name: `card-spreads`,
         path: `${__dirname}/_posts/card-spreads/`,
       }
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: `blog-post`,
+        path: `${__dirname}/_posts/posts/`,
+      },
     },
     {
       resolve: `gatsby-transformer-remark`,

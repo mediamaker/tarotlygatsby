@@ -29,21 +29,17 @@ mainFeaturedPostImage: {
       <SEO title={data.markdownRemark.frontmatter.title} description={data.excerpt} image={data.markdownRemark.frontmatter.thumbnail.childImageSharp.fluid} /> 
 
       <Layout>
-      <Paper>
         <Container className={classes.mainFeaturedPost}>
+        <Paper>
         <h1>{data.markdownRemark.frontmatter.title}</h1>
           <Img className={classes.mainFeaturedPostImage} fluid={data.markdownRemark.frontmatter.thumbnail.childImageSharp.fluid}/>
           <div
           className={classes.mainFeaturedPostBody}
           dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
         />
-
-{/* TODO: impliment social sharing buttons  */}
-    
-{/*         <FacebookShareButton url="" quote={data.excerpt}></FacebookShareButton>
-        <TwitterShareButton title={data.markdownRemark.frontmatter.title}></TwitterShareButton> */}
-              </Container>
               </Paper>
+              </Container>
+
               </Layout>
     </div>
   )
