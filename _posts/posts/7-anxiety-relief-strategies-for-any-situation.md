@@ -1,7 +1,7 @@
 ---
 layout: blog
 title: 7 anxiety relief strategies for any situation
-thumbnail: /images/anxiety-relief-tricks.jpg
+thumbnail: /images/happy-woman.jpg
 category:
   - anxiety
 tags:
