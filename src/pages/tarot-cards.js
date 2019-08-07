@@ -28,10 +28,10 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(2),
   },
   card: {
-    width: 200,
+    width: 150,
   },
   media: {
-    height: 340,
+    height: 190,
   },
   body: {
     margin: 0,
