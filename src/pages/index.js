@@ -37,7 +37,7 @@ const useStyles = makeStyles(theme => ({
     textDecoration: 'none',
   },
   media: {
-    height: 140,
+    height: 210,
   },
   body: {
     margin: 0,
