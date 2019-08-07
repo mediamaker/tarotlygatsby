@@ -70,6 +70,9 @@ const useStyles = makeStyles(theme => ({
   hide: {
     display: 'none',
   },
+  cardLink: {
+    textDecoration: "none",
+  }
 
 }))
 
@@ -141,7 +144,7 @@ const BlogIndex = () => {
               <Grid key={number} item>
                 <Card key={number} className={classes.card}>
                   <CardActionArea>
-                    <Link to={post.node.frontmatter.slug}>
+                    <Link to={post.node.frontmatter.slug} className={classes.cardLink}>
                       <CardMedia
                         className={classes.media}
                         image={

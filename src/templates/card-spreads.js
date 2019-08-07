@@ -3,11 +3,12 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Img from "gatsby-image"
 import SEO from "../components/seo"
-import { Container } from "@material-ui/core";
+import { Container } from "@material-ui/core"
 import Paper from "@material-ui/core/Paper"
-import { makeStyles} from '@material-ui/core/styles';
+import { makeStyles } from "@material-ui/core/styles"
 import Typography from "@material-ui/core/Typography"
-import clsx from 'clsx';
+import Grid from "@material-ui/core/Grid"
+import clsx from "clsx"
 
 export const pageQuery = graphql`
   query cardSpreadByID($id: String!) {
@@ -33,56 +34,89 @@ export const pageQuery = graphql`
 `
 
 export default function CardSpread({ data }) {
-
-
   const useStyles = makeStyles(theme => ({
     root: {
-   display: 'flex',
- },
- mainFeaturedPostBody: {
-  marginBottom: theme.spacing(4),
-  paddingBottom: theme.spacing(2),
-  fontSize: 18,
+      display: "flex",
+    },
+    paper: {
+      padding: theme.spacing(2),
+      textAlign: 'center',
+      color: theme.palette.text.secondary,
+    },
+    mainFeaturedPostBody: {
+      marginBottom: theme.spacing(4),
+      paddingBottom: theme.spacing(2),
+      fontSize: 18,
+    },
+    mainFeaturedPostImage: {
+      marginBottom: theme.spacing(4),
+      maxWidth: 430,
+      maxHeight: '100%',
+    },
 
-},
-mainFeaturedPostImage: {
-  marginBottom: theme.spacing(4),
-},
+    drawerHeader: {
+      display: "flex",
+      alignItems: "center",
+      padding: "0 8px",
+      ...theme.mixins.toolbar,
+      justifyContent: "flex-end",
+    },
+  }))
 
-drawerHeader: {
-  display: 'flex',
-  alignItems: 'center',
-  padding: '0 8px',
-  ...theme.mixins.toolbar,
-  justifyContent: 'flex-end',
-},
-
-
- }))
-
- const classes = useStyles()
-
+  const classes = useStyles()
+console.log(data.markdownRemark.frontmatter.thumbnail.childImageSharp.fluid)
   return (
-
     <div>
-    <SEO title={data.markdownRemark.frontmatter.title} description={data.excerpt} image={data.markdownRemark.frontmatter.thumbnail.childImageSharp.fluid} /> 
+      <SEO
+        title={data.markdownRemark.frontmatter.title}
+        description={data.excerpt}
+        image={data.markdownRemark.frontmatter.thumbnail.childImageSharp.fluid}
+      />
 
       <Layout>
+          <Container>
+            <div className={classes.drawerHeader} />
 
-        <Paper>
-      <Container>
-      <div className={classes.drawerHeader} />
-
-      <Typography component='h3' variant='h3' className={clsx(classes.pageTitle)}>
-                  {data.markdownRemark.frontmatter.title}</Typography>      
-        <Img className={classes.mainFeaturedPostImage} fluid={data.markdownRemark.frontmatter.thumbnail.childImageSharp.fluid}/>                  
-                  <div
-          className={classes.mainFeaturedPostBody}
-          dangerouslySetInnerHTML={{ __html: data.markdownRemark.frontmatter.description }}
-        />
+            <Typography
+              component="h3"
+              variant="h3"
+              className={clsx(classes.pageTitle)}
+            >
+              {data.markdownRemark.frontmatter.title}
+            </Typography>
             
+         
+
+            <Grid
+              container
+              direction="column"
+              justify="flex-start"
+              alignItems="flex-start"
+              >
+              <Grid item xs={6}  style={{ width: '100%' }}>
+              <Paper className={classes.paper}>
+<Img 
+className={classes.mainFeaturedPostImage}
+fluid={data.markdownRemark.frontmatter.thumbnail.childImageSharp.fluid}
+/>                  </Paper>
+
+              </Grid>
+
+
+              <Grid item xs={6}>
+              <Paper className={classes.paper}>
+                  {data.markdownRemark.frontmatter.title}
+                  </Paper>
+</Grid>
+            </Grid>
+
+            <div
+              className={classes.mainFeaturedPostBody}
+              dangerouslySetInnerHTML={{
+                __html: data.markdownRemark.frontmatter.description,
+              }}
+            />
           </Container>
-        </Paper>
       </Layout>
     </div>
   )

@@ -70,6 +70,9 @@ const useStyles = makeStyles(theme => ({
   hide: {
     display: 'none',
   },
+  cardLink: {
+    textDecoration: "none",
+  }
 
 }))
 
@@ -140,7 +143,7 @@ const CardSpreads = () => {
               <Grid key={cardCount} item>
                 <Card key={cardCount} className={classes.card}>
                   <CardActionArea>
-                    <Link to={post.node.frontmatter.slug}>
+                    <Link to={post.node.frontmatter.slug} className={classes.cardLink}>
                       <CardMedia
                         className={classes.media}
                         image={
