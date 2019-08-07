@@ -65,7 +65,6 @@ export default function CardSpread({ data }) {
   }))
 
   const classes = useStyles()
-  console.log(data.markdownRemark.frontmatter.thumbnail.childImageSharp.fluid)
   return (
     <div>
       <SEO
