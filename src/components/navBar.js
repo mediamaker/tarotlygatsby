@@ -18,8 +18,10 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
+import Hidden from '@material-ui/core/Hidden';
+import CssBaseline from '@material-ui/core/CssBaseline';
 
-const NavBar = () => {
+const NavBar = ({container}) => {
 
 const drawerWidth = 240;
 
@@ -34,12 +36,12 @@ const useStyles = makeStyles(theme => ({
 siteTitle: {
  color: '#fff',
 },
-  appBar: {
-    transition: theme.transitions.create(['margin', 'width'], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
+appBar: {
+  marginLeft: drawerWidth,
+  [theme.breakpoints.up('sm')]: {
+    width: `calc(100% - ${drawerWidth}px)`,
   },
+},
   appBarShift: {
     width: `calc(100% - ${drawerWidth}px)`,
     marginLeft: drawerWidth,
@@ -50,68 +52,70 @@ siteTitle: {
   },
   menuButton: {
     marginRight: theme.spacing(2),
+    [theme.breakpoints.up('sm')]: {
+      display: 'none',
+    },
   },
   hide: {
     display: 'none',
   },
   drawer: {
-    width: drawerWidth,
-    flexShrink: 0,
+    [theme.breakpoints.up('sm')]: {
+      width: drawerWidth,
+      flexShrink: 0,
+    },
   },
   drawerPaper: {
     width: drawerWidth,
   },
-  drawerHeader: {
-    display: 'flex',
-    alignItems: 'center',
-    padding: '0 8px',
-    ...theme.mixins.toolbar,
-    justifyContent: 'flex-end',
-   
 
-  },
   content: {
     flexGrow: 1,
     padding: theme.spacing(3),
-    transition: theme.transitions.create('margin', {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
-    marginLeft: -drawerWidth,
   },
-  contentShift: {
-    transition: theme.transitions.create('margin', {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-    marginLeft: 0,
-  },
+
   toolbar: {
-    paddingRight: 24, // keep right padding when drawer closed
+    toolbar: theme.mixins.toolbar,
     background: '#8360c3',  /* fallback for old browsers */
     background: '-webkit-linear-gradient(to left, #2ebf91, #8360c3)',  /* Chrome 10-25, Safari 5.1-6 */
     background: 'linear-gradient(to left, #2ebf91, #8360c3)' /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   },
-  toolbarIcon: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'flex-end',
-    padding: '0 8px',
-    ...theme.mixins.toolbar,
-  }
+
 }))
 
     const classes = useStyles()
     const theme = useTheme();
-    const [open, setOpen] = React.useState(false);
-  
+    const [mobileOpen, setMobileOpen] = React.useState(false);
+
+    const drawer = (
+      <div>
+      <div className={classes.toolbar} />
+    <Divider />
+    <List>
+    <ListItem button component={GatsbyLink} to='/' >
+          <ListItemIcon> 
+            <InboxIcon /> 
+          </ListItemIcon>
+          <ListItemText primary='Today' />
+        </ListItem>
+          <ListItem button component={GatsbyLink} to='/tarot-cards/' >
+          <ListItemIcon> 
+            <InboxIcon /> 
+          </ListItemIcon>
+          <ListItemText primary='Tarot Cards' />
+        </ListItem>
+        <ListItem button component={GatsbyLink} to='/card-spreads/' >
+          <ListItemIcon> 
+            <InboxIcon /> 
+          </ListItemIcon>
+          <ListItemText primary='Card Spreads' />
+        </ListItem>
+    </List>  
+    </div>
+    );
       
-    function handleDrawerOpen() {
-      setOpen(true);
-    }
-  
-    function handleDrawerClose() {
-      setOpen(false);
+    function handleDrawerToggle() {
+      setMobileOpen(!mobileOpen);
     }
   
     const { site} = useStaticQuery(
@@ -129,20 +133,17 @@ siteTitle: {
     
 
     return (
-<React.Fragment>
-<AppBar
-        position="fixed"
-        className={clsx(classes.appBar, {
-          [classes.appBarShift]: open,
-        })}
-      >
+<div className={classes.root}>
+      <CssBaseline />
+      <AppBar position="fixed" className={classes.appBar}>
+
         <Toolbar  className={classes.toolbar}>
           <IconButton
             color="inherit"
             aria-label="open drawer"    
-            onClick={handleDrawerOpen}
+            onClick={handleDrawerToggle}
             edge="start"
-            className={clsx(classes.menuButton, open && classes.hide)}
+            className={classes.menuButton}
           >
             <MenuIcon/>
           </IconButton>
@@ -153,44 +154,40 @@ siteTitle: {
         </Typography>
         </Toolbar>
       </AppBar>
+      <nav className={classes.drawer} aria-label="mailbox folders">
+      <Hidden smUp implementation="css">
+
   <Drawer
-  className={classes.drawer}
-  variant="persistent"
-  anchor="left"
-  open={open}
+            container={container}
+            variant="temporary"
+  anchor={theme.direction === 'rtl' ? 'right' : 'left'}
+  open={mobileOpen}
+  onClose={handleDrawerToggle}
   classes={{
-    paper: clsx(classes.drawerPaper, !open && classes.drawerPaperClose),
+    paper: classes.drawerPaper,
+  }}
+  ModalProps={{
+    keepMounted: true, // Better open performance on mobile.
   }}
 >
-  <div className={classes.drawerHeader}>
-    <IconButton onClick={handleDrawerClose}>
-      {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
-    </IconButton>
-  </div>
-  <Divider />
-  <List>
-  <ListItem button component={GatsbyLink} to='/' >
-        <ListItemIcon> 
-          <InboxIcon /> 
-        </ListItemIcon>
-        <ListItemText primary='Today' />
-      </ListItem>
-        <ListItem button component={GatsbyLink} to='/tarot-cards/' >
-        <ListItemIcon> 
-          <InboxIcon /> 
-        </ListItemIcon>
-        <ListItemText primary='Tarot Cards' />
-      </ListItem>
-      <ListItem button component={GatsbyLink} to='/card-spreads/' >
-        <ListItemIcon> 
-          <InboxIcon /> 
-        </ListItemIcon>
-        <ListItemText primary='Card Spreads' />
-      </ListItem>
-  </List>
- 
+ {drawer}
 </Drawer>
-</React.Fragment>
+</Hidden>
+<Hidden xsDown implementation="css">
+          <Drawer
+            classes={{
+              paper: classes.drawerPaper,
+            }}
+            variant="permanent"
+            open
+          >
+            {drawer}
+          </Drawer>
+        </Hidden>
+
+</nav>
+
+</div>
     )}
 
     export default NavBar;

@@ -22,8 +22,8 @@ const [spacing, setSpacing] = React.useState(2)
   
 const useStyles = makeStyles(theme => ({
   root: {
-    display: "flex",
-
+      flexGrow: 1,
+      padding: theme.spacing(3),
   },
   paper: {
     height: 140,

@@ -16,27 +16,13 @@ const Layout = ({children}) => {
     padding: theme.spacing(3),
   
   },
-  contentShift: {
-    transition: theme.transitions.create('margin', {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-    marginLeft: 0,
-  },
-    appBar: {
-      transition: theme.transitions.create(['margin', 'width'], {
-        easing: theme.transitions.easing.sharp,
-        duration: theme.transitions.duration.leavingScreen,
-      }),
-    },
-    appBarShift: {
+   toolbar: theme.mixins.toolbar,
+   appBar: {
+    marginLeft: drawerWidth,
+    [theme.breakpoints.up('sm')]: {
       width: `calc(100% - ${drawerWidth}px)`,
-      marginLeft: drawerWidth,
-      transition: theme.transitions.create(['margin', 'width'], {
-        easing: theme.transitions.easing.easeOut,
-        duration: theme.transitions.duration.enteringScreen,
-      }),
     },
+  },
   }))
 
   const classes = useStyles()
@@ -46,19 +32,20 @@ const Layout = ({children}) => {
 
     return (
        
-      <React.Fragment>
-         <CssBaseline />
+      <div className={classes.root}>
+      <CssBaseline />
 
-      <NavBar position="absolute" className={clsx(classes.appBar, open && classes.appBarShift)}/>
+      <NavBar position="fixed" className={classes.appBar}/>
              <main
-        className={clsx(classes.content, {
-          [classes.contentShift]: open,
-        })}
-      >{children}</main> 
+        className={classes.content}
+        
+      >
+
+      {children}</main> 
 
         <footer>
         </footer>
-        </React.Fragment>
+        </div>
     )
   }
 
