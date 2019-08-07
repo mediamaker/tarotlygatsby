@@ -40,7 +40,8 @@ export default function CardSpread({ data }) {
     },
     paper: {
       padding: theme.spacing(2),
-      textAlign: 'center',
+      margin: theme.spacing(1),
+      textAlign: "center",
       color: theme.palette.text.secondary,
     },
     mainFeaturedPostBody: {
@@ -51,7 +52,7 @@ export default function CardSpread({ data }) {
     mainFeaturedPostImage: {
       marginBottom: theme.spacing(4),
       maxWidth: 430,
-      maxHeight: '100%',
+      maxHeight: "100%",
     },
 
     drawerHeader: {
@@ -64,7 +65,7 @@ export default function CardSpread({ data }) {
   }))
 
   const classes = useStyles()
-console.log(data.markdownRemark.frontmatter.thumbnail.childImageSharp.fluid)
+  console.log(data.markdownRemark.frontmatter.thumbnail.childImageSharp.fluid)
   return (
     <div>
       <SEO
@@ -72,51 +73,45 @@ console.log(data.markdownRemark.frontmatter.thumbnail.childImageSharp.fluid)
         description={data.excerpt}
         image={data.markdownRemark.frontmatter.thumbnail.childImageSharp.fluid}
       />
-
       <Layout>
-          <Container>
-            <div className={classes.drawerHeader} />
+        <Container>
+          <div className={classes.drawerHeader} />
+          <Typography
+            component="h3"
+            variant="h3"
+            className={clsx(classes.pageTitle)}
+          >
+            {data.markdownRemark.frontmatter.title}
+          </Typography>
 
-            <Typography
-              component="h3"
-              variant="h3"
-              className={clsx(classes.pageTitle)}
-            >
-              {data.markdownRemark.frontmatter.title}
-            </Typography>
-            
-         
-
-            <Grid
-              container
-              direction="column"
-              justify="flex-start"
-              alignItems="flex-start"
-              >
-              <Grid item xs={6}  style={{ width: '100%' }}>
+          <Grid
+            container spacing={3}
+            justify="flex-start"
+            alignItems="flex-start"
+          >
+            <Grid xs={12} sm={6} style={{ width: "100%" }}>
               <Paper className={classes.paper}>
-<Img 
-className={classes.mainFeaturedPostImage}
-fluid={data.markdownRemark.frontmatter.thumbnail.childImageSharp.fluid}
-/>                  </Paper>
-
-              </Grid>
-
-
-              <Grid item xs={6}>
-              <Paper className={classes.paper}>
-                  {data.markdownRemark.frontmatter.title}
-                  </Paper>
-</Grid>
+                <Img
+                  className={classes.mainFeaturedPostImage}
+                  fluid={
+                    data.markdownRemark.frontmatter.thumbnail.childImageSharp
+                      .fluid
+                  }
+                />
+              </Paper>
             </Grid>
-
-            <div
-              className={classes.mainFeaturedPostBody}
-              dangerouslySetInnerHTML={{
-                __html: data.markdownRemark.frontmatter.description,
-              }}
-            />
-          </Container>
+            <Grid itemxs={12} sm={6} >
+              <Paper className={classes.paper}>
+                <div
+                  className={classes.mainFeaturedPostBody}
+                  dangerouslySetInnerHTML={{
+                    __html: data.markdownRemark.frontmatter.description,
+                  }}
+                ></div>
+              </Paper>
+            </Grid>
+          </Grid>
+        </Container>
       </Layout>
     </div>
   )
