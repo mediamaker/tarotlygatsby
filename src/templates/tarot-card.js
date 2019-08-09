@@ -7,6 +7,7 @@ import { Container } from "@material-ui/core";
 import Paper from "@material-ui/core/Paper"
 import { makeStyles} from '@material-ui/core/styles';
 import Typography from "@material-ui/core/Typography"
+import Grid from "@material-ui/core/Grid"
 import clsx from 'clsx';
 
 export const pageQuery = graphql`
@@ -45,13 +46,11 @@ export default function TarotCard({ data }) {
   marginBottom: theme.spacing(4),
   paddingBottom: theme.spacing(2),
   fontSize: 18,
-
 },
 mainFeaturedPostImage: {
   maxWidth: 230,
   marginBottom: theme.spacing(4),
 },
-
 drawerHeader: {
   display: 'flex',
   alignItems: 'center',
@@ -59,7 +58,6 @@ drawerHeader: {
   ...theme.mixins.toolbar,
   justifyContent: 'flex-end',
 },
-
  }))
 
  const classes = useStyles()
@@ -68,16 +66,17 @@ drawerHeader: {
 
     <div>
     <SEO title={data.markdownRemark.frontmatter.title} description={data.excerpt} image={data.markdownRemark.frontmatter.thumbnail.childImageSharp.fluid} /> 
-
       <Layout>
-
         <Paper>
       <Container>
       <div className={classes.drawerHeader} />
-
       <Typography component='h2' variant='h5' className={clsx(classes.pageTitle)}>
                   {data.markdownRemark.frontmatter.title}</Typography>
+
+
+
                    <Img className={classes.mainFeaturedPostImage} fluid={data.markdownRemark.frontmatter.thumbnail.childImageSharp.fluid}/>                  
+ 
                    <Typography component='h2' variant='h4' className={clsx(classes.pageTitle)}>
                    {data.markdownRemark.frontmatter.title} Description
                      </Typography>
@@ -85,7 +84,7 @@ drawerHeader: {
           className={classes.mainFeaturedPostBody}
           dangerouslySetInnerHTML={{ __html:  data.markdownRemark.frontmatter.description} }
         />            
-                  
+      
                    <Typography component='h2' variant='h4' className={clsx(classes.pageTitle)}>
                    What does it mean when {data.markdownRemark.frontmatter.title} is pulled?
                      </Typography>

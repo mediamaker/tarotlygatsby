@@ -45,7 +45,7 @@ const Layout = ({children}) => {
       >
 
       {children}
-      <Grid container justify="center" spacing='4'>
+      <Grid container justify="center" spacing={4}>
       <Grid item xs={6}>
       <Typography component='p' style={{color:`#A8A8A8`, marginTop: 10}}>
         We aim to help our members achieve their self care goals by building empowering tools.

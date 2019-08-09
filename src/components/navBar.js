@@ -104,12 +104,7 @@ appBar: {
           </ListItemIcon>
           <ListItemText primary='Guide to Tarot Cards' />
         </ListItem>
-        <ListItem button component={GatsbyLink} to='/card-spreads/' >
-          <ListItemIcon> 
-            <InboxIcon /> 
-          </ListItemIcon>
-          <ListItemText primary='Card Spreads' />
-        </ListItem>
+
     </List>  
     </div>
     );

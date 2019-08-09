@@ -9,9 +9,6 @@ import CardActionArea from "@material-ui/core/CardActionArea"
 import CardMedia from "@material-ui/core/CardMedia"
 import Zoom from '@material-ui/core/Zoom';
 import Button from '@material-ui/core/Button';
-import CardActions from '@material-ui/core/CardActions';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
 import clsx from 'clsx';
 import IconButton from '@material-ui/core/IconButton';
 
@@ -124,7 +121,7 @@ const CardReading = () => {
       )
 
 return(
-<Zoom in='true' timeout={{enter:1300  , exit:20000 }}>
+<Zoom in={true} timeout={{enter:1300  , exit:20000 }}>
 <Card className={classes.card}>
     <CardMedia
       className={classes.media}
@@ -134,27 +131,15 @@ return(
       }
       title={allTarotCards.edges[0].node.frontmatter.title}
     />
-      <Typography
-        color="textPrimary"
-        component="h2"
-        variant='h5'
-        style={{marginTop: 10}}
-        gutterBottom
-        align='center'
-      >Daily Draw
 
-      </Typography>
-      <Button size="small" color="primary" fullWidth="true">
-          <Link to='/tarot-cards/the-fool'>Reveal Card</Link>
-        </Button>
+      <CardContent>
 
-      <CardActions> 
-      </CardActions>
-
-        <CardContent>
-          <Typography paragraph>
-          The daily draw offers high-level insight into your situation.
+      <Typography paragraph>
+           Gain insight into your situation with a one card draw.
           </Typography>
+      <Button size="small" color="primary" fullWidth="true">
+          <Link to='/tarot-cards/the-fool'>Reveal Your Card</Link>
+        </Button>
           <Typography paragraph>
           Go deeper with advanced card spreads.
           </Typography>
