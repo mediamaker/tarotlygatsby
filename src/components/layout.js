@@ -3,6 +3,9 @@ import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import NavBar from '../components/navBar';
+import Typography from "@material-ui/core/Typography"
+import Grid from "@material-ui/core/Grid"
+
 const drawerWidth = 240;
 
 const Layout = ({children}) => {
@@ -41,7 +44,15 @@ const Layout = ({children}) => {
         
       >
 
-      {children}</main> 
+      {children}
+      <Grid container justify="center" spacing='4'>
+      <Grid item xs={6}>
+      <Typography component='p' style={{color:`#A8A8A8`, marginTop: 10}}>
+        We aim to help our members achieve their self care goals by building empowering tools.
+        </Typography>
+      </Grid>
+      </Grid>
+      </main> 
 
         <footer>
         </footer>
