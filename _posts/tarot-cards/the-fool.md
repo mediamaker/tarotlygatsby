@@ -14,14 +14,23 @@ description: >-
   lies ahead or great rewards await, The Fool departs on a grand adventure,
   ready for new experiences and to begin their journey.
 meaning: >-
-  You may be about to take a leap of faith, and this card bodes well for you.
-  Remember it's never too late to open your heart and manifest your perfect
-  life.
+  The Fool represents not only the beginning of a new adventure or a new chapter
+  but also the need to take a leap of faith. The dog at the Fool's side suggests
+  faithfulness, the need to have faith in our journey. The dog can suggest that
+  your journey will be accompanied by a companion, but more often can mean a
+  spirit guide. We are reminded that we are never truly alone. The dog is also a
+  symbol of protection. The Fool card reminds us that it's never too late to
+  follow your dreams on a journey or adventure, whether you can see what lies
+  ahead or you or not.
 reversedMeaning: >-
   The reversed Fool suggests the big change you are considering may not have the
-  outcome you're expecting. Ensure you've taken time to turn over all the
-  details. Then take a deep breath and ask yourself if it's still the right
-  decision.
+  outcome you are expecting. Ensure you've taken time to turn over all the
+  details. Take a deep breath and ask yourself if it's still the right decision
+  for you. You may feel reluctant to take that leap of faith. Make sure you
+  consider all your options. On the other hand, this card reversed can indicate
+  that you are acting recklessly and are jumping into situations without fully
+  considering the consequences. It is possible to live in the moment without
+  putting yourself and others at risk.
 suit: Does Not Apply
 element: Does Not Apply
 yesOrNo: 'Yes'
