@@ -92,11 +92,13 @@ reversedMeaning: >-
   confusion. You may need to get clarity on a situation before going further
   with it. You may be struggling to see a clear way forward. It is time to ask
   yourself and others questions in order to gain the knowledge you need. Do not
-  be afraid to question things in order to gain a higher understanding. When the
-  High Priestess is reversed, you should question if your mentor is appropriate,
-  or if you are following a valuable path. The High Priestess may  be indicating
-  that it is time for secrets to be revealed, secrets held in poor faith can
-  become harmful.
+  be afraid to question things in order to gain a higher understanding. 
+
+
+  When the High Priestess is reversed, you should question if your mentor is
+  appropriate, or if you are following a valuable path. The High Priestess may 
+  be indicating that it is time for secrets to be revealed, secrets held in poor
+  faith can become harmful.
 element: Water
 yesOrNo: 'Yes'
 arcana: Major
@@ -105,6 +107,7 @@ keywords:
   - wisdom
   - spiritual world
 kaballahLetter: Gimel
+astrology: The Moon
 numerologyLink: 'XI, Justic, and XX, Judgement'
 treeOfLife: 'Third, between Kether and Tiphareth'
 chakra: >-
