@@ -10,7 +10,6 @@ import CardMedia from "@material-ui/core/CardMedia"
 import Zoom from '@material-ui/core/Zoom';
 import Button from '@material-ui/core/Button';
 import CardActions from '@material-ui/core/CardActions';
-import Collapse from '@material-ui/core/Collapse';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import clsx from 'clsx';
@@ -54,6 +53,10 @@ const CardReading = () => {
       },
       media: {
         height: 310,
+        borderRadius: 30,
+        margin: 5,
+        boxShadow: '1px 3px 3px 2px gainsboro',
+
       },
       body: {
         margin: 0,
@@ -61,8 +64,13 @@ const CardReading = () => {
 
       cardLink: {
         textDecoration: "none",
+      },
+      Typography:{
+      h2: {
+        marginTop:10,
       }
-    }))
+    }
+  }))
     
     const classes = useStyles()
     const [checked, setChecked] = React.useState(true);
@@ -130,38 +138,28 @@ return(
         color="textPrimary"
         component="h2"
         variant='h5'
+        style={{marginTop: 10}}
         gutterBottom
         align='center'
-      >Your Card
+      >Daily Draw
 
       </Typography>
       <Button size="small" color="primary" fullWidth="true">
           Reveal Card
         </Button>
 
-      <CardActions> <IconButton
-          className={clsx(classes.expand, {
-            [classes.expandOpen]: expanded,
-          })}
-          onClick={handleExpandClick}
-          aria-expanded={expanded}
-          aria-label="show more"
-        >
-
-          <ExpandMoreIcon />
-        </IconButton>
+      <CardActions> 
       </CardActions>
 
-      <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
           <Typography paragraph>
-          One card for quick insight on your situation.
+          The daily draw offers high-level insight into your situation.
           </Typography>
           <Typography paragraph>
           Go deeper with advanced card spreads.
           </Typography>
           <Button size="small" color="primary" fullWidth="true">
-          Three Card Draw
+          Past, Present, Future Spread
         </Button>
         <Button size="small" color="primary" fullWidth="true">
           Celtic Cross Spread
@@ -169,7 +167,6 @@ return(
          
 
     </CardContent>
-    </Collapse>
 </Card>
 </Zoom>
 
