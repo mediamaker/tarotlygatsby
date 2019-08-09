@@ -145,7 +145,7 @@ return(
 
       </Typography>
       <Button size="small" color="primary" fullWidth="true">
-          Reveal Card
+          <Link to='/tarot-cards/the-fool'>Reveal Card</Link>
         </Button>
 
       <CardActions> 
