@@ -157,7 +157,9 @@ const BlogIndex = () => {
                         <Typography
                           color="textPrimary"
                           component="h2"
+                          variant="h5"
                           gutterBottom
+                          style={{fontSize: 16}}
                         >
                           {post.node.frontmatter.title}
                         </Typography>

@@ -73,7 +73,7 @@ drawerHeader: {
       <Container>
       <div className={classes.drawerHeader} />
 
-      <Typography component='h3' variant='h3' className={clsx(classes.pageTitle)}>
+      <Typography component='h2' variant='h5' className={clsx(classes.pageTitle)}>
                   {data.markdownRemark.frontmatter.title}</Typography>
                    <Img className={classes.mainFeaturedPostImage} fluid={data.markdownRemark.frontmatter.thumbnail.childImageSharp.fluid}/>                  
 

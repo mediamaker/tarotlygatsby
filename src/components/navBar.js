@@ -102,7 +102,7 @@ appBar: {
           <ListItemIcon> 
             <InboxIcon /> 
           </ListItemIcon>
-          <ListItemText primary='Tarot Cards' />
+          <ListItemText primary='Guide to Tarot Cards' />
         </ListItem>
         <ListItem button component={GatsbyLink} to='/card-spreads/' >
           <ListItemIcon> 

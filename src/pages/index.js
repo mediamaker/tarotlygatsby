@@ -12,7 +12,8 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Paper from '@material-ui/core/Paper';
 import Layout from "../components/layout";
 import { Container } from "@material-ui/core";
-
+import CardReading from "../components/cardReading";
+import Box from '@material-ui/core/Box';
 
 const BlogIndex = () => {
 
@@ -23,7 +24,7 @@ const [spacing, setSpacing] = React.useState(2)
 const useStyles = makeStyles(theme => ({
   root: {
       flexGrow: 1,
-      padding: theme.spacing(3),
+      padding: theme.spacing(0),
   },
   paper: {
     height: 140,
@@ -35,6 +36,7 @@ const useStyles = makeStyles(theme => ({
   card: {
     maxWidth: 345,
     textDecoration: 'none',
+    
   },
   media: {
     height: 210,
@@ -177,6 +179,20 @@ const { site, allPosts, allTarotCards } = useStaticQuery(
       <div className={classes.root}>
 <Paper>
 <div className={classes.drawerHeader} />
+<Grid container justify="center" spacing={spacing}>
+<Grid item xs={12}>
+<Grid container justify="center" spacing={2}>
+<Grid item>
+
+<Box>
+<CardReading/>
+</Box>
+</Grid>
+        </Grid>
+</Grid>
+</Grid>
+
+
         <Grid container justify="center" spacing={spacing}>
         <Grid item xs={12}>
           <Grid container justify="center" spacing={2}>
