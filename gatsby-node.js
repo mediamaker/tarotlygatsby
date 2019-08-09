@@ -91,7 +91,7 @@ if (edge.node.fields.collection === 'blog-post'){
 
     } else if (edge.node.fields.collection === 'tarot-cards') {
       createPage({
-        path: edge.node.fields.slug,
+        path: `/tarot-cards/${_.kebabCase(edge.node.fields.slug)}/`,
         tags: edge.node.frontmatter.tags,
         component: tarotCardTemplate,
         // additional data can be passed via context

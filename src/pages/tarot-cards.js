@@ -12,6 +12,7 @@ import CardMedia from "@material-ui/core/CardMedia"
 import CssBaseline from '@material-ui/core/CssBaseline';
 
 import Layout from "../components/layout";
+const _ = require('lodash')
 
 const drawerWidth = 240;
 
@@ -144,7 +145,7 @@ const BlogIndex = () => {
               <Grid key={number} item>
                 <Card key={number} className={classes.card}>
                   <CardActionArea>
-                    <Link to={post.node.frontmatter.slug} className={classes.cardLink}>
+                    <Link to={`/tarot-cards/${_.kebabCase(post.node.frontmatter.slug)}/`} className={classes.cardLink}>
                       <CardMedia
                         className={classes.media}
                         image={
