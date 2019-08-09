@@ -10,6 +10,7 @@ import CardContent from "@material-ui/core/CardContent"
 import CardActionArea from "@material-ui/core/CardActionArea"
 import CardMedia from "@material-ui/core/CardMedia"
 import CssBaseline from '@material-ui/core/CssBaseline';
+import CardReading from "../components/cardReading"
 
 import Layout from "../components/layout";
 
@@ -133,14 +134,15 @@ const CardSpreads = () => {
         })}
       >
         <div className={classes.drawerHeader} />
-        <Typography component='h4' variant='h4'>
-          Tarot Card Spreads
-        </Typography>
+
         <Grid container justify="center" spacing={spacing}>
         <Grid item xs={12}>
           <Grid container justify="center" spacing={2}>
-            {allCardSpreads.edges.map((post, cardCount) => (
+          <CardReading />
+            {/* {allCardSpreads.edges.map((post, cardCount) => (
               <Grid key={cardCount} item>
+                                       
+
                 <Card key={cardCount} className={classes.card}>
                   <CardActionArea>
                     <Link to={post.node.frontmatter.slug} className={classes.cardLink}>
@@ -168,7 +170,7 @@ const CardSpreads = () => {
                   </CardActionArea>
                 </Card>
               </Grid>
-            ))}
+            ))} */}
           </Grid>
         </Grid>
       </Grid>

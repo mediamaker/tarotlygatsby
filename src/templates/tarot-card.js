@@ -18,6 +18,8 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         title
         description
+        meaning
+        reversedMeaning
         keywords
         number
         thumbnail {
@@ -46,7 +48,7 @@ export default function TarotCard({ data }) {
 
 },
 mainFeaturedPostImage: {
-  maxWidth: 330,
+  maxWidth: 230,
   marginBottom: theme.spacing(4),
 },
 
@@ -76,10 +78,27 @@ drawerHeader: {
       <Typography component='h2' variant='h5' className={clsx(classes.pageTitle)}>
                   {data.markdownRemark.frontmatter.title}</Typography>
                    <Img className={classes.mainFeaturedPostImage} fluid={data.markdownRemark.frontmatter.thumbnail.childImageSharp.fluid}/>                  
-
+                   <Typography component='h2' variant='h4' className={clsx(classes.pageTitle)}>
+                   {data.markdownRemark.frontmatter.title} Description
+                     </Typography>
  <div
           className={classes.mainFeaturedPostBody}
           dangerouslySetInnerHTML={{ __html:  data.markdownRemark.frontmatter.description} }
+        />            
+                  
+                   <Typography component='h2' variant='h4' className={clsx(classes.pageTitle)}>
+                   What does it mean when {data.markdownRemark.frontmatter.title} is pulled?
+                     </Typography>
+ <div
+          className={classes.mainFeaturedPostBody}
+          dangerouslySetInnerHTML={{ __html:  data.markdownRemark.frontmatter.meaning} }
+        />     
+          <Typography component='h2' variant='h4' className={clsx(classes.pageTitle)}>
+                   What does it mean when {data.markdownRemark.frontmatter.title} is pulled reversed?
+                     </Typography>
+ <div
+          className={classes.mainFeaturedPostBody}
+          dangerouslySetInnerHTML={{ __html:  data.markdownRemark.frontmatter.reversedMeaning} }
         />            
           </Container>
         </Paper>
