@@ -10,8 +10,11 @@ import CardMedia from "@material-ui/core/CardMedia"
 import Button from '@material-ui/core/Button';
 import clsx from 'clsx';
 import IconButton from '@material-ui/core/IconButton';
+import EmailSignupForm from '../components/emailSignupForm'
+import {kebabCase} from "lodash";
 
 const CardReading = () => {
+  const _ = require('lodash')
 
   const [expanded, setExpanded] = React.useState(false);
 
@@ -40,13 +43,13 @@ const CardReading = () => {
       },
 
       card: {
-        width: 295,
+        width: 345,
         textDecoration: 'none',
         padding: theme.spacing(0),
 
       },
       media: {
-        height: 310,
+        height: 370,
         borderRadius: 30,
         margin: 5,
         boxShadow: '1px 3px 3px 2px gainsboro',
@@ -93,7 +96,6 @@ const CardReading = () => {
               filter: { fileAbsolutePath: { regex: "/_posts/tarot-cards/" } }
               sort: { fields: [frontmatter___date], order: DESC }
             ) {
-              totalCount
               edges {
                 node {
                   id
@@ -116,33 +118,33 @@ const CardReading = () => {
           }
         `
       )
+      var randomNumber = Math.floor(Math.random() * 3) ;
 
 return(
 <Card className={classes.card}>
     <CardMedia
       className={classes.media}
       image={
-        allFile.edges[0].node.childImageSharp.fluid
+        allTarotCards.edges[randomNumber].node.frontmatter.thumbnail.childImageSharp.fluid
           .src
       }
-      title={allTarotCards.edges[0].node.frontmatter.title}
+      title={allTarotCards.edges[randomNumber].node.frontmatter.title}
     />
-
-      <CardContent>
-
-      <Typography paragraph>
-           Gain insight into your situation with a one card draw.
+      <Typography component='h6' variant='h6' align='center'>
+           Your card is {allTarotCards.edges[randomNumber].node.frontmatter.title}
           </Typography>
-      <Button size="small" color="primary" fullWidth="true">
-          <Link to='/tarot-cards/the-fool'>Reveal Your Card</Link>
+      <CardContent>
+      <Button size="small" color="primary" fullWidth={true}>
+      <Link to={`/tarot-cards/${kebabCase(allTarotCards.edges[randomNumber].node.frontmatter.slug)}`}>What does {allTarotCards.edges[randomNumber].node.frontmatter.title} signify?</Link>
         </Button>
           <Typography paragraph>
-          Go deeper with advanced card spreads.
+          Go deeper with advanced card spreads coming soon. Signup to be the first to use it.
           </Typography>
-          <Button size="small" color="primary" fullWidth="true">
+          <EmailSignupForm/>
+          <Button size="small" color="primary" fullWidth={true}>
           Past, Present, Future Spread
         </Button>
-        <Button size="small" color="primary" fullWidth="true">
+        <Button size="small" color="primary" fullWidth={true}>
           Celtic Cross Spread
         </Button>
          

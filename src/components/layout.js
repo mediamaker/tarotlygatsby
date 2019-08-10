@@ -16,7 +16,7 @@ const Layout = ({children}) => {
   },
   content: {
     flexGrow: 1,
-    padding: theme.spacing(3),
+    padding: theme.spacing(0),
   
   },
    toolbar: theme.mixins.toolbar,
@@ -47,8 +47,8 @@ const Layout = ({children}) => {
       {children}
       <Grid container justify="center" spacing={4}>
       <Grid item xs={6}>
-      <Typography component='p' style={{color:`#A8A8A8`, marginTop: 10}}>
-        We aim to help our members achieve their self care goals by building empowering tools.
+      <Typography component='p' style={{color:`#A8A8A8`, marginTop: 10, fontSize:12}}>
+        Our mission is to help our members achieve their self care goals by building powerful tools.
         </Typography>
       </Grid>
       </Grid>

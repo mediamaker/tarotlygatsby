@@ -94,6 +94,7 @@ if (edge.node.fields.collection === 'blog-post'){
         path: `/tarot-cards/${_.kebabCase(edge.node.fields.slug)}/`,
         tags: edge.node.frontmatter.tags,
         component: tarotCardTemplate,
+        pathPrefix: edge.node.fields.collection, 
         // additional data can be passed via context
         context: {
           id: edge.node.id,
@@ -101,9 +102,10 @@ if (edge.node.fields.collection === 'blog-post'){
       });
     } else if (edge.node.fields.collection === 'card-spreads') {
       createPage({
-        path: edge.node.fields.slug,
+        path: `/card-spreads/${_.kebabCase(edge.node.fields.slug)}/`,
         tags: edge.node.frontmatter.tags,
         component: cardSpreadTemplate,
+        pathPrefix: edge.node.fields.collection, 
         // additional data can be passed via context
         context: {
           id: edge.node.id,
