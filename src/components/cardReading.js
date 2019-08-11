@@ -10,12 +10,12 @@ import Button from '@material-ui/core/Button';
 import clsx from 'clsx';
 import IconButton from '@material-ui/core/IconButton';
 import Chip from '@material-ui/core/Chip';
-import EmailSignupForm from '../components/emailSignupForm'
 import {kebabCase} from "lodash";
 
 const CardReading = () => {
   
-  const [chipData, setChipData] = React.useState([{ }]);
+  const [chipData, setChipData] = React.useState([    { key: 0, label: 'Angular' },
+]);
   
   const _ = require('lodash')
   const [expanded, setExpanded] = React.useState(false);
@@ -135,32 +135,30 @@ return(
       }
       title={selectedCard.frontmatter.title}
     />
+
+      <CardContent>
       <Typography component='h6' variant='h6' align='center'>
            Your quick draw card is {selectedCard.frontmatter.title}
           </Typography>
-      <CardContent>
+      {selectedCard.frontmatter.keywords.map(keyword => {
+        return(
+          <Chip color="primary"
+          key={keyword.id}
+          label={keyword}
+          className={classes.chip}
+        />
+        )
+      })}
+
       <Button size="small" color="primary" fullWidth={true}>
       <Link to={`/tarot-cards/${kebabCase(selectedCard.frontmatter.slug)}`}>What does {selectedCard.frontmatter.title} signify?</Link>
         </Button>
         <Button size="small" color="primary" fullWidth={true}>
       <Link to="/">Draw another Card</Link>
         </Button>
-            {/* <Typography paragraph>
-            Go deeper with advanced card spreads coming soon. Signup to be the first to use it.
-            </Typography>
-            <EmailSignupForm/>
-            <Button size="small" color="primary" fullWidth={true}>
-            Past, Present, Future Spread
-          </Button>
-          <Button size="small" color="primary" fullWidth={true}>
-            Celtic Cross Spread
-          </Button>
-            */}
 
     </CardContent>
 </Card>
-
-
 )
 }
 export default CardReading
