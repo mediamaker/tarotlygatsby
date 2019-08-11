@@ -140,10 +140,11 @@ return(
       <Typography component='h6' variant='h6' align='center'>
            Your quick draw card is {selectedCard.frontmatter.title}
           </Typography>
-      {selectedCard.frontmatter.keywords.map(keyword => {
+          
+      {selectedCard.frontmatter.keywords.map((keyword, i) => {
         return(
           <Chip color="primary"
-          key={keyword.id}
+          key={i}
           label={keyword}
           className={classes.chip}
         />
