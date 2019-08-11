@@ -65,7 +65,7 @@ drawerHeader: {
   return (
 
     <div>
-    <SEO title={data.markdownRemark.frontmatter.title} description={data.excerpt} image={data.markdownRemark.frontmatter.thumbnail.childImageSharp.fluid} /> 
+    <SEO title={data.markdownRemark.frontmatter.title + " tarot card"} description={data.markdownRemark.frontmatter.description} image={data.markdownRemark.frontmatter.thumbnail.childImageSharp.fluid} /> 
       <Layout>
         <Paper>
       <Container>
