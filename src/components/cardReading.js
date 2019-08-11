@@ -14,7 +14,7 @@ import {kebabCase} from "lodash";
 
 const CardReading = () => {
   
-  const [chipData, setChipData] = React.useState([    { key: 0, label: 'Angular' },
+  const [chipData, setChipData] = React.useState([    { key: 0, label: 'Spirituality' },
 ]);
   
   const _ = require('lodash')
