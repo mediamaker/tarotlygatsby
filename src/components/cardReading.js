@@ -1,4 +1,3 @@
-
 import React, { useState } from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import Typography from "@material-ui/core/Typography"
@@ -10,12 +9,15 @@ import CardMedia from "@material-ui/core/CardMedia"
 import Button from '@material-ui/core/Button';
 import clsx from 'clsx';
 import IconButton from '@material-ui/core/IconButton';
+import Chip from '@material-ui/core/Chip';
 import EmailSignupForm from '../components/emailSignupForm'
 import {kebabCase} from "lodash";
 
 const CardReading = () => {
+  
+  const [chipData, setChipData] = React.useState([{ }]);
+  
   const _ = require('lodash')
-
   const [expanded, setExpanded] = React.useState(false);
 
   function handleExpandClick() {
@@ -41,7 +43,9 @@ const CardReading = () => {
         height: 140,
         width: 100,
       },
-
+      chip: {
+        margin: theme.spacing(0.5),
+      },
       card: {
         width: 345,
         textDecoration: 'none',
@@ -102,6 +106,7 @@ const CardReading = () => {
                   excerpt
                   frontmatter {
                     title
+                    keywords
                     slug
                     date(formatString: "DD MMMM YYYY")
                     thumbnail {
@@ -119,35 +124,38 @@ const CardReading = () => {
         `
       )
       var randomNumber = Math.floor(Math.random() * 3) ;
-
+let selectedCard = allTarotCards.edges[randomNumber].node
 return(
 <Card className={classes.card}>
     <CardMedia
       className={classes.media}
       image={
-        allTarotCards.edges[randomNumber].node.frontmatter.thumbnail.childImageSharp.fluid
+        selectedCard.frontmatter.thumbnail.childImageSharp.fluid
           .src
       }
-      title={allTarotCards.edges[randomNumber].node.frontmatter.title}
+      title={selectedCard.frontmatter.title}
     />
       <Typography component='h6' variant='h6' align='center'>
-           Your card is {allTarotCards.edges[randomNumber].node.frontmatter.title}
+           Your quick draw card is {selectedCard.frontmatter.title}
           </Typography>
       <CardContent>
       <Button size="small" color="primary" fullWidth={true}>
-      <Link to={`/tarot-cards/${kebabCase(allTarotCards.edges[randomNumber].node.frontmatter.slug)}`}>What does {allTarotCards.edges[randomNumber].node.frontmatter.title} signify?</Link>
-        </Button>
-          <Typography paragraph>
-          Go deeper with advanced card spreads coming soon. Signup to be the first to use it.
-          </Typography>
-          <EmailSignupForm/>
-          <Button size="small" color="primary" fullWidth={true}>
-          Past, Present, Future Spread
+      <Link to={`/tarot-cards/${kebabCase(selectedCard.frontmatter.slug)}`}>What does {selectedCard.frontmatter.title} signify?</Link>
         </Button>
         <Button size="small" color="primary" fullWidth={true}>
-          Celtic Cross Spread
+      <Link to="/">Draw another Card</Link>
         </Button>
-         
+            {/* <Typography paragraph>
+            Go deeper with advanced card spreads coming soon. Signup to be the first to use it.
+            </Typography>
+            <EmailSignupForm/>
+            <Button size="small" color="primary" fullWidth={true}>
+            Past, Present, Future Spread
+          </Button>
+          <Button size="small" color="primary" fullWidth={true}>
+            Celtic Cross Spread
+          </Button>
+            */}
 
     </CardContent>
 </Card>
