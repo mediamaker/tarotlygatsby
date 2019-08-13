@@ -53,7 +53,7 @@ const CardReading = () => {
 
       },
       media: {
-        height: 410,
+        height: 480,
         borderRadius: 30,
         margin: 5,
         boxShadow: '1px 3px 3px 2px gainsboro',
