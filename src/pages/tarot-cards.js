@@ -19,7 +19,7 @@ const drawerWidth = 240;
 const useStyles = makeStyles(theme => ({
   root: {
     display: "flex",
-
+    margin:10,
   },
   paper: {
     height: 140,
@@ -46,11 +46,6 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'flex-end',
   },
 
-  stickToBottom: {
-    width: "100%",
-    position: "fixed",
-    bottom: 0,
-  },
   appBar: {
     transition: theme.transitions.create(['margin', 'width'], {
       easing: theme.transitions.easing.sharp,
@@ -135,9 +130,7 @@ const BlogIndex = () => {
         })}
       >
         <div className={classes.drawerHeader} />
-        <Typography component='h4' variant='h4'>
-          Tarot Cards
-        </Typography>
+
         <Grid container justify="center" spacing={spacing}>
         <Grid item xs={12}>
           <Grid container justify="center" spacing={2}>

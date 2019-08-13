@@ -30,7 +30,7 @@ collections:
       - {label: "Arcana", name: "arcana", widget: "select", options: ["Major", "Minor", "Does Not Apply"] , required: false}
       - {label: "Keywords [tags]", name: "keywords", widget: "list" , required: false}
       - {label: "Kaballah Letter", name: "kaballahLetter", widget: "string" , required: false} 
-      - {label: "Astrology", name: "astrology", widget: "select", options: ["The Moon","Aquarius", "Mercury", "Pisces", "Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius", "Capricorn", "Uranus", "Venus"] , required: false}
+      - {label: "Astrology", name: "astrology", widget: "select", options: ["The Moon","Aquarius", "Mercury", "Pisces", "Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius", "Capricorn", "Uranus", "Venus", "Neptune", "Mars", "The Sun", "Pluto", "Saturn"] , required: false}
       - {label: "Numerology Link", name: "numerologyLink", widget: "string"}
       - {label: "Tree of Life Pathway", name: "treeOfLife", widget: "string" , required: false}
       - {label: "Chakra", name: "chakra", widget: "string"}

@@ -53,7 +53,7 @@ const CardReading = () => {
 
       },
       media: {
-        height: 370,
+        height: 410,
         borderRadius: 30,
         margin: 5,
         boxShadow: '1px 3px 3px 2px gainsboro',
@@ -123,7 +123,7 @@ const CardReading = () => {
           }
         `
       )
-      var randomNumber = Math.floor(Math.random() * 3) ;
+      var randomNumber = Math.floor(Math.random() * 22-1) ;
 let selectedCard = allTarotCards.edges[randomNumber].node
 return(
 <Card className={classes.card}>
