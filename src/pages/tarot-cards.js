@@ -32,7 +32,7 @@ const useStyles = makeStyles(theme => ({
     width: 150,
   },
   media: {
-    height: 190,
+    height: 250,
   },
   body: {
     margin: 0,
