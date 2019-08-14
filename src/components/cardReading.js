@@ -100,6 +100,7 @@ const CardReading = () => {
               filter: { fileAbsolutePath: { regex: "/_posts/tarot-cards/" } }
               sort: { fields: [frontmatter___date], order: DESC }
             ) {
+              totalCount
               edges {
                 node {
                   id
@@ -123,7 +124,8 @@ const CardReading = () => {
           }
         `
       )
-      var randomNumber = Math.floor(Math.random() * 22-1) ;
+      console.log(allTarotCards.totalCount)
+var randomNumber = Math.floor(Math.random() * 22-1) ;
 let selectedCard = allTarotCards.edges[randomNumber].node
 return(
 <Card className={classes.card}>
