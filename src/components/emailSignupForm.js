@@ -43,14 +43,9 @@ const EmailSignupForm = () => {
         <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
       </p>
 
-      <TextField
-        id="email"
-        label="Email"
-        className={classes.textField}
-        value={values.email}
-        onChange={handleChange('email')}
-        margin="normal"
-      />
+      <p>
+    <label>Your Email: <input type="email" name="email" /></label>
+  </p>
       <p>
         
       <Button variant="contained" color="primary" className={classes.button} type="submit">
