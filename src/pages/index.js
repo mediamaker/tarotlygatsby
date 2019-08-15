@@ -59,7 +59,7 @@ const BlogIndex = () => {
         }
         heroImage: file(relativePath: { eq: "tarot-card-reading-with-crystals.jpg" }) {
           childImageSharp {
-            fluid(maxWidth: 400, maxHeight: 250) {
+            fluid(maxWidth: 880) {
               ...GatsbyImageSharpFluid
             }
           }
