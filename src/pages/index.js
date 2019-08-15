@@ -1,5 +1,6 @@
 import React, { useState } from "react"
-import { useStaticQuery, graphql, Link } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
 import SEO from "../components/seo"
 import Typography from "@material-ui/core/Typography"
 import { makeStyles } from "@material-ui/core/styles"
@@ -46,7 +47,7 @@ const BlogIndex = () => {
 
   const classes = useStyles()
 
-  const { site, allPosts, allTarotCards } = useStaticQuery(
+  const { site, allPosts, allTarotCards, heroImage } = useStaticQuery(
     graphql`
       query {
         site {
@@ -54,6 +55,13 @@ const BlogIndex = () => {
             title
             description
             thumbnail
+          }
+        }
+        heroImage: file(relativePath: { eq: "tarot-card-reading-with-crystals.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 400, maxHeight: 250) {
+              ...GatsbyImageSharpFluid
+            }
           }
         }
         allPosts: allMarkdownRemark(
@@ -110,7 +118,7 @@ const BlogIndex = () => {
   )
 
   return (
-    <React.Fragment>
+    <div>
       <SEO title={site.siteMetadata.title} description={site.siteMetadata.description} image={site.siteMetadata.thumbnail} />
       <Layout>
         <Container>
@@ -136,11 +144,12 @@ const BlogIndex = () => {
 
                 </Grid>
               </Grid>
-             
+              <Img fluid={heroImage.childImageSharp.fluid}></Img>
+
           </div>
         </Container>
       </Layout>
-    </React.Fragment>
+    </div>
   )
 }
 

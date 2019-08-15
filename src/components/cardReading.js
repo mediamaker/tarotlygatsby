@@ -18,12 +18,7 @@ const CardReading = () => {
 ]);
   
   const _ = require('lodash')
-  const [expanded, setExpanded] = React.useState(false);
 
-  function handleExpandClick() {
-    setExpanded(!expanded);
-  }
- 
 
     const useStyles = makeStyles(theme => ({
       root: {
@@ -85,17 +80,7 @@ const CardReading = () => {
                 description
               }
             }
-            allFile(filter: {name: {eq: "card-back"}}) {
-              edges {
-                  node {
-                    childImageSharp {
-                      fluid(maxWidth: 630) {
-                        ...GatsbyImageSharpFluid
-                       }
-                    }
-                  }
-                }
-              }
+            
             allTarotCards: allMarkdownRemark(
               filter: { fileAbsolutePath: { regex: "/_posts/tarot-cards/" } }
               sort: { fields: [frontmatter___date], order: DESC }

@@ -72,7 +72,7 @@ const useStyles = makeStyles(theme => ({
 
 }))
 
-const BlogIndex = () => {
+const TarotCardIndex = () => {
 
   const { site, allTarotCards } = useStaticQuery(
     graphql`
@@ -185,4 +185,4 @@ const BlogIndex = () => {
   )
 }
 
-export default BlogIndex
+export default TarotCardIndex
