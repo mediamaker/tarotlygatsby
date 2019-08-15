@@ -116,11 +116,11 @@ const BlogIndex = () => {
   const classes = useStyles()
 
   const [open, setOpen] = React.useState(false);
-  const pageTitle = `Uncover the mysteries of the Tarot with accurate descriptions for all 22 Tarot cards of the Major Arcana. Learn what each card means when it's drawn, including reversals.`
+  const pageDescription = `Uncover the mysteries of the Tarot with accurate descriptions for all 22 Tarot cards of the Major Arcana. Learn what each card means when it's drawn, including reversals.`
 
   return (
     <React.Fragment>
-      <SEO title={pageTitle} />
+      <SEO title={`Guide to Tarot Cards`} description={pageDescription} />
       <Layout>
       <div className={classes.root}>
       <CssBaseline />
@@ -136,7 +136,7 @@ const BlogIndex = () => {
           Major Arcana Tarot Cards
           </Typography>
         <Typography component="body">
-          {pageTitle}
+          {pageDescription}
           </Typography>
         <Grid container justify="center" spacing={spacing}>
         <Grid item xs={12}>

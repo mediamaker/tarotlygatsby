@@ -27,7 +27,6 @@ exports.createPages = ({ actions, graphql }) => {
   const blogPostTemplate = path.resolve("./src/templates/blog-post.js")
   const tarotCardTemplate = path.resolve("./src/templates/tarot-card.js")
   const tagTemplate = path.resolve("./src/templates/tags.js")
-  const cardSpreadTemplate = path.resolve("./src/templates/card-spreads.js")
 
 
   return graphql(`
@@ -100,18 +99,7 @@ if (edge.node.fields.collection === 'blog-post'){
           id: edge.node.id,
         },
       });
-    } else if (edge.node.fields.collection === 'card-spreads') {
-      createPage({
-        path: `/card-spreads/${_.kebabCase(edge.node.fields.slug)}/`,
-        tags: edge.node.frontmatter.tags,
-        component: cardSpreadTemplate,
-        pathPrefix: edge.node.fields.collection, 
-        // additional data can be passed via context
-        context: {
-          id: edge.node.id,
-        },
-      });
-    }
+    } 
     
     })
 

@@ -73,12 +73,13 @@ appBar: {
     flexGrow: 1,
     padding: theme.spacing(3),
   },
-
+  
   toolbar: {
     toolbar: theme.mixins.toolbar,
-    background: '#8360c3',  /* fallback for old browsers */
-    background: '-webkit-linear-gradient( 90.5deg,  rgba(0,128,128,1) 8.5%, rgba(174,206,100,1) 118.2% );',  /* Chrome 10-25, Safari 5.1-6 */
-    background: 'linear-gradient( 90.5deg,  rgba(0,128,128,1) 8.5%, rgba(174,206,100,1) 118.2% );' /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: `#373B44;`,  /* fallback for old browsers */
+    background: `-webkit-linear-gradient(to right, #4286f4, #373B44);`,  /* Chrome 10-25, Safari 5.1-6 */
+    background: `linear-gradient(to right, #4286f4, #373B44);` /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   },
 
 }))

@@ -55,13 +55,6 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: `card-spreads`,
-        path: `${__dirname}/_posts/card-spreads/`,
-      }
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
         name: `blog-post`,
         path: `${__dirname}/_posts/posts/`,
       },

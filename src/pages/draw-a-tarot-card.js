@@ -21,7 +21,7 @@ const DrawATarotCard = () => {
     
   return (
     <div>
-    <SEO title={`Quick insight on your situation  or get a 'yes' or 'no' answer with a simple one card tarot card draw.`} />
+    <SEO title={`Draw a tarot card`} description={`Quick insight on your situation  or get a 'yes' or 'no' answer with a simple one card tarot card draw.`} />
     <Layout>
     <div className={classes.drawerHeader} />
     <Typography variant='body' component='h1'>

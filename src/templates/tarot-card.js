@@ -70,7 +70,7 @@ drawerHeader: {
         <Paper>
       <Container>
       <div className={classes.drawerHeader} />
-      <Typography component='h2' variant='h5' className={clsx(classes.pageTitle)}>
+      <Typography component='h1' variant='h5' className={clsx(classes.pageTitle)}>
                   {data.markdownRemark.frontmatter.title}</Typography>
 
 
