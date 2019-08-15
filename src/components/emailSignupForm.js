@@ -48,8 +48,8 @@ const EmailSignupForm = () => {
   </p>
       <p>
         
-      <Button variant="contained" color="primary" className={classes.button} type="submit">
-Submit      </Button>
+      <button type="submit">Send</button>
+
 
       </p>
     </form>
