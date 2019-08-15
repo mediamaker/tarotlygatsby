@@ -14,9 +14,6 @@ const EmailSignupForm = () => {
     button: {
       margin: theme.spacing(1),
     },
-    input: {
-      display: 'none',
-    },
     container: {
       display: 'flex',
       flexWrap: 'wrap',
@@ -30,15 +27,13 @@ const EmailSignupForm = () => {
     
   });
 
-  const handleChange = email => event => {
-    setValues({ ...values, [email]: event.target.value });
-  };
+
 
     return (
 <React.Fragment>
       <h3>Get Started</h3>
       <form name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true">
-  <p class="hidden">
+  <p class={classes.hidden}>
     <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
   </p>
   <p>
