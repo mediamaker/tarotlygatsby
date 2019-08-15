@@ -116,10 +116,11 @@ const BlogIndex = () => {
   const classes = useStyles()
 
   const [open, setOpen] = React.useState(false);
-  
+  const pageTitle = `Uncover the mysteries of the Tarot with accurate descriptions for all 22 Tarot cards of the Major Arcana. Learn what each card means when it's drawn, including reversals.`
+
   return (
     <React.Fragment>
-      <SEO title={site.siteMetadata.title} />
+      <SEO title={pageTitle} />
       <Layout>
       <div className={classes.root}>
       <CssBaseline />
@@ -131,6 +132,12 @@ const BlogIndex = () => {
       >
         <div className={classes.drawerHeader} />
 
+        <Typography variant="h5" component="h1">
+          Major Arcana Tarot Cards
+          </Typography>
+        <Typography component="body">
+          {pageTitle}
+          </Typography>
         <Grid container justify="center" spacing={spacing}>
         <Grid item xs={12}>
           <Grid container justify="center" spacing={2}>
