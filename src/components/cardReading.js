@@ -125,7 +125,7 @@ const CardReading = () => {
         `
       )
       console.log(allTarotCards.totalCount)
-var randomNumber = Math.floor(Math.random() * 22-1) ;
+var randomNumber = Math.floor(Math.random() * allTarotCards.totalCount) ;
 let selectedCard = allTarotCards.edges[randomNumber].node
 return(
 <Card className={classes.card}>

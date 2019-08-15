@@ -168,7 +168,7 @@ const BlogIndex = () => {
 
   return (
     <React.Fragment>
-      <SEO title={site.siteMetadata.title} />
+      <SEO title={site.siteMetadata.title} description={site.siteMetadata.description} />
       <Layout>
         <Container>
           <div className={classes.root}>

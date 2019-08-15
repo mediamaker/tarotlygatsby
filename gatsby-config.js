@@ -12,9 +12,10 @@ var netlifyCmsPaths = {
 module.exports = {
   siteMetadata: {
     title: `Tarotly self care`,
-    author: `John and Lee-Ana`,
-    description: `Our mission is to help our members achieve their self care and mindful living goals with tools to succeed across mobile, desktop and voice assistants.`,
+    author: `John Cozen`,
+    description: `Our mission is to help our members achieve their self care and mindful living goals by developing tools to help them succeed.`,
     siteUrl: `https://tarotly.net`,
+    thumbnail: `https://tarotly.net/static/33c86f394a3d032ee166a6f4b9ec3e01/f4ab0/woman-with-tarot-cards.jpg`,
     social: {
       twitter: `tarotly1`,
     },
