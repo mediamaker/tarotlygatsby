@@ -9,14 +9,14 @@ import CardContent from "@material-ui/core/CardContent"
 import CardActionArea from "@material-ui/core/CardActionArea"
 import CardMedia from "@material-ui/core/CardMedia"
 import CssBaseline from "@material-ui/core/CssBaseline"
+import Paper from "@material-ui/core/Paper"
 import Layout from "../components/layout"
 import { Container } from "@material-ui/core"
 import CardReading from "../components/cardReading"
 import Box from "@material-ui/core/Box"
 import EmailSignupForm from "../components/emailSignupForm"
-import TextField from '@material-ui/core/TextField';
 
-const BlogIndex = () => {
+const Blog = () => {
   const drawerWidth = 240
 
   const [spacing, setSpacing] = React.useState(2)
@@ -24,24 +24,57 @@ const BlogIndex = () => {
   const useStyles = makeStyles(theme => ({
     root: {
       flexGrow: 1,
+      padding: theme.spacing(3),
     },
     paper: {
-      padding: theme.spacing(2),
-      textAlign: 'center',
-      color: theme.palette.text.secondary,
+      height: 140,
+      width: 100,
     },
-
     control: {
       padding: theme.spacing(2),
     },
     card: {
-
+      maxWidth: 345,
       textDecoration: "none",
     },
     media: {
       height: 210,
     },
-
+    body: {
+      margin: 0,
+    },
+    stickToBottom: {
+      width: "100%",
+      position: "fixed",
+      bottom: 0,
+    },
+    appBar: {
+      transition: theme.transitions.create(["margin", "width"], {
+        easing: theme.transitions.easing.sharp,
+        duration: theme.transitions.duration.leavingScreen,
+      }),
+    },
+    appBarShift: {
+      width: `calc(100% - ${drawerWidth}px)`,
+      marginLeft: drawerWidth,
+      transition: theme.transitions.create(["margin", "width"], {
+        easing: theme.transitions.easing.easeOut,
+        duration: theme.transitions.duration.enteringScreen,
+      }),
+    },
+    menuButton: {
+      marginRight: theme.spacing(2),
+    },
+    hide: {
+      display: "none",
+    },
+    drawer: {
+      width: drawerWidth,
+      flexShrink: 0,
+    },
+    drawerPaper: {
+      width: drawerWidth,
+    },
     drawerHeader: {
       display: "flex",
       alignItems: "center",
@@ -49,8 +82,25 @@ const BlogIndex = () => {
       ...theme.mixins.toolbar,
       justifyContent: "flex-end",
     },
-   
-  
+    content: {
+      flexGrow: 1,
+      padding: theme.spacing(3),
+      transition: theme.transitions.create("margin", {
+        easing: theme.transitions.easing.sharp,
+        duration: theme.transitions.duration.leavingScreen,
+      }),
+      marginLeft: -drawerWidth,
+    },
+    contentShift: {
+      transition: theme.transitions.create("margin", {
+        easing: theme.transitions.easing.easeOut,
+        duration: theme.transitions.duration.enteringScreen,
+      }),
+      marginLeft: 0,
+    },
+    cardLink: {
+      textDecoration: "none",
+    },
   }))
 
   const classes = useStyles()
@@ -124,28 +174,49 @@ const BlogIndex = () => {
       <Layout>
         <Container>
           <div className={classes.root}>
+            <Paper>
               <div className={classes.drawerHeader} />
+             
               <Grid container justify="center" spacing={spacing}>
-                  <Grid item xs={12} md={9}>
-                  <Typography variant='h6' component='h1'>
-                        
-                        </Typography>
-                        <Typography variant='body' component='h1'>
-                         Grow your tarot card practice 
-                        </Typography>
-                        <Typography variant='body'>
-
-                        Our mission at Tarotly is to help our members acheive their self care goals and to do that we need to develop the absolute best tools and services to help you grow your tarot card practice.
-                        </Typography>
-
-                        <Typography variant='body'>
-                          We are asking for your help to make Tarotly the best service possible. Join thousands of tarot card enthusiasts and intuitives in building the tarot card platform you don't want to live without.
-                        </Typography>
-               <EmailSignupForm/>
-
+                <Grid item xs={12}>
+                  <Grid container justify="center" spacing={2}>
+                    {allPosts.edges.map((post, index) => (
+                      <Grid key={index} item>
+                        <Card key={index} className={classes.card}>
+                          <CardActionArea>
+                            <Link
+                              to={post.node.frontmatter.slug}
+                              className={classes.cardLink}
+                            >
+                              <CardMedia
+                                className={classes.media}
+                                image={
+                                  post.node.frontmatter.thumbnail
+                                    .childImageSharp.fluid.src
+                                }
+                                title={post.node.frontmatter.title}
+                              />
+                              <CardContent>
+                                <Typography
+                                  color="textPrimary"
+                                  component="h2"
+                                  gutterBottom
+                                >
+                                  {post.node.frontmatter.title}
+                                </Typography>
+                                <Typography variant="body2" component="p">
+                                  {post.node.excerpt}
+                                </Typography>
+                              </CardContent>
+                            </Link>
+                          </CardActionArea>
+                        </Card>
+                      </Grid>
+                    ))}
+                  </Grid>
                 </Grid>
               </Grid>
-             
+            </Paper>
           </div>
         </Container>
       </Layout>
@@ -153,4 +224,4 @@ const BlogIndex = () => {
   )
 }
 
-export default BlogIndex
+export default Blog

@@ -157,7 +157,7 @@ return(
       <Link to={`/tarot-cards/${kebabCase(selectedCard.frontmatter.slug)}`}>What does {selectedCard.frontmatter.title} signify?</Link>
         </Button>
         <Button size="small" color="primary" fullWidth={true}>
-      <Link to="/">Draw another Card</Link>
+      <Link to="/draw-a-tarot-card/">Draw another Card</Link>
         </Button>
 
     </CardContent>

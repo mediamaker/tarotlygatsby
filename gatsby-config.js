@@ -11,7 +11,7 @@ var netlifyCmsPaths = {
 
 module.exports = {
   siteMetadata: {
-    title: `Tarotly self care`,
+    title: `Tarotly: Grow your Tarot Card practice`,
     author: `John Cozen`,
     description: `Our mission is to help our members achieve their self care and mindful living goals by developing tools to help them succeed.`,
     siteUrl: `https://tarotly.net`,

@@ -96,13 +96,25 @@ appBar: {
           <ListItemIcon> 
             <InboxIcon /> 
           </ListItemIcon>
-          <ListItemText primary='Today' />
+          <ListItemText primary='Home' />
         </ListItem>
-          <ListItem button component={GatsbyLink} to='/tarot-cards/' >
+          <ListItem button component={GatsbyLink} to='/draw-a-tarot-card/' >
           <ListItemIcon> 
             <InboxIcon /> 
           </ListItemIcon>
-          <ListItemText primary='Guide to Tarot Cards' />
+          <ListItemText primary='Draw a Tarot Card' />
+        </ListItem>
+        <ListItem button component={GatsbyLink} to='/tarot-cards/' >
+          <ListItemIcon> 
+            <InboxIcon /> 
+          </ListItemIcon>
+          <ListItemText primary='Tarot Card Guide' />
+        </ListItem>
+        <ListItem button component={GatsbyLink} to='/blog/' >
+          <ListItemIcon> 
+            <InboxIcon /> 
+          </ListItemIcon>
+          <ListItemText primary='Blog' />
         </ListItem>
 
     </List>  
@@ -144,7 +156,7 @@ appBar: {
           </IconButton>
           <Typography variant="h6">
           <Link component={GatsbyLink} className={classes.siteTitle} to="/">
-          {site.siteMetadata.title}
+          {`Tarotly`}
           </Link>
         </Typography>
         </Toolbar>
