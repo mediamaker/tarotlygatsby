@@ -37,7 +37,7 @@ const EmailSignupForm = () => {
     <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
   </p>
   <p>
-    <label>Email: <input type="text" name="email" /></label>
+    <label>Email: <input type="email" name="email" /></label>
   </p>
 
   <p>
