@@ -12,11 +12,15 @@ import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+import AppsIcon from '@material-ui/icons/Apps';
+import QuestionAnswerIcon from '@material-ui/icons/QuestionAnswer';
+import PhotoAlbumIcon from '@material-ui/icons/PhotoAlbum';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
+import FaceIcon from '@material-ui/icons/Face';
 import MailIcon from '@material-ui/icons/Mail';
 import Hidden from '@material-ui/core/Hidden';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -95,25 +99,25 @@ appBar: {
     <List>
     <ListItem button component={GatsbyLink} to='/' >
           <ListItemIcon> 
-            <InboxIcon /> 
+            <FaceIcon /> 
           </ListItemIcon>
           <ListItemText primary='Home' />
         </ListItem>
           <ListItem button component={GatsbyLink} to='/draw-a-tarot-card/' >
           <ListItemIcon> 
-            <InboxIcon /> 
+            <PhotoAlbumIcon /> 
           </ListItemIcon>
           <ListItemText primary='Draw a Tarot Card' />
         </ListItem>
         <ListItem button component={GatsbyLink} to='/tarot-cards/' >
           <ListItemIcon> 
-            <InboxIcon /> 
+            <AppsIcon /> 
           </ListItemIcon>
-          <ListItemText primary='Tarot Card Guide' />
+          <ListItemText primary='Tarot Cards Guide' />
         </ListItem>
         <ListItem button component={GatsbyLink} to='/blog/' >
           <ListItemIcon> 
-            <InboxIcon /> 
+            <QuestionAnswerIcon /> 
           </ListItemIcon>
           <ListItemText primary='Blog' />
         </ListItem>
