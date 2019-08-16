@@ -140,7 +140,7 @@ const BlogIndex = () => {
                         <Typography variant='body'>
                           We are asking for your help to make Tarotly the best service possible. Join thousands of tarot card enthusiasts and intuitives in building the tarot card platform you don't want to live without.
                         </Typography>
-               {/* <EmailSignupForm/> */}
+               <EmailSignupForm/>
 
                 </Grid>
               </Grid>
