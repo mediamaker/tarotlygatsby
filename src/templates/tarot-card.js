@@ -40,8 +40,9 @@ export default function TarotCard({ data }) {
 
   const useStyles = makeStyles(theme => ({
     root: {
-   display: 'flex',
- },
+      flexGrow: 1,
+      padding: theme.spacing(2),
+    },
  mainFeaturedPostBody: {
   marginBottom: theme.spacing(4),
   paddingBottom: theme.spacing(2),
@@ -67,8 +68,10 @@ drawerHeader: {
     <div>
     <SEO title={data.markdownRemark.frontmatter.title + " tarot card"} description={data.markdownRemark.frontmatter.description} image={data.markdownRemark.frontmatter.thumbnail.childImageSharp.fluid} /> 
       <Layout>
-        <Paper>
       <Container>
+        <Paper>
+        <div className={classes.root}>
+
       <div className={classes.drawerHeader} />
       <Typography component='h1' variant='h5' className={clsx(classes.pageTitle)}>
                   {data.markdownRemark.frontmatter.title}</Typography>
@@ -98,10 +101,12 @@ drawerHeader: {
  <div
           className={classes.mainFeaturedPostBody}
           dangerouslySetInnerHTML={{ __html:  data.markdownRemark.frontmatter.reversedMeaning} }
-        />            
-          </Container>
+        />        
+            </div>
+    
         </Paper>
+        </Container>
       </Layout>
-    </div>
+      </div>
   )
 }

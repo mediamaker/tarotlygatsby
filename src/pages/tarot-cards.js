@@ -10,6 +10,7 @@ import CardContent from "@material-ui/core/CardContent"
 import CardActionArea from "@material-ui/core/CardActionArea"
 import CardMedia from "@material-ui/core/CardMedia"
 import CssBaseline from "@material-ui/core/CssBaseline"
+import { Container, Paper } from "@material-ui/core"
 
 import Layout from "../components/layout"
 const _ = require("lodash")
@@ -120,6 +121,8 @@ const TarotCardIndex = () => {
     <React.Fragment>
       <SEO title={`Guide to Tarot Cards`} description={pageDescription} />
       <Layout>
+        <Container>
+          <Paper>
         <div className={classes.root}>
           <CssBaseline />
 
@@ -199,6 +202,8 @@ The Major Arcana
             </Grid>
           </main>
         </div>
+        </Paper>
+        </Container>
       </Layout>
     </React.Fragment>
   )
