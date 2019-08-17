@@ -171,7 +171,7 @@ const BlogIndex = () => {
                         </ListItem>
                         <ListItem>
                           <ListItemText
-                            primary="Deepen your knowledge of the tarot with detailed card descriptions and meanings (includes reversals!)"
+                            primary="Deepen your knowledge of the tarot with detailed card descriptions and meanings (including reversals!)"
                             />
                         </ListItem>
                         <ListItem>
