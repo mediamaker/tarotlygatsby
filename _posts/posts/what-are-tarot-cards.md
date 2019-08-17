@@ -6,7 +6,7 @@ category:
   - tarot-cards
 tags:
   - tarot cards
-date: 2019-07-15T09:32:38.581Z
+date: 2019-08-09T09:32:38.581Z
 slug: what-are-tarot-cards
 rating: 5
 ---
