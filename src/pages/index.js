@@ -8,9 +8,11 @@ import Grid from "@material-ui/core/Grid"
 import Layout from "../components/layout"
 import { Container } from "@material-ui/core"
 import EmailSignupForm from "../components/emailSignupForm"
+import List from "@material-ui/core/List"
+import ListItem from "@material-ui/core/ListItem"
+import ListItemText from '@material-ui/core/ListItemText';
 
 const BlogIndex = () => {
-
   const [spacing, setSpacing] = React.useState(2)
 
   const useStyles = makeStyles(theme => ({
@@ -19,15 +21,17 @@ const BlogIndex = () => {
     },
     paper: {
       padding: theme.spacing(2),
-      textAlign: 'center',
+      textAlign: "center",
       color: theme.palette.text.secondary,
+    },
+    demo: {
+      backgroundColor: theme.palette.background.paper,
     },
 
     control: {
       padding: theme.spacing(2),
     },
     card: {
-
       textDecoration: "none",
     },
     media: {
@@ -41,11 +45,11 @@ const BlogIndex = () => {
       ...theme.mixins.toolbar,
       justifyContent: "flex-end",
     },
-   
-  
   }))
 
   const classes = useStyles()
+  const [secondary, setSecondary] = React.useState(false);
+  const [dense, setDense] = React.useState(false);
 
   const { site, allPosts, allTarotCards, heroImage } = useStaticQuery(
     graphql`
@@ -57,7 +61,9 @@ const BlogIndex = () => {
             thumbnail
           }
         }
-        heroImage: file(relativePath: { eq: "tarot-card-reading-with-crystals.jpg" }) {
+        heroImage: file(
+          relativePath: { eq: "tarot-card-reading-with-crystals.jpg" }
+        ) {
           childImageSharp {
             fluid(maxWidth: 880) {
               ...GatsbyImageSharpFluid
@@ -116,36 +122,69 @@ const BlogIndex = () => {
       }
     `
   )
-
   return (
     <div>
-      <SEO title={site.siteMetadata.title} description={site.siteMetadata.description} image={site.siteMetadata.thumbnail} />
+      <SEO
+        title={site.siteMetadata.title}
+        description={site.siteMetadata.description}
+        image={site.siteMetadata.thumbnail}
+      />
       <Layout>
         <Container>
           <div className={classes.root}>
-              <div className={classes.drawerHeader} />
-              <Grid container justify="center" spacing={spacing}>
+            <div className={classes.drawerHeader} />
+            <Grid container justify="center" spacing={spacing}>
+              <Grid item xs={12} md={9}>
+                <Typography variant="h6" component="h1"></Typography>
+                <Typography variant="body" component="h1">
+                  Grow your tarot card practice
+                </Typography>
+                <Typography variant="body" paragraph="true">
+                  Our mission at Tarotly is to help our members acheive their
+                  self care goals and to do that we need to develop the absolute
+                  best tools and services to help you grow your tarot card
+                  practice. Level-up your tarot card practice with Tarotly,
+                  whether you are just getting to know what tarot cards are or
+                  you have been practicing tarot readings for a long time.
+                </Typography>
+
+                <Typography variant="body" paragraph="true">
+                  We are asking for your help to make Tarotly the best service
+                  possible. Join thousands of tarot card enthusiasts and
+                  intuitives in building the tarot card platform you don't want
+                  to live without.
+                </Typography>
+
+                <Grid container spacing={2}>
                   <Grid item xs={12} md={9}>
-                  <Typography variant='h6' component='h1'>
-                        
-                        </Typography>
-                        <Typography variant='body' component='h1'>
-                         Grow your tarot card practice 
-                        </Typography>
-                        <Typography variant='body'>
-
-                        Our mission at Tarotly is to help our members acheive their self care goals and to do that we need to develop the absolute best tools and services to help you grow your tarot card practice.
-                        </Typography>
-
-                        <Typography variant='body'>
-                          We are asking for your help to make Tarotly the best service possible. Join thousands of tarot card enthusiasts and intuitives in building the tarot card platform you don't want to live without.
-                        </Typography>
-               <EmailSignupForm/>
-
+                    <Typography variant="h6" className={classes.title}>
+                      
+                    </Typography>
+                    <div className={classes.demo}>
+                      <List dense={dense}>
+                        <ListItem>
+                          <ListItemText
+                            primary="Give or receive tarot card readings anywhere with the tarotly mobile web app"
+                          />
+                        </ListItem>
+                        <ListItem>
+                          <ListItemText
+                            primary="Deepen your knowledge of the tarot with detailed card descriptions and meanings (includes reversals!)"
+                            />
+                        </ListItem>
+                        <ListItem>
+                          <ListItemText
+                            primary="Connect and grow with thousands of Tarot card enthuasts in a private community. People with tarot card experience ranging from beginner to expert level."
+                          />
+                        </ListItem>
+                      </List>
+                    </div>
+                  </Grid>
                 </Grid>
+                <EmailSignupForm />
               </Grid>
-              <Img fluid={heroImage.childImageSharp.fluid}></Img>
-
+            </Grid>
+            <Img fluid={heroImage.childImageSharp.fluid}></Img>
           </div>
         </Container>
       </Layout>
