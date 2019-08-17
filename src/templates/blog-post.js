@@ -8,6 +8,7 @@ import Paper from "@material-ui/core/Paper"
 import { Container } from "@material-ui/core";
 import Typography from "@material-ui/core/Typography"
 import clsx from 'clsx';
+import Grid from "@material-ui/core/Grid"
 
 const BlogPost = ({ data }) => {
 
@@ -23,6 +24,8 @@ const BlogPost = ({ data }) => {
 },
 mainFeaturedPostImage: {
   marginBottom: theme.spacing(4),
+  maxWidth: 550,
+  alignItems: 'center'
 },
 drawerHeader: {
   display: 'flex',
@@ -35,18 +38,21 @@ drawerHeader: {
  }))
 
  const classes = useStyles()
+ const [spacing, setSpacing] = React.useState(2)
 
   return (
     <div>
       <SEO title={data.markdownRemark.frontmatter.title} description={data.excerpt} image={data.markdownRemark.frontmatter.thumbnail.childImageSharp.fluid} /> 
 
       <Layout>
+      <Container>
 
         <Paper className={classes.paper}>
                   <div className={classes.drawerHeader} />
-                  <Container>
+                              <Grid container justify="center" spacing={spacing}>
+              <Grid item xs={12} md={9}>
 
-                  <Typography component='h1' variant='h3' className={clsx(classes.pageTitle)}>
+                  <Typography component='h1' variant='h4' className={clsx(classes.pageTitle)}>
         {data.markdownRemark.frontmatter.title}
         </Typography>
           <Img className={classes.mainFeaturedPostImage} fluid={data.markdownRemark.frontmatter.thumbnail.childImageSharp.fluid}/>
@@ -54,9 +60,10 @@ drawerHeader: {
           className={classes.mainFeaturedPostBody}
           dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
         />
-                      </Container>
-
+                      </Grid>
+            </Grid>
               </Paper>
+              </Container>
 
               </Layout>
     </div>
