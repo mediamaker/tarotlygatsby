@@ -125,13 +125,16 @@ const TarotCardIndex = () => {
           <Paper>
         <div className={classes.root}>
           <CssBaseline />
-
           <main
             className={clsx(classes.content, {
               [classes.contentShift]: open,
             })}
           >
             <div className={classes.drawerHeader} />
+
+            <Grid container justify="center" spacing={spacing}>
+              <Grid item xs={12} md={9}>
+
             <Typography variant="h5" component="h1">
               What are Tarot Cards?
             </Typography>
@@ -198,6 +201,8 @@ The Major Arcana
                     </Grid>
                   ))}
                 </Grid>
+              </Grid>
+              </Grid>
               </Grid>
             </Grid>
           </main>
