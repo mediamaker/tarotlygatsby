@@ -140,7 +140,7 @@ const TarotCardIndex = () => {
             </Typography>
             <Typography variant="body" paragraph="true">
               Tarot cards are a centuries old method of divining the future and
-              unlocking the secrets held in our subconcious. What is essentially
+              unlocking the secrets held in our subconscious. What is essentially
               a deck of cards, each card with it's own illustration and meaning,
               a pre-determined number of tarot cards are selected by the one
               seeking knowledge ( the "seeker") and laid out in sequence to
