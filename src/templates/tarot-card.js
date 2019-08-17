@@ -37,6 +37,7 @@ export const pageQuery = graphql`
 
 export default function TarotCard({ data }) {
 
+  const [spacing, setSpacing] = React.useState(2)
 
   const useStyles = makeStyles(theme => ({
     root: {
@@ -73,6 +74,8 @@ drawerHeader: {
         <div className={classes.root}>
 
       <div className={classes.drawerHeader} />
+      <Grid container justify="center" spacing={spacing}>
+              <Grid item xs={12} md={9}>
       <Typography component='h1' variant='h5' className={clsx(classes.pageTitle)}>
                   {data.markdownRemark.frontmatter.title}</Typography>
 
@@ -102,6 +105,9 @@ drawerHeader: {
           className={classes.mainFeaturedPostBody}
           dangerouslySetInnerHTML={{ __html:  data.markdownRemark.frontmatter.reversedMeaning} }
         />        
+            
+            </Grid>
+            </Grid>
             </div>
     
         </Paper>
