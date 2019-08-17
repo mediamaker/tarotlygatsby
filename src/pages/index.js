@@ -6,7 +6,7 @@ import Typography from "@material-ui/core/Typography"
 import { makeStyles } from "@material-ui/core/styles"
 import Grid from "@material-ui/core/Grid"
 import Layout from "../components/layout"
-import { Container } from "@material-ui/core"
+import { Container, Paper } from "@material-ui/core"
 import EmailSignupForm from "../components/emailSignupForm"
 import List from "@material-ui/core/List"
 import ListItem from "@material-ui/core/ListItem"
@@ -18,6 +18,7 @@ const BlogIndex = () => {
   const useStyles = makeStyles(theme => ({
     root: {
       flexGrow: 1,
+      padding: theme.spacing(2),
     },
     paper: {
       padding: theme.spacing(2),
@@ -131,6 +132,7 @@ const BlogIndex = () => {
       />
       <Layout>
         <Container>
+          <Paper>
           <div className={classes.root}>
             <div className={classes.drawerHeader} />
             <Grid container justify="center" spacing={spacing}>
@@ -186,6 +188,7 @@ const BlogIndex = () => {
             </Grid>
             <Img fluid={heroImage.childImageSharp.fluid}></Img>
           </div>
+          </Paper>
         </Container>
       </Layout>
     </div>
