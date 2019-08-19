@@ -8,6 +8,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import HomeIcon from '@material-ui/icons/Home';
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
@@ -99,7 +100,7 @@ appBar: {
     <List>
     <ListItem button component={GatsbyLink} to='/' >
           <ListItemIcon> 
-            <FaceIcon /> 
+            <HomeIcon /> 
           </ListItemIcon>
           <ListItemText primary='Home' />
         </ListItem>
@@ -121,7 +122,14 @@ appBar: {
           </ListItemIcon>
           <ListItemText primary='Blog' />
         </ListItem>
-
+        <Divider />
+    
+        <ListItem button className="snipcart-user-profile" component={GatsbyLink} to='#' >
+       <ListItemIcon> 
+            <FaceIcon /> 
+          </ListItemIcon>
+          <ListItemText primary='Profile' />
+        </ListItem>
     </List>  
     </div>
     );

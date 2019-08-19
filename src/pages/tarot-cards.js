@@ -138,7 +138,7 @@ const TarotCardIndex = () => {
             <Typography variant="h5" component="h1">
               What are Tarot Cards?
             </Typography>
-            <Typography variant="body" paragraph="true">
+            <Typography variant="1" paragraph="true">
               Tarot cards are a centuries old method of divining the future and
               unlocking the secrets held in our subconscious. What is essentially
               a deck of cards, each card with it's own illustration and meaning,
@@ -152,7 +152,7 @@ const TarotCardIndex = () => {
             <Typography variant="h5" component="h1">
 The Major Arcana
             </Typography>
-            <Typography component="body" paragraph="true">
+            <Typography component="body1" paragraph="true">
             "The Major Arcana" refers to 22 special tarot cards that hold a
               special significance and may represent major life events when
               pulled in a reading. Keep in mind that when a card is pulled in the reverse or

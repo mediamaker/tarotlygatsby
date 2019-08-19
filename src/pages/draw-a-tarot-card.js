@@ -40,10 +40,10 @@ const DrawATarotCard = () => {
     <div className={classes.drawerHeader} />
     <Grid container justify="center" spacing={spacing}>
               <Grid item xs={12} md={9}>
-    <Typography variant='body' component='h1'>
+    <Typography variant='body1' component='h1'>
                          One Card Daily Tarot Card Reading 
                         </Typography>
-                        <Typography variant='body' paragraph='true'>
+                        <Typography variant='body1' paragraph='true'>
                         Seeking quick answers to your situation? Whether you're seeking a 'yes' or 'no' to a question on your mind or simply want to gain some basic insight into your situation, a quick one card reading can uncover core truths and illuminate the path. 
                         </Typography>
                         <Grid container justify="center" spacing={spacing}>

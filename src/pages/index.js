@@ -11,6 +11,7 @@ import EmailSignupForm from "../components/emailSignupForm"
 import List from "@material-ui/core/List"
 import ListItem from "@material-ui/core/ListItem"
 import ListItemText from '@material-ui/core/ListItemText';
+import Button from "@material-ui/core/Button"
 
 const BlogIndex = () => {
   const [spacing, setSpacing] = React.useState(2)
@@ -19,6 +20,9 @@ const BlogIndex = () => {
     root: {
       flexGrow: 1,
       padding: theme.spacing(2),
+    },
+    button: {
+      margin: theme.spacing(2),
     },
     paper: {
       padding: theme.spacing(2),
@@ -138,10 +142,10 @@ const BlogIndex = () => {
             <Grid container justify="center" spacing={spacing}>
               <Grid item xs={12} md={9}>
                 <Typography variant="h6" component="h1"></Typography>
-                <Typography variant="body" component="h1">
+                <Typography variant="h2" component="h1">
                   Grow your tarot card practice
                 </Typography>
-                <Typography variant="body" paragraph="true">
+                <Typography variant="body1" paragraph="true">
                   Our mission at Tarotly is to help our members acheive their
                   self care goals and to do that we need to develop the absolute
                   best tools and services to help you grow your tarot card
@@ -150,7 +154,7 @@ const BlogIndex = () => {
                   you have been practicing tarot readings for a long time.
                 </Typography>
 
-                <Typography variant="body" paragraph="true">
+                <Typography variant="body1" paragraph="true">
                   We are asking for your help to make Tarotly the best service
                   possible. Join thousands of tarot card enthusiasts and
                   intuitives in building the tarot card platform you don't want
@@ -171,19 +175,31 @@ const BlogIndex = () => {
                         </ListItem>
                         <ListItem>
                           <ListItemText
-                            primary="Deepen your knowledge of the tarot with detailed card descriptions and meanings (including reversals!)"
+                            primary="Deepen your knowledge of the tarot with detailed card descriptions and meanings (including reversals)"
                             />
                         </ListItem>
                         <ListItem>
                           <ListItemText
                             primary="Connect and grow with thousands of Tarot card enthuasts in a private community. People with tarot card experience ranging from beginner to expert level."
-                          />
+                          />  
                         </ListItem>
                       </List>
                     </div>
                   </Grid>
                 </Grid>
-                <EmailSignupForm />
+                <Button color="primary" variant="contained" 
+    className={`snipcart-add-item ${classes.button}`}
+    data-item-id="1"
+    data-item-name="subscription_month"
+    data-item-price="9.99"
+    data-item-payment-interval="Month"
+    data-item-url="https://tarotly.net"
+    data-item-payment-trial="10"
+    data-item-payment-interval-count="1"
+    data-item-description="10 day free trial">
+        10 day free trial
+</Button>
+
               </Grid>
             </Grid>
             <Img fluid={heroImage.childImageSharp.fluid}></Img>

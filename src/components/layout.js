@@ -5,6 +5,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import NavBar from '../components/navBar';
 import Typography from "@material-ui/core/Typography"
 import Grid from "@material-ui/core/Grid"
+import Helmet from 'react-helmet';
 
 const drawerWidth = 240;
 
