@@ -197,7 +197,7 @@ const BlogIndex = () => {
     data-item-payment-trial="10"
     data-item-payment-interval-count="1"
     data-item-description="10 day free trial">
-        10 day free trial
+       Start 10 day free trial
 </Button>
 
               </Grid>
