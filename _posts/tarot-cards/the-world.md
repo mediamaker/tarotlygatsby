@@ -9,9 +9,9 @@ thumbnail: /images/the-world.jpg
 description: >-
   The World card depicts a dancing figure at the center. She is holding a wand
   in both hands. A wreath of flowers surrounds the dancing figure. There are
-  four figures on each corner of the card representing representative of the
-  four corners of the universe, the four elements, and the four evangelicals.
-  This card represents unity and harmony.
+  four figures on each corner of the card representing the four corners of the
+  universe, the four elements, and the four evangelicals. This card represents
+  unity and harmony.
 meaning: >-
   The World card illustrates wholeness and unity. It represents achievement and
   fulfillment. Perhaps you have completed a major milestone in your life and you
