@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import CardReading from "../components/cardReading"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
@@ -28,7 +28,7 @@ const DrawATarotCard = () => {
     },
     }))
     const classes = useStyles()
-    const [spacing, setSpacing] = React.useState(2)
+    const [spacing] = React.useState(2)
 
   return (
 <React.Fragment>  <SEO title={`Draw a tarot card`} description={`Quick insight on your situation  or get a 'yes' or 'no' answer with a simple one card tarot card draw.`} />

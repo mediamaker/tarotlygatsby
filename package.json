@@ -21,6 +21,7 @@
     "emotion-theming": "^10.0.14",
     "gatsby": "^2.13.4",
     "gatsby-background-image": "^0.8.0",
+    "gatsby-cli": "^2.8.18",
     "gatsby-image": "^2.2.4",
     "gatsby-plugin-emotion": "^4.1.2",
     "gatsby-plugin-facebook-pixel": "^1.0.3",

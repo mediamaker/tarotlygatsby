@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import SEO from "../components/seo"
@@ -7,14 +7,13 @@ import { makeStyles } from "@material-ui/core/styles"
 import Grid from "@material-ui/core/Grid"
 import Layout from "../components/layout"
 import { Container, Paper } from "@material-ui/core"
-import EmailSignupForm from "../components/emailSignupForm"
 import List from "@material-ui/core/List"
 import ListItem from "@material-ui/core/ListItem"
 import ListItemText from '@material-ui/core/ListItemText';
 import Button from "@material-ui/core/Button"
 
 const BlogIndex = () => {
-  const [spacing, setSpacing] = React.useState(2)
+  const [spacing] = React.useState(2)
 
   const useStyles = makeStyles(theme => ({
     root: {
@@ -53,10 +52,9 @@ const BlogIndex = () => {
   }))
 
   const classes = useStyles()
-  const [secondary, setSecondary] = React.useState(false);
-  const [dense, setDense] = React.useState(false);
+  const [dense] = React.useState(false);
 
-  const { site, allPosts, allTarotCards, heroImage } = useStaticQuery(
+  const { site, heroImage } = useStaticQuery(
     graphql`
       query {
         site {

@@ -1,6 +1,6 @@
 import React from "react"
 import Img from "gatsby-image"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import { makeStyles} from '@material-ui/core/styles';
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -38,7 +38,7 @@ drawerHeader: {
  }))
 
  const classes = useStyles()
- const [spacing, setSpacing] = React.useState(2)
+ const [spacing] = React.useState(2)
 
   return (
     <div>

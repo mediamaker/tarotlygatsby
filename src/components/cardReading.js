@@ -1,14 +1,11 @@
-import React, { useState } from "react"
+import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import Typography from "@material-ui/core/Typography"
-import { makeStyles, useTheme } from "@material-ui/core/styles"
+import { makeStyles } from "@material-ui/core/styles"
 import Card from "@material-ui/core/Card"
 import CardContent from "@material-ui/core/CardContent"
-import CardActionArea from "@material-ui/core/CardActionArea"
 import CardMedia from "@material-ui/core/CardMedia"
 import Button from "@material-ui/core/Button"
-import clsx from "clsx"
-import IconButton from "@material-ui/core/IconButton"
 import Chip from "@material-ui/core/Chip"
 import { kebabCase } from "lodash"
 
@@ -66,9 +63,8 @@ const CardReading = () => {
   }))
 
   const classes = useStyles()
-  const [checked, setChecked] = React.useState(true)
 
-  const { site, allPosts, allTarotCards, allFile } = useStaticQuery(
+  const { allTarotCards, allFile } = useStaticQuery(
     graphql`
       query {
         site {

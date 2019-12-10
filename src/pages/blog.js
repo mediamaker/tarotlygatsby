@@ -1,25 +1,22 @@
-import React, { useState } from "react"
+import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import SEO from "../components/seo"
 import Typography from "@material-ui/core/Typography"
-import { makeStyles, useTheme } from "@material-ui/core/styles"
+import { makeStyles } from "@material-ui/core/styles"
 import Grid from "@material-ui/core/Grid"
 import Card from "@material-ui/core/Card"
 import CardContent from "@material-ui/core/CardContent"
 import CardActionArea from "@material-ui/core/CardActionArea"
 import CardMedia from "@material-ui/core/CardMedia"
-import CssBaseline from "@material-ui/core/CssBaseline"
 import Paper from "@material-ui/core/Paper"
 import Layout from "../components/layout"
 import { Container } from "@material-ui/core"
-import CardReading from "../components/cardReading"
-import Box from "@material-ui/core/Box"
-import EmailSignupForm from "../components/emailSignupForm"
+
 
 const Blog = () => {
   const drawerWidth = 240
 
-  const [spacing, setSpacing] = React.useState(2)
+  const [spacing] = React.useState(2)
 
   const useStyles = makeStyles(theme => ({
     root: {
@@ -105,7 +102,7 @@ const Blog = () => {
 
   const classes = useStyles()
 
-  const { site, allPosts, allTarotCards } = useStaticQuery(
+  const { site, allPosts } = useStaticQuery(
     graphql`
       query {
         site {

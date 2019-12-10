@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import clsx from "clsx"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import SEO from "../components/seo"
@@ -73,7 +73,7 @@ const useStyles = makeStyles(theme => ({
 }))
 
 const TarotCardIndex = () => {
-  const { site, allTarotCards } = useStaticQuery(
+  const { allTarotCards } = useStaticQuery(
     graphql`
       query {
         site {
@@ -114,7 +114,7 @@ const TarotCardIndex = () => {
   const [spacing] = React.useState(2)
   const classes = useStyles()
 
-  const [open, setOpen] = React.useState(false)
+  const [open] = React.useState(false)
   const pageDescription = `What are tarot cards? Uncover the mysteries of the tarot with accurate descriptions for all 22 tarot cards of the Major Arcana. Learn what each card means when it's drawn, including reversals.`
 
   return (

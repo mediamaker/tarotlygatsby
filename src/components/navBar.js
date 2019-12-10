@@ -1,5 +1,4 @@
-import React, { useState } from "react"
-import clsx from 'clsx';
+import React from "react"
 import { useStaticQuery, graphql, Link as GatsbyLink } from "gatsby"
 import Link from '@material-ui/core/Link';
 import Typography from "@material-ui/core/Typography"
@@ -12,17 +11,13 @@ import HomeIcon from '@material-ui/icons/Home';
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import AppsIcon from '@material-ui/icons/Apps';
 import QuestionAnswerIcon from '@material-ui/icons/QuestionAnswer';
 import PhotoAlbumIcon from '@material-ui/icons/PhotoAlbum';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
 import FaceIcon from '@material-ui/icons/Face';
-import MailIcon from '@material-ui/icons/Mail';
 import Hidden from '@material-ui/core/Hidden';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
@@ -81,8 +76,6 @@ appBar: {
   
   toolbar: {
     toolbar: theme.mixins.toolbar,
-    background: `#373B44;`,  /* fallback for old browsers */
-    background: `-webkit-linear-gradient(to right, #4286f4, #373B44);`,  /* Chrome 10-25, Safari 5.1-6 */
     background: `linear-gradient(to right, #4286f4, #373B44);`, /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     color: `#FFF`
 
