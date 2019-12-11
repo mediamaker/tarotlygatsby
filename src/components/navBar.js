@@ -117,12 +117,7 @@ appBar: {
         </ListItem>
         <Divider />
     
-        <ListItem button className="snipcart-user-profile" component={GatsbyLink} to='#' >
-       <ListItemIcon> 
-            <FaceIcon /> 
-          </ListItemIcon>
-          <ListItemText primary='Profile' />
-        </ListItem>
+      
     </List>  
     </nav>
     );

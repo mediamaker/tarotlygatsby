@@ -33,13 +33,6 @@ module.exports = {
     `gatsby-plugin-playground`,
     "gatsby-plugin-slug",
     {
-			resolve: 'gatsby-plugin-snipcart',
-			options: {
-        apiKey: 'NGQyNjM4NTctNjE3NS00N2I0LTk3Y2YtMjkwNzFhNTc5M2M3NjM3MDE4MDI3ODc5NjExMTc2',
-        autopop: "true",
-			}
-		},
-    {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: `UA-50891-26`,

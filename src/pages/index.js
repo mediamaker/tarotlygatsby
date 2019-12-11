@@ -68,7 +68,7 @@ const BlogIndex = () => {
           relativePath: { eq: "tarot-card-reading-with-crystals.jpg" }
         ) {
           childImageSharp {
-            fluid(maxWidth: 880) {
+            fluid(maxWidth: 480) {
               ...GatsbyImageSharpFluid
             }
           }
@@ -185,18 +185,7 @@ const BlogIndex = () => {
                     </div>
                   </Grid>
                 </Grid>
-                <Button color="primary" variant="contained" 
-    className={`snipcart-add-item ${classes.button}`}
-    data-item-id="1"
-    data-item-name="subscription_month"
-    data-item-price="9.99"
-    data-item-payment-interval="Month"
-    data-item-url="https://tarotly.net"
-    data-item-payment-trial="10"
-    data-item-payment-interval-count="1"
-    data-item-description="10 day free trial">
-       Start 10 day free trial
-</Button>
+             
 
               </Grid>
             </Grid>
