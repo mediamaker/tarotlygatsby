@@ -52,6 +52,7 @@ export default function TarotCard({ data }) {
 mainFeaturedPostImage: {
   maxWidth: 230,
   marginBottom: theme.spacing(4),
+  margin: "0 auto",
 },
 drawerHeader: {
   display: 'flex',
@@ -75,7 +76,7 @@ drawerHeader: {
 
       <div className={classes.drawerHeader} />
       <Grid container justify="center" spacing={spacing}>
-              <Grid item xs={12} md={9}>
+              <Grid item xs={12} md={9} justifyContent='center'>
       <Typography component='h1' variant='h5' className={clsx(classes.pageTitle)}>
                   {data.markdownRemark.frontmatter.title}</Typography>
 
