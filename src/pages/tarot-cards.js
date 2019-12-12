@@ -98,7 +98,7 @@ const TarotCardIndex = () => {
                 date(formatString: "DD MMMM YYYY")
                 thumbnail {
                   childImageSharp {
-                    fluid(maxWidth: 630) {
+                    fluid(maxWidth: 180) {
                       ...GatsbyImageSharpFluid
                     }
                   }
