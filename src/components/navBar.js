@@ -34,7 +34,6 @@ const useStyles = makeStyles(theme => ({
     margin: 0,
   },
 siteTitle: {
- color: '#fff',
 },
 appBar: {
   marginLeft: drawerWidth,
@@ -76,8 +75,7 @@ appBar: {
   
   toolbar: {
     toolbar: theme.mixins.toolbar,
-    background: `linear-gradient(to right, #4286f4, #373B44);`, /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    color: `#FFF`
+    background: `#fff`, /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
   },
 
