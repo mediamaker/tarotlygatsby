@@ -20,6 +20,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import FaceIcon from '@material-ui/icons/Face';
 import Hidden from '@material-ui/core/Hidden';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import StorefrontIcon from '@material-ui/icons/Storefront';
 
 const NavBar = ({container}) => {
 
@@ -112,6 +113,12 @@ appBar: {
             <QuestionAnswerIcon /> 
           </ListItemIcon>
           <ListItemText primary='Blog' />
+        </ListItem>
+        <ListItem button component="a" href="https://shop.mediamakeru.com/collections/tarotly-apparel-everything-for-the-mystics">
+          <ListItemIcon> 
+            <StorefrontIcon /> 
+          </ListItemIcon>
+          <ListItemText primary='Apparel' />
         </ListItem>
         <Divider />
     

@@ -47,7 +47,6 @@ export default function TarotCard({ data }) {
  mainFeaturedPostBody: {
   marginBottom: theme.spacing(4),
   paddingBottom: theme.spacing(2),
-  fontSize: 18,
 },
 mainFeaturedPostImage: {
   maxWidth: 230,
