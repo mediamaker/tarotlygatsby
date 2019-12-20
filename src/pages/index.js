@@ -11,6 +11,7 @@ import List from "@material-ui/core/List"
 import ListItem from "@material-ui/core/ListItem"
 import ListItemText from '@material-ui/core/ListItemText';
 import Button from "@material-ui/core/Button"
+import EmailSignupForm from "../components/emailSignupForm";
 
 const BlogIndex = () => {
   const [spacing] = React.useState(2)
@@ -158,7 +159,7 @@ const BlogIndex = () => {
                   intuitives in building the tarot card platform you don't want
                   to live without.
                 </Typography>
-
+                <EmailSignupForm/>
                 <Grid container spacing={2}>
                   <Grid item xs={12} md={9}>
                     <Typography variant="h6" className={classes.title}>
