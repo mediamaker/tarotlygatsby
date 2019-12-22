@@ -30,7 +30,6 @@ module.exports = {
     `gatsby-plugin-transition-link`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-playground`,
     "gatsby-plugin-slug",
     {
       resolve: `gatsby-plugin-google-analytics`,
@@ -127,17 +126,6 @@ module.exports = {
       }
     },
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: `Work Sans`,
-            variants: [`300`, `400`, `700`, `900`]
-          },
-        ],
-      },
-    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
