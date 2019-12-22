@@ -69,7 +69,7 @@ const BlogIndex = () => {
           relativePath: { eq: "tarot-card-reading-with-crystals.jpg" }
         ) {
           childImageSharp {
-            fluid(maxWidth: 480) {
+            fluid(maxWidth: 350) {
               ...GatsbyImageSharpFluid
             }
           }
@@ -114,7 +114,7 @@ const BlogIndex = () => {
                 date(formatString: "DD MMMM YYYY")
                 thumbnail {
                   childImageSharp {
-                    fluid(maxWidth: 630) {
+                    fluid(maxWidth: 400) {
                       ...GatsbyImageSharpFluid
                     }
                   }
@@ -188,9 +188,9 @@ const BlogIndex = () => {
                 </Grid>
              
 
-              </Grid>
+              </Grid>            <div style={{width: '400px'}}> <Img fluid={heroImage.childImageSharp.fluid}></Img></div>
+
             </Grid>
-            <Img fluid={heroImage.childImageSharp.fluid}></Img>
           </div>
           </Paper>
         </Container>
