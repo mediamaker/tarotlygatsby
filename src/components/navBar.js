@@ -17,7 +17,6 @@ import PhotoAlbumIcon from '@material-ui/icons/PhotoAlbum';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import FaceIcon from '@material-ui/icons/Face';
 import Hidden from '@material-ui/core/Hidden';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import StorefrontIcon from '@material-ui/icons/Storefront';
@@ -29,7 +28,6 @@ const drawerWidth = 240;
 const useStyles = makeStyles(theme => ({
   root: {
     display: "flex",
-
   },
   body: {
     margin: 0,
@@ -131,19 +129,7 @@ appBar: {
       setMobileOpen(!mobileOpen);
     }
   
-    const { site} = useStaticQuery(
-      graphql`
-        query {
-          site {
-            siteMetadata {
-              title
-              description
-            }
-          }
-        }
-      `
-    )
-    
+
 
     return (
 <div className={classes.root}>
@@ -152,7 +138,7 @@ appBar: {
 
         <Toolbar  className={classes.toolbar}>
           <IconButton
-            color="inherit"
+            color="000"
             aria-label="open drawer"    
             onClick={handleDrawerToggle}
             edge="start"

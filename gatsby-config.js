@@ -24,7 +24,7 @@ module.exports = {
       {
       resolve: `gatsby-plugin-facebook-pixel`,
       options: {
-        pixelId: '455395268341831',
+        pixelId: '1476556719324691',
       },
     },
     `gatsby-plugin-transition-link`,
@@ -126,7 +126,6 @@ module.exports = {
           })
       }
     },
-    `gatsby-plugin-emotion`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-prefetch-google-fonts`,
