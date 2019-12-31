@@ -126,13 +126,6 @@ module.exports = {
                     slug
                     number
                     date(formatString: "DD MMMM YYYY")
-                    thumbnail {
-                      childImageSharp {
-                        fluid(maxWidth: 130) {
-                          ...GatsbyImageSharpFluid
-                        }
-                      }
-                    }
                   }
                 }
               }
