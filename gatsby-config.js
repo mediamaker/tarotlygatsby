@@ -108,7 +108,7 @@ module.exports = {
             allSitePage {
               edges {
                 node {
-                  path
+                  slug: path
                 }
               }
             }
