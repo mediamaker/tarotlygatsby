@@ -94,17 +94,15 @@ module.exports = {
     },
     `gatsby-plugin-material-ui`,
     {
-      resolve: `gatsby-plugin-sitemap`,
+      resolve: `gatsby-plugin-advanced-sitemap`,
       options: {
-        output: `/sitemap.xml`,
-        // Exclude specific pages or groups of pages using glob parameters
-        // See: https://github.com/isaacs/minimatch
-        // The example below will exclude the single `path/to/page` and all routes beginning with `category`
-        query: `
+           // 1 query for each data type
+          query: `
           {
             site {
               siteMetadata {
-                siteUrl
+                title
+                description
               }
             }
             allSitePage {
@@ -114,17 +112,55 @@ module.exports = {
                 }
               }
             }
-        }`,
-        serialize: ({ site, allSitePage }) =>
-          allSitePage.edges.map(edge => {
-            return {
-              url: site.siteMetadata.siteUrl + edge.node.path,
-              changefreq: `daily`,
-              priority: 0.7,
+            allTarotCards: allMarkdownRemark(
+              filter: { fileAbsolutePath: { regex: "/_posts/tarot-cards/" } }
+              sort: { fields: [frontmatter___number], order: ASC }
+            ) {
+              totalCount
+              edges {
+                node {
+                  id
+                  excerpt
+                  frontmatter {
+                    title
+                    slug
+                    number
+                    date(formatString: "DD MMMM YYYY")
+                    thumbnail {
+                      childImageSharp {
+                        fluid(maxWidth: 130) {
+                          ...GatsbyImageSharpFluid
+                        }
+                      }
+                    }
+                  }
+                }
+              }
             }
-          })
+          }`,
+          mapping: {
+              // Each data type can be mapped to a predefined sitemap
+              // Routes can be grouped in one of: posts, tags, authors, pages, or a custom name
+              // The default sitemap - if none is passed - will be pages
+              allSitePage: {
+                  sitemap: `posts`,
+              },
+              allTarotCards: {
+                  sitemap: `tarot-cards`,
+              }
+          },
+          exclude: [
+              `/dev-404-page`,
+              `/404`,
+              `/404.html`,
+              `/offline-plugin-app-shell-fallback`,
+              `/my-excluded-page`,
+              /(\/)?hash-\S*/, // you can also pass valid RegExp to exclude internal tags for example
+          ],
+          createLinkInHead: true, // optional: create a link in the `<head>` of your site
+          addUncaughtPages: true, // optional: will fill up pages that are not caught by queries and mapping and list them under `sitemap-pages.xml`
       }
-    },
+  },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-manifest`,
