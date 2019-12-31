@@ -120,12 +120,8 @@ module.exports = {
               edges {
                 node {
                   id
-                  excerpt
-                  frontmatter {
-                    title
+                  slug: frontmatter {
                     slug
-                    number
-                    date(formatString: "DD MMMM YYYY")
                   }
                 }
               }
