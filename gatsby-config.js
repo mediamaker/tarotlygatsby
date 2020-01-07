@@ -94,62 +94,60 @@ module.exports = {
     },
     `gatsby-plugin-material-ui`,
     {
-      resolve: `gatsby-plugin-advanced-sitemap`,
+      resolve: `gatsby-plugin-sitemap`,
       options: {
-           // 1 query for each data type
-          query: `
+        output: `/sitemap.xml`,
+        // Exclude specific pages or groups of pages using glob parameters
+        // See: https://github.com/isaacs/minimatch
+        // The example below will exclude the single `path/to/page` and all routes beginning with `category`
+        exclude: [],
+        query: `
           {
             site {
               siteMetadata {
-                title
-                description
+                siteUrl
               }
             }
+  
             allSitePage {
               edges {
                 node {
-                  slug: path
+                  path
                 }
               }
             }
-            allTarotCards: allMarkdownRemark(
-              filter: { fileAbsolutePath: { regex: "/_posts/tarot-cards/" } }
-              sort: { fields: [frontmatter___number], order: ASC }
-            ) {
-              totalCount
+            allMarkdownRemark {
               edges {
                 node {
-                  id
-                  slug: frontmatter {
+                  fields {
                     slug
                   }
                 }
               }
             }
           }`,
-          mapping: {
-              // Each data type can be mapped to a predefined sitemap
-              // Routes can be grouped in one of: posts, tags, authors, pages, or a custom name
-              // The default sitemap - if none is passed - will be pages
-              allSitePage: {
-                  sitemap: `posts`,
-              },
-              allTarotCards: {
-                  sitemap: `tarot-cards`,
-              }
-          },
-          exclude: [
-              `/dev-404-page`,
-              `/404`,
-              `/404.html`,
-              `/offline-plugin-app-shell-fallback`,
-              `/my-excluded-page`,
-              /(\/)?hash-\S*/, // you can also pass valid RegExp to exclude internal tags for example
-          ],
-          createLinkInHead: true, // optional: create a link in the `<head>` of your site
-          addUncaughtPages: true, // optional: will fill up pages that are not caught by queries and mapping and list them under `sitemap-pages.xml`
+        serialize: ({ site, allSitePage, allMarkdownRemark }) => {
+          let pages = []
+          allSitePage.edges.map(edge => {
+            pages.push({
+              url: site.siteMetadata.siteUrl + edge.node.path,
+              changefreq: `daily`,
+              priority: 0.7,
+            })
+          })
+          allMarkdownRemark.edges.map(edge => {
+            pages.push({
+              url: `${site.siteMetadata.siteUrl}/${
+                edge.node.fields.slug
+              }`,
+              changefreq: `daily`,
+              priority: 0.7,
+            })
+          })
+          return pages
       }
-  },
+    }
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-manifest`,

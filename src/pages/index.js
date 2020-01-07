@@ -7,15 +7,11 @@ import { makeStyles } from "@material-ui/core/styles"
 import Grid from "@material-ui/core/Grid"
 import Layout from "../components/layout"
 import { Container, Paper } from "@material-ui/core"
-import List from "@material-ui/core/List"
-import ListItem from "@material-ui/core/ListItem"
-import ListItemText from '@material-ui/core/ListItemText';
-import Button from "@material-ui/core/Button"
 import EmailSignupForm from "../components/emailSignupForm";
 
 const BlogIndex = () => {
-  const [spacing] = React.useState(2)
-
+  const [spacing] = React.useState(8)
+console.log(spacing);
   const useStyles = makeStyles(theme => ({
     root: {
       flexGrow: 1,
@@ -24,8 +20,15 @@ const BlogIndex = () => {
     button: {
       margin: theme.spacing(2),
     },
+    h1 : {
+      marginBottom: theme.spacing(2),
+        },
+    h2 : {
+      marginTop: theme.spacing(2),
+      marginBottom: theme.spacing(2),
+    },
     paper: {
-      padding: theme.spacing(2),
+      padding: theme.spacing(8),
       textAlign: "center",
       color: theme.palette.text.secondary,
     },
@@ -140,24 +143,30 @@ const BlogIndex = () => {
             <div className={classes.drawerHeader} />
             <Grid container justify="center" spacing={spacing}>
               <Grid item xs={12} md={9}>
-                <Typography variant="h6" component="h1"></Typography>
-                <Typography variant="h2" component="h1">
-                  Grow your tarot card practice
+                <Typography variant="h4" component="h1" className= {classes.h1}>
+                  Grow your tarot card knowledge and practice
                 </Typography>
-                <Typography variant="body1" paragraph="true">
+
+                <Typography variant="body1" >
                   Our mission at Tarotly is to help our members acheive their
                   self care goals and to do that we need to develop the absolute
                   best tools and services to help you grow your tarot card
-                  practice. Level-up your tarot card practice with Tarotly,
+                  practice. Level-up your tarot card practice the effective and fun way with Tarotly, an inviting community of like-minded people learning all about how Tarot cards and Oracle cards can connect us to a deeper sense of self and each other.
+                  </Typography>
+                <Typography variant="body1" >
                   whether you are just getting to know what tarot cards are or
                   you have been practicing tarot readings for a long time.
                 </Typography>
 
-                <Typography variant="body1" paragraph="true">
+                <Typography variant="body1" >
                   We are asking for your help to make Tarotly the best service
                   possible. Join thousands of tarot card enthusiasts and
                   intuitives in building the tarot card platform you don't want
                   to live without.
+                  </Typography>
+
+                  <Typography variant="h5" component="h2" className= {classes.h2}>
+                  Tarot School starts soon. Enter your email for more info.
                 </Typography>
                 <EmailSignupForm/>
                 <Grid container spacing={2}>
@@ -166,30 +175,12 @@ const BlogIndex = () => {
                       
                     </Typography>
                     <div className={classes.demo}>
-                      <List dense={dense}>
-                        <ListItem>
-                          <ListItemText
-                            primary="Give or receive tarot card readings anywhere with the tarotly mobile web app"
-                          />
-                        </ListItem>
-                        <ListItem>
-                          <ListItemText
-                            primary="Deepen your knowledge of the tarot with detailed card descriptions and meanings (including reversals)"
-                            />
-                        </ListItem>
-                        <ListItem>
-                          <ListItemText
-                            primary="Connect and grow with thousands of Tarot card enthuasts in a private community. People with tarot card experience ranging from beginner to expert level."
-                          />  
-                        </ListItem>
-                      </List>
+                
                     </div>
                   </Grid>
-                </Grid>
-             
-
-              </Grid>            <div style={{width: '400px'}}> <Img fluid={heroImage.childImageSharp.fluid}></Img></div>
-
+                </Grid>          
+              </Grid>  
+                <div style={{width: '400px'}}> <Img fluid={heroImage.childImageSharp.fluid}></Img></div>
             </Grid>
           </div>
           </Paper>

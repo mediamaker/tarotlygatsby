@@ -17,7 +17,6 @@ const Layout = ({children}) => {
   },
   content: {
     flexGrow: 1,
-    padding: theme.spacing(0),
   
   },
    toolbar: theme.mixins.toolbar,

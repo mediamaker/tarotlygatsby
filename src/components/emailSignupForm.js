@@ -34,7 +34,7 @@ const EmailSignupForm = () => {
       <h3>Get Started</h3>
       <form name="contact3" method="POST" netlify-honeypot="bot-field" data-netlify="true">
       <input type="hidden" name="form-name" value="contact3" />
-  <p class={classes.hidden}>
+  <p className={classes.hidden}>
     <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
   </p>
   <p>

@@ -138,7 +138,7 @@ appBar: {
 
         <Toolbar  className={classes.toolbar}>
           <IconButton
-            color="000"
+            color="inherit"
             aria-label="open drawer"    
             onClick={handleDrawerToggle}
             edge="start"
