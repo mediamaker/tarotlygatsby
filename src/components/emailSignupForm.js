@@ -31,7 +31,7 @@ const EmailSignupForm = () => {
 
     return (
 <React.Fragment>
-      <h3>Get Started</h3>
+      <p>News about classes, special events and exclusive resources for the Tarotly community.</p>
       <form name="contact3" method="POST" netlify-honeypot="bot-field" data-netlify="true">
       <input type="hidden" name="form-name" value="contact3" />
   <p className={classes.hidden}>

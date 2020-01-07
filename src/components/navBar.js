@@ -50,6 +50,7 @@ appBar: {
   },
   menuButton: {
     marginRight: theme.spacing(2),
+    color: `black`,
     [theme.breakpoints.up('sm')]: {
       display: 'none',
     },

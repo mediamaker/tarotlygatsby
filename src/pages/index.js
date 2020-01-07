@@ -27,6 +27,9 @@ console.log(spacing);
       marginTop: theme.spacing(2),
       marginBottom: theme.spacing(2),
     },
+    featuredImage: {
+      width: `400px`,
+    },
     paper: {
       padding: theme.spacing(8),
       textAlign: "center",
@@ -166,7 +169,7 @@ console.log(spacing);
                   </Typography>
 
                   <Typography variant="h5" component="h2" className= {classes.h2}>
-                  Tarot School starts soon. Enter your email for more info.
+                  Stay informed, sign-up for the Tarotly community newsletter
                 </Typography>
                 <EmailSignupForm/>
                 <Grid container spacing={2}>
@@ -179,8 +182,8 @@ console.log(spacing);
                     </div>
                   </Grid>
                 </Grid>          
+                <Img className={classes.featuredImage} fluid={heroImage.childImageSharp.fluid}></Img>
               </Grid>  
-                <div style={{width: '400px'}}> <Img fluid={heroImage.childImageSharp.fluid}></Img></div>
             </Grid>
           </div>
           </Paper>
@@ -190,4 +193,4 @@ console.log(spacing);
   )
 }
 
-export default BlogIndex
+export default BlogIndex 
